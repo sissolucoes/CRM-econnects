@@ -207,7 +207,12 @@ Class Usuario_Model extends MY_Model
              */
             $this->session->sess_destroy();
 
+
+
+
             $this->session->set_userdata($usuario);
+
+            $this->log_evento->log($this , 'login', 'Login');
 
             return true;
         } else {
@@ -216,6 +221,7 @@ Class Usuario_Model extends MY_Model
     }
     function logout(){
 
+        $this->log_evento->log($this , 'logout', 'Logout');
         $this->session->sess_destroy();
 
     }

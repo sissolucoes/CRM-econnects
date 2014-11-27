@@ -203,6 +203,10 @@ Class Log_Evento_Model extends MY_Model
         $this->log($model, 'excluir', $resumo);
     }
 
+    public function with_usuario($fields = array('nome')){
 
+        $this->with_simple_relation('usuario', 'usuario_', 'usuario_id', $fields, 'left');
+        return $this;
+    }
 
 }

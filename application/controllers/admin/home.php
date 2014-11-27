@@ -20,8 +20,6 @@ class Home extends Admin_Controller {
 	public function index()
 	{
         $data = array();
-
-        $this->log_evento->log($this, 'teste', 'teste');
         $this->template->load('admin/layouts/base', "admin/home/index", $data );
 	}
 }

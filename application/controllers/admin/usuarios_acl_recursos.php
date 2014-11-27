@@ -143,7 +143,7 @@ class Usuarios_Acl_Recursos extends Admin_Controller {
     }
     public  function delete($id){
 
-        //$this->current_model->delete($id);
+        $this->current_model->delete($id);
         $this->session->set_flashdata('succ_msg', 'Registro excluido corretamente.');
         redirect("{$this->controller_uri}/index");
     }

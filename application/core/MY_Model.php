@@ -1117,7 +1117,7 @@ class MY_Model extends CI_Model
         $this->update( $this->input->post($this->primary_key),  $data);
     }
 
-    public function with_simple_relation($with_table, $prefix , $foreing_key , $fields){
+    public function with_simple_relation($with_table, $prefix , $foreing_key , $fields, $join = 'inner'){
 
 
         if(is_array($with_table)){
@@ -1130,7 +1130,7 @@ class MY_Model extends CI_Model
             $this->_database->select("{$with_table}.$field AS {$prefix}{$field}");
         }
 
-        $this->_database->join($with_table, $this->_table.".{$foreing_key} = {$with_table}.{$foreing_key}");
+        $this->_database->join($with_table, $this->_table.".{$foreing_key} = {$with_table}.{$foreing_key}", $join);
 
         return $this;
 
@@ -1141,5 +1141,12 @@ class MY_Model extends CI_Model
         foreach($data as $row){
             $this->insert($row);
         }
+    }
+
+    public function  set_select(){
+
+        $this->_database->select($this->_table . '.*');
+
+        return $this;
     }
 }

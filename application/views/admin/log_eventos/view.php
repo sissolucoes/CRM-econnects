@@ -27,7 +27,7 @@
                                 <table align="left" cellpadding="0" cellspacing="4" border="0" class="table table-bordered table-primary" id="table-log-evento">
                                     <tr>
                                         <td class="desc_campo"><div>Usuario:</div></td>
-                                        <td class="caixa"><?php echo $row['usuario_id'];?></td>
+                                        <td class="caixa"><?php echo $row['usuario_nome'] != '' ?  $row['usuario_nome'] : 'N/D';?> </td>
                                     </tr>
                                     <tr>
                                         <td class="desc_campo"><div >Tipo de Evento:</div></td>
@@ -52,7 +52,7 @@
                                     </tr>
                                     <tr>
                                         <td class="desc_campo"><div>Data / Hora:</div></td>
-                                        <td class="caixa"><?php echo $row['criacao'];?></td>
+                                        <td class="caixa"><?php echo app_date_mysql_to_mask($row['criacao']);?></td>
                                     </tr>
                                     <tr>
                                         <td class="desc_campo"  valign="top">

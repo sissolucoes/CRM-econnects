@@ -52,7 +52,7 @@ class Log_Eventos extends Admin_Controller {
 
 
 
-        $data['rows'] = $this->current_model->get_all();
+        $data['rows'] = $this->current_model->with_usuario()->get_all();
 
 
 
@@ -72,7 +72,7 @@ class Log_Eventos extends Admin_Controller {
 
 
         $data = array();
-        $data['row'] = $this->current_model->get($id);
+        $data['row'] = $this->current_model->with_usuario()->set_select()->get($id);
 
 
 

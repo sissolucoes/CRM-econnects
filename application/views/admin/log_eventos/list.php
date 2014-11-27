@@ -48,7 +48,7 @@
                                     <td class="center"><?php echo $row[$primary_key];?></td>
                                     <td><?php echo app_date_mysql_to_mask($row['criacao']);?></td>
                                     <td><?php echo $row['tipo_evento'];?></td>
-                                    <td><?php echo $row['usuario_id'];?></td>
+                                    <td><?php echo $row['usuario_nome'] != '' ?  $row['usuario_nome'] : 'N/D';?></td>
                                     <td class="center">
                                         <a href="<?php echo base_url("{$current_controller_uri}/view/{$row[$primary_key]}")?>" class="btn btn-sm btn-primary">  <i class="fa fa-search"></i>  Detalhes </a>
                                         <a href="<?php echo base_url("$current_controller_uri/delete/{$row[$primary_key]}")?>" class="btn btn-sm btn-danger deleteRowButton"> <i class="fa fa-eraser"></i> Excluir </a>
