@@ -1,27 +1,47 @@
 <?php
-Class Log_Database_Model extends MY_Model
+Class Log_Evento_Model extends MY_Model
 {
-    protected $_table = 'log_database';
-    protected $_primary_key = 'log_database_id';
 
 
-    protected $_defaul_order = 'criacao';
+    protected $_table = 'log_evento';
+    protected $primary_key = 'log_evento_id';
 
-    protected $_defaul_sort = 'DESC';
+    protected $return_type = 'array';
+    protected $soft_delete = FALSE;
 
-    protected $_exclude_fields = array('alteracao', 'criacao', 'alteracao_usuario_id', 'deletado');
+    protected $soft_delete_key = 'deletado';
 
-    public function log($model, $tipo, $resumo){
+    protected $update_at_key = 'alteracao';
+    protected $create_at_key = 'criacao';
 
-        if(is_object($model)){
+    /**
+     * Desabilita o log nesse model para não gerar
+     * um loop infinito
+     * @var bool
+     */
+    protected $enable_log = FAlSE;
 
-            $model = strtolower(get_class($model));
+
+    protected $_exclude_fields = array(
+        'alteracao',
+        'criacao',
+        'alteracao_usuario_id',
+        'deletado'
+    );
+
+
+
+    public function log($class, $tipo_evento, $conteudo){
+
+        if(is_object($class) ){
+
+            $class = strtolower(get_class($class));
         }
 
         $data  = array(
-            'model' => $model,
-            'tipo' => $tipo,
-            'resumo' => $resumo,
+            'model' => $class,
+            'tipo_evento' => $tipo_evento,
+            'conteudo' => $conteudo,
             'ip' => $_SERVER['REMOTE_ADDR'],
             'controller' => $this->router->fetch_class(),
             'acao' => $this->router->fetch_method(),
@@ -29,7 +49,7 @@ Class Log_Database_Model extends MY_Model
             'usuario_id' => $this->session->userdata('usuario_id'),
         );
 
-        $this->saveData($data);
+        $this->insert($data);
 
     }
 
@@ -42,9 +62,9 @@ Class Log_Database_Model extends MY_Model
 
         $resumo = '<table border="0" cellpadding="1" cellspacing="2" align="left" class="log_table_resumo">';
 
-        if(is_object($model)){
+        if(is_object($model) && ($model instanceof MY_Model) ){
 
-            $id_key = $model->getPrimaryKey();
+            $id_key = $model->primary_key();
             $id_value = $old_data[$id_key];
 
             $resumo .= '
@@ -96,9 +116,9 @@ Class Log_Database_Model extends MY_Model
 
         $resumo = '<table border="0" cellpadding="1" cellspacing="2" align="left" class="log_table_resumo">';
 
-        if(is_object($model)){
+        if(is_object($model) && ($model instanceof MY_Model)){
 
-            $id_key = $model->getPrimaryKey();
+            $id_key = $model->primary_key();
 
             $resumo .= '
                 <tr class="linha_0">
@@ -144,9 +164,9 @@ Class Log_Database_Model extends MY_Model
 
         $resumo = '<table border="0" cellpadding="1" cellspacing="2" align="left" class="log_table_resumo">';
 
-        if(is_object($model)){
+        if(is_object($model) && ($model instanceof MY_Model)){
 
-            $id_key = $model->getPrimaryKey();
+            $id_key = $model->primary_key();
 
 
 
@@ -182,32 +202,6 @@ Class Log_Database_Model extends MY_Model
 
         $this->log($model, 'excluir', $resumo);
     }
-
-    function updateData($id, $data){
-
-        $this->db->where($this->_primary_key, $id);
-        $this->db->update($this->_table, $data);
-    }
-
-
-    function saveData($data){
-
-        $this->db->insert($this->_table, $data);
-    }
-
-    function delete($id){
-
-        $data = array();
-        $data['alteracao'] = date('Y-m-d H:i:s');
-        $data['alteracao_usuario_id'] = $this->session->userdata('usuario_id');
-        $data['deletado'] = 1;
-
-        $this->db->where($this->_primary_key, $id);
-        $this->db->update($this->_table, $data);
-
-    }
-
-
 
 
 

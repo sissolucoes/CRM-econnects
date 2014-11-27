@@ -79,6 +79,9 @@ class MY_Model extends CI_Model
     protected $validate_groups = array();
 
 
+    protected $enable_log = TRUE;
+
+
     /**
      *  Example array
      *
@@ -253,6 +256,12 @@ class MY_Model extends CI_Model
 
             $this->_database->insert($this->_table, $data);
             $insert_id = $this->_database->insert_id();
+            /**
+             * Log event insert
+             */
+            if($this->enable_log){
+                $this->log_evento->log_inserir($this , $insert_id, $data);
+            }
 
             $this->trigger('after_create', $insert_id);
 
@@ -276,6 +285,17 @@ class MY_Model extends CI_Model
             $ids[] = $this->insert($row, $skip_validation, ($key == count($data) - 1));
         }
 
+        /**
+         * Log event insert
+         */
+        foreach($ids as $id){
+
+            if($this->enable_log){
+                $this->log_evento->log_inserir($this , $id, $data);
+            }
+
+        }
+
         return $ids;
     }
 
@@ -295,9 +315,19 @@ class MY_Model extends CI_Model
 
         if ($data !== FALSE)
         {
+
+            /**
+             * Log update
+             */
+            if($this->enable_log){
+                $this->log_evento->log_alterar($this , $this->get($primary_value), $data);
+            }
+
+
             $result = $this->_database->where($this->primary_key, $primary_value)
                 ->set($data)
                 ->update($this->_table);
+
 
             $this->trigger('after_update', array($data, $result));
 
@@ -323,9 +353,22 @@ class MY_Model extends CI_Model
 
         if ($data !== FALSE)
         {
+
+            /**
+             * Log update
+             */
+            if($this->enable_log){
+                foreach($primary_values as $primary_id){
+
+                    $this->log_evento->log_alterar($this , $this->get($primary_id), $data);
+                }
+            }
+
             $result = $this->_database->where_in($this->primary_key, $primary_values)
                 ->set($data)
                 ->update($this->_table);
+
+
 
             $this->trigger('after_update', array($data, $result));
 
@@ -384,6 +427,12 @@ class MY_Model extends CI_Model
 
         $this->_database->where($this->primary_key, $id);
 
+        /**
+         * log delete event
+         */
+        if($this->enable_log){
+            $this->log_evento->log_excluir($this , $id, $this->get($id));
+        }
         if ($this->soft_delete)
         {
             $result = $this->_database->update($this->_table, array( $this->soft_delete_key => TRUE ));
@@ -430,6 +479,14 @@ class MY_Model extends CI_Model
     public function delete_many($primary_values)
     {
         $primary_values = $this->trigger('before_delete', $primary_values);
+
+        /**
+         * log delete event
+         */
+        foreach($primary_values as $primary_id){
+
+            $this->log_evento->log_excluir($this , $primary_id, $this->get($primary_id));
+        }
 
         $this->_database->where_in($this->primary_key, $primary_values);
 

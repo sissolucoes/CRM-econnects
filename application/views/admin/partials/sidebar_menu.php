@@ -111,7 +111,7 @@
         <ul id="menu-sistema" class="collapse">
             <li><a href="<?php echo base_url('admin/idiomas/index');?>"><i class="fa fa-flag"></i><span>Idiomas</span></a></li>
             <li><a href="<?php echo base_url('admin/configuracoes/index');?>"><i class="fa  fa-gear"></i><span>Configurações</span></a></li>
-            <li><a href="<?php echo base_url('admin/logs/index');?>"><i class="fa  fa-gear"></i><span>Logs</span></a></li>
+            <li><a href="<?php echo base_url('admin/log_eventos/index');?>"><i class="fa  fa-gear"></i><span>Logs</span></a></li>
 
 
         </ul>

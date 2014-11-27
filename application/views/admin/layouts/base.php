@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="<?php echo app_assets_url('coral/css/admin/module.admin.stylesheet-complete.min.css', 'admin')?>"/>
     <link rel="stylesheet" href="<?php echo app_assets_url('core/css/base.css', 'admin')?>"/>
 
+    <?php echo $css_for_layout;?>
+
 
 
 
@@ -116,6 +118,7 @@
 
 <script src="<?php echo app_assets_url('coral/components/core/core.init.js', 'admin')?>"></script>
 <script src="<?php echo app_assets_url('core/js/base.js', 'admin')?>"></script>
+<?php echo $js_for_layout;?>
 
 </body>
 </html>
