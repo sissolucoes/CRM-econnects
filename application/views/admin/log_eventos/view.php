@@ -14,6 +14,17 @@
                     <div class="col-separator-h"></div>
                 </div>
 
+                <!-- col-table -->
+                <div class="col-table">
+
+
+                    <div class="innerAll margin-none bg-white">
+                        <a href="<?php echo base_url("{$current_controller_uri}/index")?>" class="btn  btn-app btn-primary">
+                            <i class="fa fa-arrow-left"></i> Voltar
+                        </a>
+                    </div>
+                </div>
+
 
 
                 <!-- col-app -->
