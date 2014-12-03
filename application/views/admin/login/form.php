@@ -7,7 +7,10 @@
         <!-- col-app -->
         <div class="col-app">
             <div class="login">
-                <div class="placeholder text-center"><i class="fa fa-lock"></i></div>
+                <div class="placeholder text-center">
+
+                    <img src="<?php echo app_assets_url('core/images/logo.png', 'admin')?>" alt="" class="border-none">
+                </div>
                 <div class="panel panel-default col-sm-6 col-sm-offset-3">
 
                     <div class="panel-body">

@@ -16,12 +16,23 @@
                     </div>
                     <!-- // Widget heading END -->
 
-                   <div class="row">
-                       <div class="col-md-6">
-                           <?php $this->load->view('admin/partials/messages'); ?>
-                       </div>
-                   </div>
+
                     <div class="widget-body innerAll inner-2x">
+
+                        <div class="row innerTB">
+                            <div class="col-md-6">
+                                <a href="<?php echo base_url("$current_controller_uri/add")?>" class="btn  btn-app btn-primary">
+                                    <i class="fa  fa-plus"></i> Adicionar
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <?php $this->load->view('admin/partials/messages'); ?>
+                            </div>
+                        </div>
 
                         <!-- Table -->
                         <table class="table table-bordered table-primary">

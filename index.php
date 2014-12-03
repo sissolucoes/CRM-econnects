@@ -1,6 +1,9 @@
 <?php
 $host_servers['production'] = array(
-    'zazz.com.br'
+    'zazz.com.br',
+    'voetranquilo.com.br',
+    'www.voetranquilo.com.br'
+
 );
 /*
  *---------------------------------------------------------------

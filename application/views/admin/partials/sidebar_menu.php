@@ -5,8 +5,8 @@
 <div id="sidebar-fusion-wrapper">
 <div id="brandWrapper">
 
-    <a href="index.html" class="display-block-inline pull-left logo"><img src="<?php echo app_assets_url('coral/images/logo/app-logo-style-default.png', 'admin')?>" alt=""></a>
-    <a href="index.html"><span class="text">Coral</span></a>
+    <a href="<?php echo base_url('admin/home');?>" class="display-block-inline pull-left logo"><img src="<?php echo app_assets_url('core/images/logo-icon.png', 'admin')?>" alt=""></a>
+    <a href="<?php echo base_url('admin/home');?>"><span class="text">Corcovado</span></a>
 </div>
 
 
@@ -14,51 +14,13 @@
 
 <ul class="menu list-unstyled">
 
-<li class="hasSubmenu">
+<li class="">
 
-    <a href="#menu-0838d22b19eebefd95dac33cfac9f7a4" data-toggle="collapse">
+    <a href="<?php echo base_url('admin/home');?>" >
         <i class="fa fa-dashboard"></i>
-        <span>Dashboard</span>
+        <span>Painel</span>
     </a>
-    <ul class="collapse" id="menu-0838d22b19eebefd95dac33cfac9f7a4">
-        <li class="">
 
-            <a href="dashboard_analytics.html">
-
-
-                <i class="fa fa-bar-chart-o"></i>
-
-                <span>Dashboard Analytics</span>
-
-
-
-            </a>
-
-        </li>
-        <li class="">
-
-            <a href="dashboard_users.html">
-
-
-                <i class="fa fa-user"></i>
-
-                <span>Dashboard Users</span>
-
-
-
-            </a>
-
-        </li>
-        <li class="">
-
-            <a href="dashboard_overview.html">
-
-                <i class="fa fa-dashboard"></i>
-                <span>Dashboard Overview</span>
-            </a>
-
-        </li>
-    </ul>
 
 </li>
 <li class="hasSubmenu active">
@@ -110,7 +72,7 @@
         <a href="#menu-sistema" data-toggle="collapse"><i class="fa fa-gears"></i><span>Sistema</span></a>
         <ul id="menu-sistema" class="collapse">
             <li><a href="<?php echo base_url('admin/idiomas/index');?>"><i class="fa fa-flag"></i><span>Idiomas</span></a></li>
-            <li><a href="<?php echo base_url('admin/configuracoes/index');?>"><i class="fa  fa-gear"></i><span>Configurações</span></a></li>
+            <!--li><a href="<?php echo base_url('admin/configuracoes/index');?>"><i class="fa  fa-gear"></i><span>Configurações</span></a></li-->
             <li><a href="<?php echo base_url('admin/log_eventos/index');?>"><i class="fa  fa-gear"></i><span>Logs</span></a></li>
 
 

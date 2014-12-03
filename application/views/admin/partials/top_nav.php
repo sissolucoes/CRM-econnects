@@ -20,12 +20,12 @@
 				</span>
         </a>
         <ul class="dropdown-menu pull-right">
-            <li class="active"><a href="index.html" class="glyphicons user"><i></i> Meus Dados</a></li>
-            <li><a href="social_account.html">Configurações</a></li>
+            <!--li class="active"><a href="index.html" class="glyphicons user"><i></i> Meus Dados</a></li>
+            <li><a href="social_account.html">Configurações</a></li-->
             <li><a href="<?php echo base_url('admin/login/logout')?>">Sair</a></li>
         </ul>
     </div>
-    <div class="dropdown dropdown-icons padding-none">
+    <!--div class="dropdown dropdown-icons padding-none">
         <a data-toggle="dropdown" href="#" class="btn btn-primary btn-circle dropdown-toggle"><i
                 class="fa fa-user"></i> </a>
         <ul class="dropdown-menu">
@@ -38,7 +38,7 @@
             <li data-toggle="tooltip" data-title="Contacts" data-placement="left" data-container="body"><a
                     href="contacts.html"><i class="fa fa-phone-square"></i></a></li>
         </ul>
-    </div>
+    </div-->
 </div>
 <div class="clearfix"></div>
 </div>
