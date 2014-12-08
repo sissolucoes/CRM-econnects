@@ -50,6 +50,12 @@ Class Idioma_Model extends MY_Model
 
 
 
+    public function filter_ativos(){
 
+        $this->_database->where($this->_table. '.ativo', 1);
+
+        return $this;
+
+    }
 
 }

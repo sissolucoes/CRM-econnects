@@ -425,7 +425,6 @@ class MY_Model extends CI_Model
     {
         $this->trigger('before_delete', $id);
 
-        $this->_database->where($this->primary_key, $id);
 
         /**
          * log delete event
@@ -433,6 +432,10 @@ class MY_Model extends CI_Model
         if($this->enable_log){
             $this->log_evento->log_excluir($this , $id, $this->get($id));
         }
+
+        $this->_database->where($this->primary_key, $id);
+
+
         if ($this->soft_delete)
         {
             $result = $this->_database->update($this->_table, array( $this->soft_delete_key => TRUE ));
@@ -1140,6 +1143,14 @@ class MY_Model extends CI_Model
 
         foreach($data as $row){
             $this->insert($row);
+        }
+    }
+
+    function update_array($primary_key, $data){
+
+        foreach($data as $row){
+
+            $this->update( $primary_key,  $row);
         }
     }
 

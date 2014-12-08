@@ -118,12 +118,12 @@ Class Usuario_Model extends MY_Model
     function check_email_exists($email){
 
         log_message('debug', 'check_email_user'. $email);
-        $this->db->select($this->_table. '.email');
-        $this->db->from($this->_table);
-        $this->db->where($this->_table. '.email', $email);
-        $this->db->where($this->_table. '.deletado', 0);
+        $this->_database->select($this->_table. '.email');
+        $this->_database->from($this->_table);
+        $this->_database->where($this->_table. '.email', $email);
+        $this->_database->where($this->_table. '.deletado', 0);
 
-        $query = $this->db->get();
+        $query = $this->_database->get();
 
         if ($query->num_rows() > 0) {
 
@@ -144,13 +144,13 @@ Class Usuario_Model extends MY_Model
     function check_email_owner($email, $usuario_id){
 
         log_message('debug', 'check_email_owner'. $email . ' - ' . $usuario_id);
-        $this->db->select($this->_table. '.email');
-        $this->db->from($this->_table);
-        $this->db->where($this->_table. '.email', $email);
-        $this->db->where($this->_table. '.usuario_id', $usuario_id);
-        $this->db->where($this->_table. '.deletado', 0);
+        $this->_database->select($this->_table. '.email');
+        $this->_database->from($this->_table);
+        $this->_database->where($this->_table. '.email', $email);
+        $this->_database->where($this->_table. '.usuario_id', $usuario_id);
+        $this->_database->where($this->_table. '.deletado', 0);
 
-        $query = $this->db->get();
+        $query = $this->_database->get();
 
         if ($query->num_rows() > 0) {
 
@@ -184,15 +184,15 @@ Class Usuario_Model extends MY_Model
 
     function login($login, $password)
     {
-        $this->db->select($this->_table. '.*');
-        $this->db->from($this->_table);
-        $this->db->where($this->_table. '.email', $login);
-        $this->db->where($this->_table. '.senha', MD5($this->salt.$password));
-        $this->db->where($this->_table. '.ativo', 1);
-        $this->db->where($this->_table. '.deletado', 0);
-        $this->db->limit(1);
+        $this->_database->select($this->_table. '.*');
+        $this->_database->from($this->_table);
+        $this->_database->where($this->_table. '.email', $login);
+        $this->_database->where($this->_table. '.senha', MD5($this->salt.$password));
+        $this->_database->where($this->_table. '.ativo', 1);
+        $this->_database->where($this->_table. '.deletado', 0);
+        $this->_database->limit(1);
 
-        $query = $this->db->get();
+        $query = $this->_database->get();
 
 
         if ($query->num_rows() == 1) {
