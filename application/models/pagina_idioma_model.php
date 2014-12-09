@@ -52,7 +52,9 @@ Class Pagina_Idioma_Model extends MY_Model
                 'pagina_id' => $pagina_id,
                 'idioma_id' => $idioma_id,
                 'titulo' => $idioma_data['titulo'],
-                'conteudo' => $idioma_data['conteudo']
+                'conteudo' => $idioma_data['conteudo'],
+                'meta_description' => $idioma_data['meta_description'],
+                'meta_keywords' => $idioma_data['meta_keywords']
             );
 
         }

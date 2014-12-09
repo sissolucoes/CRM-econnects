@@ -67,6 +67,15 @@
     </ul>
 
 </li>
+<li class="hasSubmenu">
+        <a href="#menu-cms" data-toggle="collapse"><i class="fa fa-gears"></i><span>CMS</span></a>
+        <ul id="menu-cms" class="collapse">
+            <li><a href="<?php echo base_url('admin/paginas/index');?>"><i class="fa fa-flag"></i><span>Páginas</span></a></li>
+
+
+
+        </ul>
+</li>
 
     <li class="hasSubmenu">
         <a href="#menu-sistema" data-toggle="collapse"><i class="fa fa-gears"></i><span>Sistema</span></a>

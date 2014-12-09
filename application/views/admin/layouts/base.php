@@ -43,6 +43,11 @@
     <script src="<?php echo app_assets_url('coral/plugins/charts_flot/excanvas.js?v=v2.0.0-rc1&amp;sv=v0.0.1.2', 'admin')?>"></script>
     <script src="<?php echo app_assets_url('coral/plugins/core_browser/ie/ie.prototype.polyfill.js?v=v2.0.0-rc1&amp;sv=v0.0.1.2', 'admin')?>"></script>
 
+    <?php if(isset($enable_ckeditor)) :?>
+        <script src="<?php echo app_assets_url("ckeditor/ckeditor.js", 'common');?>"></script>
+        <script src="<?php echo app_assets_url("ckfinder/ckfinder.js", 'common');?>"></script>
+    <?php endif?>
+
 </head>
 <body class=" menu-right-hidden">
 

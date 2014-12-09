@@ -80,7 +80,7 @@
 
                                             <div class="row">
 
-                                                <div class="col-md-6">
+                                                <div class="col-md-12">
 
                                                     <div class="relativeWrap">
                                                         <div class="widget widget-tabs widget-tabs-double-2 widget-tabs-responsive">
@@ -118,6 +118,8 @@
                                                                         <?
                                                                          if( isset($idiomas_rows[$idioma['idioma_id']])){
                                                                              $idioma_row =    $idiomas_rows[$idioma['idioma_id']];
+
+
                                                                          }
 
                                                                         ?>
@@ -133,14 +135,32 @@
                                                                                     <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Título</label>
                                                                                     <div class="col-md-8"><input class="form-control" id="<?php echo $field_name;?>" name="idiomas[<?php echo $idioma['idioma_id'];?>][<?php echo $field_name;?>]" type="text" value="<?php echo isset($idioma_row[$field_name]) ? $idioma_row[$field_name] : set_value($field_name); ?>" /></div>
                                                                                 </div>
+                                                                                <?php $field_name = 'meta_description';?>
+                                                                                <div class="form-group">
+                                                                                    <label class="col-md-2 control-label" for="<?php echo $field_name;?>">SEO - Description </label>
+                                                                                    <div class="col-md-8"><input class="form-control" id="<?php echo $field_name;?>" name="idiomas[<?php echo $idioma['idioma_id'];?>][<?php echo $field_name;?>]" type="text" value="<?php echo isset($idioma_row[$field_name]) ? $idioma_row[$field_name] : set_value($field_name); ?>" /></div>
+                                                                                </div>
+                                                                                <?php $field_name = 'meta_keywords';?>
+                                                                                <div class="form-group">
+                                                                                    <label class="col-md-2 control-label" for="<?php echo $field_name;?>">SEO - Keywords</label>
+                                                                                    <div class="col-md-8"><input class="form-control" id="<?php echo $field_name;?>" name="idiomas[<?php echo $idioma['idioma_id'];?>][<?php echo $field_name;?>]" type="text" value="<?php echo isset($idioma_row[$field_name]) ? $idioma_row[$field_name] : set_value($field_name); ?>" /></div>
+                                                                                </div>
                                                                                 <?php $field_name = 'conteudo';?>
                                                                                 <div class="form-group">
-                                                                                    <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Conteúdo</label>
-                                                                                    <div class="col-md-8"><input class="form-control" id="<?php echo $field_name;?>" name="idiomas[<?php echo $idioma['idioma_id'];?>][<?php echo $field_name;?>]" type="text" value="<?php echo isset($idioma_row[$field_name]) ? $idioma_row[$field_name] : set_value($field_name); ?>" /></div>
+                                                                                    <label class="col-md-2 control-label" for="<?php echo $field_name . '_'. $idioma['codigo'] ;?>">Conteúdo</label>
+                                                                                    <div class="col-md-8">
+                                                                                        <textarea class="form-control" id="<?php echo $field_name . '_'. $idioma['codigo'] ;?>" name="idiomas[<?php echo $idioma['idioma_id'];?>][<?php echo $field_name;?>]" ><?php echo isset($idioma_row[$field_name]) ? $idioma_row[$field_name] : set_value($field_name); ?></textarea>
+                                                                                    </div>
                                                                                 </div>
 
                                                                             </div>
                                                                         </div>
+                                                                        <?php
+                                                                            if(isset($ckeditor_conteudo[$idioma['codigo']])){
+                                                                                echo display_ckeditor($ckeditor_conteudo[$idioma['codigo']]);
+                                                                            }
+
+                                                                        ?>
                                                                     <?php $c++; endforeach;?>
                                                                     <!-- End Tab content -->
 

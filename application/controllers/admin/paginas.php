@@ -65,13 +65,13 @@ class Paginas extends Admin_Controller {
     {
 
         $this->load->library('form_validation');
+        $this->load->helper('ckeditor');
 
         $this->template->set('page_title_info', '');
         $this->template->set('page_subtitle', 'Add');
         $this->template->set_breadcrumb('Add', base_url("$this->controller_uri/index"));
 
         if($_POST){
-
 
             if($this->current_model->validate_form()){
 
@@ -92,10 +92,24 @@ class Paginas extends Admin_Controller {
             }
         }
 
+
+
+
         $data = array();
+        /**
+         * habilita o js do ckeditor
+         */
+        $data['enable_ckeditor'] = true;
+
+        $idomas =  $this->idioma->filter_ativos()->get_all();
+        foreach($idomas as $idoma){
+
+            $data['ckeditor_conteudo'][$idoma['codigo']] = app_item_ckeditor('conteudo_'.$idoma['codigo']);
+        }
+
 
         $data['primary_key'] = $this->current_model->primary_key();
-        $data['idiomas'] = $this->idioma->filter_ativos()->get_all();
+        $data['idiomas'] = $idomas;
 
 
         $data['new_record'] = '0';
@@ -107,6 +121,7 @@ class Paginas extends Admin_Controller {
     public function edit($id)
     {
         $this->load->library('form_validation');
+        $this->load->helper('ckeditor');
 
         $this->template->set('page_title_info', '');
         $this->template->set('page_subtitle', 'Editar');
@@ -138,10 +153,21 @@ class Paginas extends Admin_Controller {
             }
         }
 
+        /**
+         * habilita o js do ckeditor
+         */
+        $data['enable_ckeditor'] = true;
+
+        $idomas =  $this->idioma->filter_ativos()->get_all();
+        foreach($idomas as $idoma){
+
+            $data['ckeditor_conteudo'][$idoma['codigo']] = app_item_ckeditor('conteudo_'.$idoma['codigo']);
+        }
+
 
 
         $data['primary_key'] = $this->current_model->primary_key();
-        $data['idiomas'] = $this->idioma->filter_ativos()->get_all();
+        $data['idiomas'] =$idomas;
         $data['idiomas_rows'] = $this->pagina_idioma->get_by_pagina($id);
 
         $data['new_record'] = '0';
