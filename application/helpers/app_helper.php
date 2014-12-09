@@ -596,3 +596,26 @@ function app_word_cut($string, $limit, $append =  '...'){
         return $string;
     }
 }
+
+function app_item_ckeditor($id){
+
+    return  array
+    (
+
+        'id'   => $id,
+        'path' => app_assets_url("ckeditor/", 'common'),
+        'config' => array
+        (
+            'toolbar' => "Full",
+            'baseHref' => base_url(),
+            'width'   => "100%",
+            'height'  => "400px",
+            'filebrowserBrowseUrl'      => app_assets_url("ckfinder/ckfinder.html", 'common'),
+            'filebrowserImageBrowseUrl' => app_assets_url("ckfinder/ckfinder.html?Type=Images", 'common'),
+            'filebrowserFlashBrowseUrl' => app_assets_url("ckfinder/ckfinder.html?Type=Flash", 'common'),
+            'filebrowserUploadUrl'      => app_assets_url("ckfinder/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files", 'common'),
+            'filebrowserImageUploadUrl' => app_assets_url("ckfinder/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images", 'common'),
+            'filebrowserFlashUploadUrl' => app_assets_url("ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash", 'common')
+        )
+    );
+}
