@@ -72,6 +72,20 @@
                                                         <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Slug</label>
                                                         <div class="col-md-8"><input class="form-control" id="<?php echo $field_name;?>" name="<?php echo $field_name;?>" type="text" value="<?php echo isset($row[$field_name]) ? $row[$field_name] : set_value($field_name); ?>" /></div>
                                                     </div>
+
+                                                    <?php $field_name = 'ativo';?>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Ativo</label>
+                                                        <div class="col-md-2">
+
+                                                            <select  class="form-control required" name="<?php echo $field_name;?>" id="<?php echo $field_name;?>">
+                                                                <option></option>
+                                                                <?php foreach(array( '1' => 'Sim', '0' => 'Não') as $item_value => $item_name) :?>
+                                                                    <option value="<?php echo $item_value;?>" <?php  if(isset($row[$field_name]) && $row[$field_name] == $item_value) echo 'selected="selected"'; ?>><?php echo $item_name;?></option>
+                                                                <?php endforeach;?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <!-- // Column END -->
 

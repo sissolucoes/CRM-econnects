@@ -30,6 +30,12 @@ Class Pagina_Model extends MY_Model
             'label' => 'Slug',
             'rules' => 'required',
             'groups' => 'default'
+        ),
+        array(
+            'field' => 'ativo',
+            'label' => 'Ativo',
+            'rules' => 'required',
+            'groups' => 'default'
         )
 
     );
@@ -39,6 +45,7 @@ Class Pagina_Model extends MY_Model
         $data =  array(
             'nome' => $this->input->post('nome'),
             'slug' => $this->input->post('slug'),
+            'ativo' => $this->input->post('ativo')
         );
 
 
@@ -82,7 +89,69 @@ Class Pagina_Model extends MY_Model
     }
 
 
+    function get_pagina_by_slug($slug){
 
+        return $this->get_by('slug', $slug);
+
+    }
+    function get_pagina_by_id($id){
+
+        return $this->get($id);
+
+    }
+    public function set_ativos(){
+
+        $this->_database->where("{$this->_table}.ativo", 1);
+
+        return $this;
+    }
+
+    public function with_idioma(){
+
+
+        $with_table = 'pagina_idioma';
+        $prefix = '';
+        $foreing_key = $this->primary_key;
+        $join = 'inner';
+
+        $fields = array(
+            'titulo',
+            'conteudo',
+            'meta_description',
+            'meta_keywords',
+            'idioma_id'
+
+        );
+
+        foreach($fields as $field){
+
+            $this->_database->select("{$with_table}.$field AS {$prefix}{$field}");
+        }
+
+        $this->_database->join($with_table, $this->_table.".{$foreing_key} = {$with_table}.{$foreing_key}", $join);
+
+        $this->_database->select("idioma.codigo AS idioma_codigo");
+        $this->_database->join('idioma', "idioma.idioma_id = {$with_table}.idioma_id", $join);
+
+        return $this;
+
+    }
+
+    public function filter_idioma($idioma){
+
+        if (is_numeric($idioma)) {
+
+            $this->_database->where("idioma.idioma_id", $idioma);
+
+        } else {
+
+            $this->_database->where("idioma.codigo", $idioma);
+        }
+
+        return $this;
+
+
+    }
 
 
 }

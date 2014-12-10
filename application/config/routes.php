@@ -39,13 +39,13 @@
 */
 
 $route['default_controller'] = "home";
-$route['404_override'] = '';
+$route['404_override'] = 'paginas';
 
 // URI like '/en/about' -> use controller 'about'
-$route['^(br|us|es|nl)/(.+)$'] = "$2";
+$route['^(pt|en|es)/(.+)$'] = "$2";
 
 // '/en', '/de', '/fr' and '/nl' URIs -> use default controller
-$route['^(br|us|es|nl)$'] = $route['default_controller'];
+$route['^(pt|en|es)$'] = $route['default_controller'];
 
 
 /* End of file routes.php */
