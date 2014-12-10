@@ -14,7 +14,7 @@ class MY_Lang extends CI_Lang {
 	var $languages = array(
 		'en' => 'english',
 		'pt' => 'portuguese-br',
-		'es' => 'french'
+		'es' => 'spanish'
 	);
 
 	// special URIs (not localized)

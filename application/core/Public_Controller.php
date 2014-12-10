@@ -8,6 +8,7 @@ class Public_Controller extends MY_Controller
     {
         parent::__construct();
 
-
+        $this->load->helper('language');
+        $this->load->helper('url');
     }
 }
