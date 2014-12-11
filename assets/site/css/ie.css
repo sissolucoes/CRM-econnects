@@ -1,0 +1,15 @@
+.fig_solicitacao_ie{
+    position: relative !important;
+    left: 2px !important;
+    top: -2px !important;
+    width: 149px !important;
+    height: 40px !important;
+}
+
+.fig_ocorrencia_ie{
+    position: relative !important;
+    right: 1px !important;
+    top: -2px !important;
+    width: 148px !important;
+    height: 40px !important;
+}
