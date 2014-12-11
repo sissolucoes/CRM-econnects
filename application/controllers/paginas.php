@@ -39,7 +39,7 @@ class Paginas extends Public_Controller
                     ->set_ativos()
                     ->with_idioma()
                     ->set_select()
-                    ->filter_idioma('es')
+                    ->filter_idioma($this->lang->lang())
                     ->get_pagina_by_id($id);
 
             } else {
@@ -48,7 +48,7 @@ class Paginas extends Public_Controller
                     ->set_ativos()
                     ->with_idioma()
                     ->set_select()
-                    ->filter_idioma('es')
+                    ->filter_idioma($this->lang->lang())
                     ->get_pagina_by_slug($slug);
             }
 
@@ -60,7 +60,7 @@ class Paginas extends Public_Controller
 
             $data['pagina'] = $page;
 
-            var_dump($page);
+            //var_dump($page);
 
 
             $slug = $page['slug'];
