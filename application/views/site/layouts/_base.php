@@ -1,5 +1,5 @@
-<!DOCTYPE HTML>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt_BR">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -13,7 +13,8 @@
     <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <script src="<?php echo app_assets_url('js/vendor/modernizr-2.6.2.min.js', 'site')?>"></script>
 </head>
-<body class="home <?php if(app_current_controller() == 'home') echo 'index_row';?>">
+<body class="home index_row">
+
 <?php $this->load->view('site/partials/menu');?>
 
 <?php echo $contents;?>
