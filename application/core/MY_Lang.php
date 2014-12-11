@@ -12,8 +12,8 @@ class MY_Lang extends CI_Lang {
 
 	// languages
 	var $languages = array(
+        'pt' => 'portuguese-br',
 		'en' => 'english',
-		'pt' => 'portuguese-br',
 		'es' => 'spanish'
 	);
 
