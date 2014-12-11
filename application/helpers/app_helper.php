@@ -619,3 +619,15 @@ function app_item_ckeditor($id){
         )
     );
 }
+
+function app_get_cms_bloco($slug){
+    $CI = &get_instance();
+    $CI->load->model('cms_bloco_model', 'cms_bloco');
+
+    return $CI->cms_bloco
+        ->set_ativos()
+        ->with_idioma()
+        ->set_select()
+        ->filter_idioma($CI->lang->lang())
+        ->get_bloco_by_slug($slug);
+}

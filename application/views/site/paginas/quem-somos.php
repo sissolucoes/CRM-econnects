@@ -20,10 +20,15 @@
 
 <br clear="all">
 
+<?php $bloco = app_get_cms_bloco('quem-somos-missao'); ?>
+
 <div id="bottom_quem_somos">
     <div class="quem_somos_bottom2" style="padding-left: 45px">
-        <h1><span style="position: relative; top: -15px">Missão:</span></h1>
-        <span style="position: relative; top: -40px;"><p style="height: 57px">Desenvolver e comercializar soluções criativas e inovadoras na gestão de risco e prestação de serviços que agregam valor aos nosso clientes e parceiros estratégicos.</p></span>
+        <h1><span style="position: relative; top: -15px"><?php echo $bloco['titulo'];?>:</span></h1>
+        <span style="position: relative; top: -40px;">
+                <?php echo $bloco['conteudo'];?>
+          
+        </span>
     </div>
 
     <div class="quem_somos_bottom2">

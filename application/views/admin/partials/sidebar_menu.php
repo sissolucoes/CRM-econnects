@@ -71,6 +71,7 @@
         <a href="#menu-cms" data-toggle="collapse"><i class="fa fa-cube"></i><span>CMS</span></a>
         <ul id="menu-cms" class="collapse">
             <li><a href="<?php echo base_url('admin/paginas/index');?>"><i class="fa fa-bars"></i><span>Páginas</span></a></li>
+            <li><a href="<?php echo base_url('admin/cms_blocos/index');?>"><i class="fa fa-cubes"></i><span>Blocos</span></a></li>
 
 
 
