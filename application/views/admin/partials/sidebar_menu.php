@@ -68,9 +68,9 @@
 
 </li>
 <li class="hasSubmenu">
-        <a href="#menu-cms" data-toggle="collapse"><i class="fa fa-gears"></i><span>CMS</span></a>
+        <a href="#menu-cms" data-toggle="collapse"><i class="fa fa-cube"></i><span>CMS</span></a>
         <ul id="menu-cms" class="collapse">
-            <li><a href="<?php echo base_url('admin/paginas/index');?>"><i class="fa fa-flag"></i><span>Páginas</span></a></li>
+            <li><a href="<?php echo base_url('admin/paginas/index');?>"><i class="fa fa-bars"></i><span>Páginas</span></a></li>
 
 
 
@@ -80,7 +80,7 @@
     <li class="hasSubmenu">
         <a href="#menu-sistema" data-toggle="collapse"><i class="fa fa-gears"></i><span>Sistema</span></a>
         <ul id="menu-sistema" class="collapse">
-            <li><a href="<?php echo base_url('admin/idiomas/index');?>"><i class="fa fa-flag"></i><span>Idiomas</span></a></li>
+            <li><a href="<?php echo base_url('admin/idiomas/index');?>"><i class="fa fa-language"></i><span>Idiomas</span></a></li>
             <!--li><a href="<?php echo base_url('admin/configuracoes/index');?>"><i class="fa  fa-gear"></i><span>Configurações</span></a></li-->
             <li><a href="<?php echo base_url('admin/log_eventos/index');?>"><i class="fa  fa-gear"></i><span>Logs</span></a></li>
 
