@@ -32,6 +32,7 @@ class Admin_Controller extends MY_Controller
         $this->template->set('current_controller_uri', $this->controller_uri);
 
         $this->template->set('userdata', $this->session->all_userdata());
+        $this->template->set('enable_ckeditor', false);
 
         if(($this->router->fetch_class() !== 'login')   && (!$this->auth->is_admin())  && ($this->noLogin === false) ){
 

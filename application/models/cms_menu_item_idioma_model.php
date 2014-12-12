@@ -1,9 +1,9 @@
 <?php
-Class Cms_Bloco_Idioma_Model extends MY_Model
+Class Cms_Menu_Item_Idioma_Model extends MY_Model
 {
 
-    protected $_table = 'cms_bloco_idioma';
-    protected $primary_key = 'cms_bloco_idioma_id';
+    protected $_table = 'cms_menu_item_idioma';
+    protected $primary_key = 'cms_menu_item_idioma_id';
 
     protected $return_type = 'array';
     protected $soft_delete = FALSE;
@@ -37,23 +37,21 @@ Class Cms_Bloco_Idioma_Model extends MY_Model
         return $data;
     }
 
-    public function insert_by_bloco($cms_bloco_id, $idiomasData){
+    public function insert_by_menu_item($cms_menu_item_id, $idiomasData){
 
         $data = array();
 
         foreach($idiomasData as $idioma_id => $idioma_data){
             $data[]= array(
-                'cms_bloco_id' => $cms_bloco_id,
+                'cms_menu_item_id' => $cms_menu_item_id,
                 'idioma_id' => $idioma_id,
-                'titulo' => $idioma_data['titulo'],
-                'conteudo' => $idioma_data['conteudo']
-
+                'titulo' => $idioma_data['titulo']
             );
 
         }
         if($data){
 
-            $this->delete_by_bloco($cms_bloco_id);
+            $this->delete_by_menu_item($cms_menu_item_id);
             $this->insert_array($data);
             return true;
         }
@@ -62,36 +60,36 @@ Class Cms_Bloco_Idioma_Model extends MY_Model
 
     }
 
-    public function update_by_bloco($cms_bloco_id, $idiomasData){
+    public function update_by_menu_item($cms_menu_item_id, $idiomasData){
 
 
 
         foreach($idiomasData as $idioma_id => $idioma_data){
             $data = array(
 
-                'titulo' => $idioma_data['titulo'],
-                'conteudo' => $idioma_data['conteudo']
+                'titulo' => $idioma_data['titulo']
+
             );
 
 
-            $this->update_by( array('cms_bloco_id' => $cms_bloco_id, 'idioma_id' => $idioma_id ), $data);
+            $this->update_by( array('cms_menu_item_id' => $cms_menu_item_id, 'idioma_id' => $idioma_id ), $data);
 
         }
 
 
     }
 
-    function delete_by_bloco($cms_bloco_id){
+    function delete_by_menu_item($cms_menu_item_id){
 
-        return $this->delete_by( array('cms_bloco_id' => $cms_bloco_id));
+        return $this->delete_by( array('cms_menu_item_id' => $cms_menu_item_id));
 
     }
 
-    function get_by_bloco($pagina_id){
+    function get_by_menu_item($cms_menu_item_id){
 
         $data = array();
 
-        $this->_database->where("cms_bloco_id", $pagina_id);
+        $this->_database->where("cms_menu_item_id", $cms_menu_item_id);
         $rows = $this->get_all();
 
 

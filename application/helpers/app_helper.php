@@ -631,3 +631,31 @@ function app_get_cms_bloco($slug){
         ->filter_idioma($CI->lang->lang())
         ->get_bloco_by_slug($slug);
 }
+
+function app_display_options_menu_item($itens,  $level, $current, $skip){
+
+        if(!is_array($skip)){
+            $skip = (array) $skip;
+        }
+
+
+
+        foreach($itens as $item){
+
+            $disabled = '';
+            if(in_array($item["cms_menu_item_id"], $skip)){
+                $disabled = 'disabled="disabled"';
+            }
+
+            $selected = '';
+            if($item["cms_menu_item_id"] == $current){
+                $selected = 'selected="selected="';
+            }
+
+            echo "<option value=\"{$item["cms_menu_item_id"]}\" {$selected} {$disabled}>". str_repeat("-", $level) . " {$item["nome"]}" . "</option>\n";
+            if(isset($item["filhos"])){
+                app_display_options_menu_item($item["filhos"], $level + 1, $current, $skip );
+            }
+        }
+
+}
