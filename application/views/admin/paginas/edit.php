@@ -73,6 +73,18 @@
                                                         <div class="col-md-8"><input class="form-control" id="<?php echo $field_name;?>" name="<?php echo $field_name;?>" type="text" value="<?php echo isset($row[$field_name]) ? $row[$field_name] : set_value($field_name); ?>" /></div>
                                                     </div>
 
+                                                    <?php $field_name = 'pagina_parent_id';?>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Menu Pai</label>
+                                                        <div class="col-md-4">
+
+                                                            <select  class="form-control required" name="<?php echo $field_name;?>" id="<?php echo $field_name;?>">
+                                                                <option value="0">Raiz</option>
+                                                                <?php app_display_options_pagina_parents($pagina_parents, 1, isset($row[$field_name]) ? $row[$field_name] : 0,  isset($row[$primary_key]) ? $row[$primary_key] : 0  ) ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
                                                     <?php $field_name = 'ativo';?>
                                                     <div class="form-group">
                                                         <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Ativo</label>

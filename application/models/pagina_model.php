@@ -45,7 +45,8 @@ Class Pagina_Model extends MY_Model
         $data =  array(
             'nome' => $this->input->post('nome'),
             'slug' => $this->input->post('slug'),
-            'ativo' => $this->input->post('ativo')
+            'ativo' => $this->input->post('ativo'),
+            'pagina_parent_id' => $this->input->post('pagina_parent_id')
         );
 
 
@@ -150,6 +151,31 @@ Class Pagina_Model extends MY_Model
 
         return $this;
 
+
+    }
+
+    public function get_filhos_of($pai){
+
+        $this->_database->where('pagina_parent_id', $pai);
+        return $this->get_all();
+
+    }
+
+
+    public function get_parents($pai){
+
+        $data = array();
+        $pais =  $this->get_filhos_of($pai);
+
+
+        foreach($pais as $pai){
+
+            $data[$pai[$this->primary_key]] = $pai;
+            $data[$pai[$this->primary_key]]['filhos'] = $this->get_parents($pai[$this->primary_key]);
+
+        }
+
+        return $data;
 
     }
 

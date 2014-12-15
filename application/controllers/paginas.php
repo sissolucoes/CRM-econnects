@@ -27,14 +27,19 @@ class Paginas extends Public_Controller
 
         /**
          * @todo verificar se tem/não o idioma na url
+         * @todo pegar sempre o ultimo segmento, devido a submenus
          */
-        if ($this->uri->segment(2)) {
 
-            $slug = $this->uri->segment(2);
+        $last = $this->uri->total_segments();
+        $slug = $this->uri->segment($last);
+
+        if ($slug) {
+
+
 
             if (is_numeric($slug)) {
 
-                $id = (int)$this->uri->segment(2);
+                $id = (int) $slug;
                 $page = $this->pagina
                     ->set_ativos()
                     ->with_idioma()
@@ -50,6 +55,7 @@ class Paginas extends Public_Controller
                     ->set_select()
                     ->filter_idioma($this->lang->lang())
                     ->get_pagina_by_slug($slug);
+
             }
 
         }

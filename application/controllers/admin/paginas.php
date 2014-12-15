@@ -111,6 +111,8 @@ class Paginas extends Admin_Controller {
         $data['primary_key'] = $this->current_model->primary_key();
         $data['idiomas'] = $idomas;
 
+        $data['pagina_parents'] = $this->current_model->get_parents(0);
+
 
         $data['new_record'] = '0';
         $data['form_action'] =  base_url("$this->controller_uri/add");
@@ -164,7 +166,7 @@ class Paginas extends Admin_Controller {
             $data['ckeditor_conteudo'][$idoma['codigo']] = app_item_ckeditor('conteudo_'.$idoma['codigo']);
         }
 
-
+        $data['pagina_parents'] = $this->current_model->get_parents(0);
 
         $data['primary_key'] = $this->current_model->primary_key();
         $data['idiomas'] =$idomas;

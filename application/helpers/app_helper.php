@@ -659,3 +659,31 @@ function app_display_options_menu_item($itens,  $level, $current, $skip){
         }
 
 }
+
+function app_display_options_pagina_parents($itens,  $level, $current, $skip){
+
+    if(!is_array($skip)){
+        $skip = (array) $skip;
+    }
+
+
+
+    foreach($itens as $item){
+
+        $disabled = '';
+        if(in_array($item["pagina_id"], $skip)){
+            $disabled = 'disabled="disabled"';
+        }
+
+        $selected = '';
+        if($item["pagina_id"] == $current){
+            $selected = 'selected="selected="';
+        }
+
+        echo "<option value=\"{$item["pagina_id"]}\" {$selected} {$disabled}>". str_repeat("-", $level) . " {$item["nome"]}" . "</option>\n";
+        if(isset($item["filhos"])){
+            app_display_options_pagina_parents($item["filhos"], $level + 1, $current, $skip );
+        }
+    }
+
+}
