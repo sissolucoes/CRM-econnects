@@ -36,6 +36,11 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+/**
+ * App
+ */
+define('ASSETS_PATH',		FCPATH . 'assets/');
+define('PUBLIC_UPLOAD_PATH',		ASSETS_PATH . 'uploads/');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
