@@ -81,11 +81,28 @@
 </li>
 
     <li class="hasSubmenu">
+        <a href="#menu-sac" data-toggle="collapse"><i class="fa fa-comments-o"></i><span>SAC</span></a>
+        <ul id="menu-sac" class="collapse">
+            <li><a href="<?php echo base_url('admin/sac_categorias/index');?>"><i class="fa fa-list"></i><span>Categorias</span></a></li>
+            <li><a href="<?php echo base_url('admin/sac_duvidas/index');?>"><i class="fa fa-question-circle"></i><span>Dúvidas</span></a></li>
+
+        </ul>
+    </li>
+    <li class="hasSubmenu">
+        <a href="#menu-blog" data-toggle="collapse"><i class="fa fa-book"></i><span>Blog</span></a>
+        <ul id="menu-blog" class="collapse">
+            <li><a href="<?php echo base_url('admin/blog_categorias/index');?>"><i class="fa fa-list"></i><span>Categorias</span></a></li>
+            <li><a href="<?php echo base_url('admin/blog_posts/index');?>"><i class="fa fa-edit"></i><span>Posts</span></a></li>
+
+        </ul>
+    </li>
+
+    <li class="hasSubmenu">
         <a href="#menu-sistema" data-toggle="collapse"><i class="fa fa-gears"></i><span>Sistema</span></a>
         <ul id="menu-sistema" class="collapse">
             <li><a href="<?php echo base_url('admin/idiomas/index');?>"><i class="fa fa-language"></i><span>Idiomas</span></a></li>
-            <!--li><a href="<?php echo base_url('admin/configuracoes/index');?>"><i class="fa  fa-gear"></i><span>Configurações</span></a></li-->
-            <li><a href="<?php echo base_url('admin/log_eventos/index');?>"><i class="fa  fa-gear"></i><span>Logs</span></a></li>
+            <li><a href="<?php echo base_url('admin/configuracoes/set');?>"><i class="fa  fa-gear"></i><span>Configurações</span></a></li>
+            <li><a href="<?php echo base_url('admin/log_eventos/index');?>"><i class="fa  fa-eye"></i><span>Logs</span></a></li>
 
 
         </ul>
