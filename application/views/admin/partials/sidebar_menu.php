@@ -74,6 +74,7 @@
             <li><a href="<?php echo base_url('admin/cms_blocos/index');?>"><i class="fa fa-cubes"></i><span>Blocos</span></a></li>
             <li><a href="<?php echo base_url('admin/cms_menus/index');?>"><i class="fa fa-list"></i><span>Menus</span></a></li>
             <li><a href="<?php echo base_url('admin/cms_slides/index');?>"><i class="fa fa-columns"></i><span>Slides</span></a></li>
+            <li><a href="<?php echo base_url('admin/cms_banners/index');?>"><i class="fa fa-th-large"></i><span>Banners</span></a></li>
 
 
 
