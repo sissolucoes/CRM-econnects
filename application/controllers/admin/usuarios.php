@@ -18,7 +18,7 @@ class Usuarios extends Admin_Controller {
 
     }
 
-	public function index()
+	public function index($offset = 0)
 	{
         $this->template->set('page_title_info', '');
         $this->template->set('page_subtitle', 'List');
@@ -41,7 +41,7 @@ class Usuarios extends Admin_Controller {
 
 
 
-        $data['rows'] = $this->current_model->with_usuario_acl_tipo()->get_all();
+        $data['rows'] = $this->current_model->limit($config['per_page'], $offset )->with_usuario_acl_tipo()->get_all();
 
 
 

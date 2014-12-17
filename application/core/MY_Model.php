@@ -670,7 +670,8 @@ class MY_Model extends CI_Model
             $this->_database->where("{$this->_table}.{$this->soft_delete_key}", (bool)$this->_temporary_only_deleted);
         }
 
-        return $this->_database->count_all($this->_table);
+        return $this->_database->count_all_results($this->_table);
+
     }
 
     /**

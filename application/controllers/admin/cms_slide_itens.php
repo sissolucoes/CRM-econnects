@@ -29,7 +29,7 @@ class Cms_Slide_Itens extends Admin_Controller {
 
 
 
-    public function view($cms_slide_id)
+    public function view($cms_slide_id,  $offset = 0)
     {
 
 
@@ -56,8 +56,8 @@ class Cms_Slide_Itens extends Admin_Controller {
         $this->template->set_breadcrumb('List', base_url("$this->controller_uri/index"));
 
         $this->load->library('pagination');
-        $config['base_url'] = base_url("$this->controller_uri/index");
-        $config['uri_segment'] = 4;
+        $config['base_url'] = base_url("$this->controller_uri/view/{$cms_slide_id}");
+        $config['uri_segment'] = 5;
         $config['total_rows'] =  $this->current_model->set_cms_slide($cms_slide_id)->count_all();
         $config['per_page'] = 10;
         $this->pagination->initialize($config);
@@ -69,7 +69,7 @@ class Cms_Slide_Itens extends Admin_Controller {
 
 
 
-        $data['rows'] = $this->current_model->set_cms_slide($cms_slide_id)->get_all();
+        $data['rows'] = $this->current_model->limit($config['per_page'], $offset )->set_cms_slide($cms_slide_id)->get_all();
 
 
 

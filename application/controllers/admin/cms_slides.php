@@ -26,7 +26,7 @@ class Cms_Slides extends Admin_Controller {
 
 
 
-	public function index()
+	public function index($offset = 0)
 	{
 
 
@@ -47,7 +47,7 @@ class Cms_Slides extends Admin_Controller {
 
 
         $data = array();
-        $data['primary_key'] = $this->current_model->primary_key();
+        $data['primary_key'] = $this->current_model->limit($config['per_page'], $offset )->primary_key();
         $data["pagination_links"] = $this->pagination->create_links();
 
 

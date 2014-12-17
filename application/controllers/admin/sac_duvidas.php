@@ -32,7 +32,7 @@ class Sac_Duvidas extends Admin_Controller {
 
 
 
-    public function index()
+    public function index($offset = 0)
     {
 
 
@@ -58,7 +58,7 @@ class Sac_Duvidas extends Admin_Controller {
 
 
 
-        $data['rows'] = $this->current_model->get_all();
+        $data['rows'] = $this->current_model->limit($config['per_page'], $offset )->get_all();
 
 
 

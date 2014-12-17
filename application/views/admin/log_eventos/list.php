@@ -63,6 +63,10 @@
                         </table>
                         <!-- // Table END -->
 
+                        <?php echo $pagination_links;?>
+
+
+
                     </div>
                 </div>
                 <!-- // Widget END -->

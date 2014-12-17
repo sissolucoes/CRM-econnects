@@ -26,7 +26,7 @@ class Log_Eventos extends Admin_Controller {
 
 
 
-    public function index()
+    public function index($offset = 0)
     {
 
 
@@ -52,7 +52,7 @@ class Log_Eventos extends Admin_Controller {
 
 
 
-        $data['rows'] = $this->current_model->with_usuario()->get_all();
+        $data['rows'] = $this->current_model->limit($config['per_page'], $offset )->with_usuario()->get_all();
 
 
 
