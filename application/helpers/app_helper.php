@@ -479,7 +479,7 @@ function app_youtube_embed_link_by_id($id){
 
 }
 
-function app_get_slug($string) {
+function app_parse_slug($string) {
 
     $table = array(
         'Š'=>'S', 'š'=>'s', 'Đ'=>'Dj', 'đ'=>'dj', 'Ž'=>'Z', 'ž'=>'z', 'Č'=>'C', 'č'=>'c', 'Ć'=>'C', 'ć'=>'c',
@@ -492,7 +492,10 @@ function app_get_slug($string) {
         'ÿ'=>'y', 'Ŕ'=>'R', 'ŕ'=>'r', '/' => '-', ' ' => '-'
     );
 
-    return strtolower(strtr($string, $table));
+    $parse = strtolower(strtr($string, $table));
+    $parse = preg_replace("/[^A-Za-z0-9_-]/", '', $parse);
+
+    return $parse;
 }
 
 function app_get_url_anuncio($anuncio){
@@ -683,6 +686,59 @@ function app_display_options_pagina_parents($itens,  $level, $current, $skip){
         echo "<option value=\"{$item["pagina_id"]}\" {$selected} {$disabled}>". str_repeat("-", $level) . " {$item["nome"]}" . "</option>\n";
         if(isset($item["filhos"])){
             app_display_options_pagina_parents($item["filhos"], $level + 1, $current, $skip );
+        }
+    }
+
+}
+
+function app_display_options_sac_categoria_parents($itens,  $level, $current, $skip){
+
+    if(!is_array($skip)){
+        $skip = (array) $skip;
+    }
+
+
+
+    foreach($itens as $item){
+
+        $disabled = '';
+        if(in_array($item["sac_categoria_id"], $skip)){
+            $disabled = 'disabled="disabled"';
+        }
+
+        $selected = '';
+        if($item["sac_categoria_id"] == $current){
+            $selected = 'selected="selected="';
+        }
+
+        echo "<option value=\"{$item["sac_categoria_id"]}\" {$selected} {$disabled}>". str_repeat("-", $level) . " {$item["nome"]}" . "</option>\n";
+        if(isset($item["filhos"])){
+            app_display_options_sac_categoria_parents($item["filhos"], $level + 1, $current, $skip );
+        }
+    }
+
+}
+function app_display_options_sac_categoria_duvidas_parents($itens,  $level, $current){
+
+
+
+
+    foreach($itens as $item){
+
+        $disabled = '';
+        if($item["sac_categoria_parent_id"] == 0){
+            $disabled = 'disabled="disabled"';
+        }
+
+        $selected = '';
+        if($item["sac_categoria_id"] == $current){
+            $selected = 'selected="selected="';
+        }
+
+
+        echo "<option value=\"{$item["sac_categoria_id"]}\" {$selected} {$disabled}>". str_repeat("-", $level) . " {$item["nome"]}" . "</option>\n";
+        if(isset($item["filhos"])){
+            app_display_options_sac_categoria_duvidas_parents($item["filhos"], $level + 1, $current );
         }
     }
 

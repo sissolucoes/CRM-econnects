@@ -43,7 +43,7 @@ Class Sac_Categoria_Model extends MY_Model
 
         $data =  array(
             'nome' => $this->input->post('nome'),
-            'slug' => $this->input->post('slug'),
+            'slug' => app_parse_slug($this->input->post('slug')),
             'ativo' => $this->input->post('ativo'),
             'sac_categoria_parent_id' => $this->input->post('sac_categoria_parent_id')
         );

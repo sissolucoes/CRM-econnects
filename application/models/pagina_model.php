@@ -13,9 +13,6 @@ Class Pagina_Model extends MY_Model
     protected $update_at_key = 'alteracao';
     protected $create_at_key = 'criacao';
 
-    protected $idioma_model = 'pagina_idioma';
-
-
 
 
     public $validate = array(
@@ -44,7 +41,7 @@ Class Pagina_Model extends MY_Model
 
         $data =  array(
             'nome' => $this->input->post('nome'),
-            'slug' => $this->input->post('slug'),
+            'slug' => app_parse_slug($this->input->post('slug')),
             'ativo' => $this->input->post('ativo'),
             'pagina_parent_id' => $this->input->post('pagina_parent_id')
         );

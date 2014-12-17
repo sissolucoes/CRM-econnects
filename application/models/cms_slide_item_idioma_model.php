@@ -62,6 +62,7 @@ Class Cms_Slide_Item_Idioma_Model extends MY_Model
         if($data){
 
             $this->delete_by_slide_item($cms_slide_item_id);
+            //@todo apagar imagens nao utilizadas
             $this->insert_array($data);
             return true;
         }

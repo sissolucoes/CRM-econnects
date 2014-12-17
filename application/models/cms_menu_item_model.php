@@ -48,7 +48,7 @@ Class Cms_Menu_Item_Model extends MY_Model
 
         $data =  array(
             'nome' => $this->input->post('nome'),
-            'slug' => $this->input->post('slug'),
+            'slug' => app_parse_slug($this->input->post('slug')),
             'ativo' => $this->input->post('ativo'),
             'cms_menu_id' => $this->input->post('cms_menu_id'),
             'cms_menu_item_parent_id' => $this->input->post('cms_menu_item_parent_id'),
