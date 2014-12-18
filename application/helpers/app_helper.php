@@ -491,7 +491,7 @@ function app_parse_slug($string) {
         'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u', 'ú'=>'u', 'û'=>'u',  'ý'=>'y', 'þ'=>'b',
         'ÿ'=>'y', 'Ŕ'=>'R', 'ŕ'=>'r', '/' => '-', ' ' => '-'
     );
-
+    $string = trim($string);
     $parse = strtolower(strtr($string, $table));
     $parse = preg_replace("/[^A-Za-z0-9_-]/", '', $parse);
 

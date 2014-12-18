@@ -97,6 +97,14 @@
 
         </ul>
     </li>
+    <li class="hasSubmenu">
+        <a href="#menu-produtos" data-toggle="collapse"><i class="fa fa-tags "></i><span>Produtos</span></a>
+        <ul id="menu-produtos" class="collapse">
+            <li><a href="<?php echo base_url('admin/produto_categorias/index');?>"><i class="fa fa-list"></i><span>Categorias</span></a></li>
+            <li><a href="<?php echo base_url('admin/produtos/index');?>"><i class="fa fa-edit"></i><span>Gerenciar Produtos</span></a></li>
+
+        </ul>
+    </li>
 
     <li class="hasSubmenu">
         <a href="#menu-sistema" data-toggle="collapse"><i class="fa fa-gears"></i><span>Sistema</span></a>
