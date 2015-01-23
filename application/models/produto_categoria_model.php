@@ -35,6 +35,12 @@ Class Produto_Categoria_Model extends MY_Model
             'label' => 'Publicado',
             'rules' => 'required',
             'groups' => 'default'
+        ),
+        array(
+            'field' => 'tipo_pessoa',
+            'label' => 'Tipo',
+            'rules' => 'required',
+            'groups' => 'default'
         )
 
     );
@@ -44,7 +50,8 @@ Class Produto_Categoria_Model extends MY_Model
         $data =  array(
             'nome' => $this->input->post('nome'),
             'slug' => app_parse_slug($this->input->post('slug')),
-            'publicado' => $this->input->post('publicado')
+            'publicado' => $this->input->post('publicado'),
+            'tipo_pessoa' => $this->input->post('tipo_pessoa')
 
         );
 
@@ -150,7 +157,19 @@ Class Produto_Categoria_Model extends MY_Model
 
     }
 
+    public  function get_by_tipo_pessoa($tipo){
 
+        $this->_database->where("{$this->_table}.tipo_pessoa", $tipo);
+        return $this->get_all();;
+
+    }
+
+    public function set_publicados(){
+
+        $this->_database->where("{$this->_table}.publicado", 1);
+
+        return $this;
+    }
 
 
 }

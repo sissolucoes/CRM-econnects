@@ -94,7 +94,8 @@ class Produtos extends Admin_Controller {
         }
 
 
-
+        $this->template->css(app_assets_url('modulos/produtos/css/base.css',  'admin'));
+        $this->template->js(app_assets_url('modulos/produtos/js/base.js',  'admin'));
 
         $data = array();
         /**
@@ -157,6 +158,9 @@ class Produtos extends Admin_Controller {
 
             }
         }
+
+        $this->template->css(app_assets_url('modulos/produtos/css/base.css',  'admin'));
+        $this->template->js(app_assets_url('modulos/produtos/js/base.js',  'admin'));
 
         /**
          * habilita o js do ckeditor

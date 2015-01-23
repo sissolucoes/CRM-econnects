@@ -161,11 +161,30 @@ class Produto_Categorias extends Admin_Controller {
 
         $this->template->load("admin/layouts/base", "$this->controller_uri/edit", $data );
     }
+
     public  function delete($id){
 
         $this->current_model->delete($id);
         $this->session->set_flashdata('succ_msg', 'Registro excluido corretamente.');
         redirect("{$this->controller_uri}/index");
+    }
+
+    public function get_categoria_by_tipo_pessoa($tipo)
+    {
+        $data = array(
+            'status' => false,
+            'message' => 'Não foi possivel encontrar o registro.',
+        );
+        $data['rows'] = $this->current_model->get_by_tipo_pessoa($tipo);
+
+        if($data['rows']){
+
+            $data['status'] = true;
+            $data['message'] = 'Sucesso';
+        }
+
+        echo json_encode($data);
+
     }
 
 

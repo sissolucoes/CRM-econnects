@@ -13,6 +13,10 @@ Class Produto_Model extends MY_Model
     protected $update_at_key = 'alteracao';
     protected $create_at_key = 'criacao';
 
+    const TIPO_PESSOA_FISICA = 'PF';
+
+    const TIPO_PESSOA_JURIDICA = 'PJ';
+
 
 
 
@@ -160,6 +164,56 @@ Class Produto_Model extends MY_Model
 
     }
 
+    public function set_publicados(){
+
+        $this->_database->where("{$this->_table}.publicado", 1);
+
+        return $this;
+    }
+
+    public  function get_produtos_by_tipo_pessoa($tipo){
+
+
+        $this->_database->where("{$this->_table}.tipo_pessoa", $tipo);
+        return $this->get_all();;
+
+    }
+
+    public  function get_produtos_by_categoria($categoria){
+
+
+        $this->_database->where("{$this->_table}.produto_categoria_id", $categoria);
+        return $this->get_all();;
+
+    }
+
+    public function with_categoria(){
+
+        $with_table = 'produto_categoria';
+        $prefix = 'categoria_';
+        $foreing_key = 'produto_categoria_id';
+        $join = 'inner';
+
+        $fields = array(
+            'nome',
+            'slug'
+
+
+        );
+
+        foreach($fields as $field){
+
+            $this->_database->select("{$with_table}.$field AS {$prefix}{$field}");
+        }
+
+        $this->_database->join($with_table, $this->_table.".{$foreing_key} = {$with_table}.{$foreing_key}", $join);
+
+        //$this->_database->select("idioma.codigo AS idioma_codigo");
+        //$this->_database->join('idioma', "idioma.idioma_id = {$with_table}.idioma_id", $join);
+
+        return $this;
+
+    }
 
 
 
