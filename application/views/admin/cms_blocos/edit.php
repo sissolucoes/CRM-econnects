@@ -149,6 +149,11 @@
                                                                                     <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Título</label>
                                                                                     <div class="col-md-8"><input class="form-control" id="<?php echo $field_name;?>" name="idiomas[<?php echo $idioma['idioma_id'];?>][<?php echo $field_name;?>]" type="text" value="<?php echo isset($idioma_row[$field_name]) ? $idioma_row[$field_name] : set_value($field_name); ?>" /></div>
                                                                                 </div>
+                                                                                <?php $field_name = 'subtitulo';?>
+                                                                                <div class="form-group">
+                                                                                    <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Subtítulo</label>
+                                                                                    <div class="col-md-8"><input class="form-control" id="<?php echo $field_name;?>" name="idiomas[<?php echo $idioma['idioma_id'];?>][<?php echo $field_name;?>]" type="text" value="<?php echo isset($idioma_row[$field_name]) ? $idioma_row[$field_name] : set_value($field_name); ?>" /></div>
+                                                                                </div>
                                                                                 <?php $field_name = 'conteudo';?>
                                                                                 <div class="form-group">
                                                                                     <label class="col-md-2 control-label" for="<?php echo $field_name . '_'. $idioma['codigo'] ;?>">Conteúdo</label>

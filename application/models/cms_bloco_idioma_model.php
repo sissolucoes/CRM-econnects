@@ -46,6 +46,7 @@ Class Cms_Bloco_Idioma_Model extends MY_Model
                 'cms_bloco_id' => $cms_bloco_id,
                 'idioma_id' => $idioma_id,
                 'titulo' => $idioma_data['titulo'],
+                'subtitulo' => $idioma_data['subtitulo'],
                 'conteudo' => $idioma_data['conteudo']
 
             );
@@ -70,7 +71,8 @@ Class Cms_Bloco_Idioma_Model extends MY_Model
             $data = array(
 
                 'titulo' => $idioma_data['titulo'],
-                'conteudo' => $idioma_data['conteudo']
+                'conteudo' => $idioma_data['conteudo'],
+                'subtitulo' => $idioma_data['subtitulo'],
             );
 
 

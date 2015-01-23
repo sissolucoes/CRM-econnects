@@ -114,6 +114,7 @@ Class Cms_Bloco_Model extends MY_Model
 
         $fields = array(
             'titulo',
+            'subtitulo',
             'conteudo',
             'idioma_id'
 
