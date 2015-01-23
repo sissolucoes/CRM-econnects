@@ -158,7 +158,7 @@
                                                                                         <?php if(isset($idioma_row['imagem']) && $idioma_row['imagem'] != ''): ?>
 
                                                                                             <br/>
-                                                                                           <p class="help-block"> <img class="img-thumbnail" src="<?php echo app_assets_url("slides/{$cms_slide_id}/{$idioma_row['imagem']}" , 'uploads')?>"></p>
+                                                                                           <p class="help-block"> <img class="img-thumbnail" src="<?php echo app_assets_url("slides/{$cms_slide_id}/{$row[$primary_key]}/{$idioma_row['imagem']}" , 'uploads')?>"></p>
                                                                                         <?php endif;?>
                                                                                     </div>
                                                                                 </div>

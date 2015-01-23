@@ -177,7 +177,7 @@ class Cms_Slide_Itens extends Admin_Controller {
                 $this->current_model->update_form();
 
                 $this->session->set_flashdata('succ_msg', 'Os dados foram salvos corretamente.');
-                //redirect("{$this->controller_uri}/view/{$data['row']['cms_slide_id']}");
+                redirect("{$this->controller_uri}/view/{$data['row']['cms_slide_id']}");
 
             }
         }

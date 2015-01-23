@@ -23,7 +23,7 @@
                     <div class="widget-body innerAll inner-2x">
                         <div class="row innerTB">
                             <div class="col-md-6">
-                                <a href="<?php echo base_url("admin/cms_menus/index")?>" class="btn  btn-app btn-primary">
+                                <a href="<?php echo base_url("admin/cms_slides/index")?>" class="btn  btn-app btn-primary">
                                     <i class="fa fa-arrow-left"></i> Voltar
                                 </a>
                                 <a href="<?php echo base_url("$current_controller_uri/add/{$cms_slide_id}")?>" class="btn  btn-app btn-primary">

@@ -69,10 +69,12 @@ Class Cms_Slide_Item_Model extends MY_Model
 
         $idiomas = $this->input->post('idiomas');
 
+        $cms_slide_id= $this->input->post('cms_slide_id');
+
 
         $cms_slide_item_id =  $this->insert($data);
 
-        $idiomas = $this->do_upload_imagem_idioma($idiomas, $cms_slide_item_id);
+        $idiomas = $this->do_upload_imagem_idioma($idiomas, $cms_slide_id,  $cms_slide_item_id);
 
 
         $this->cms_slide_item_idioma->insert_by_slide_item($cms_slide_item_id, $idiomas);
@@ -81,7 +83,7 @@ Class Cms_Slide_Item_Model extends MY_Model
 
     }
 
-    public function do_upload_imagem_idioma($idiomas, $cms_slide_item_id){
+    public function do_upload_imagem_idioma($idiomas, $cms_slide_id,  $cms_slide_item_id){
 
         foreach($idiomas as $idioma_id => $idioma_data){
 
@@ -91,7 +93,7 @@ Class Cms_Slide_Item_Model extends MY_Model
 
             if(isset($_FILES[$upload_field])){
 
-                $config['upload_path'] = PUBLIC_UPLOAD_PATH . 'slides/'.$cms_slide_item_id;
+                $config['upload_path'] = PUBLIC_UPLOAD_PATH . "slides/{$cms_slide_id}/{$cms_slide_item_id}";
                 if(!file_exists($config['upload_path'])){
                     mkdir($config['upload_path'], 0777, true);
                 }
@@ -135,11 +137,11 @@ Class Cms_Slide_Item_Model extends MY_Model
 
         $idiomas = $this->input->post('idiomas');
 
-
+        $cms_slide_id= $this->input->post('cms_slide_id');
 
         $cms_slide_item_id = $this->input->post($this->primary_key);
 
-        $idiomas = $this->do_upload_imagem_idioma($idiomas, $cms_slide_item_id);
+        $idiomas = $this->do_upload_imagem_idioma($idiomas, $cms_slide_id,  $cms_slide_item_id);
 
         $this->update( $cms_slide_item_id,  $data);
 
@@ -182,7 +184,8 @@ Class Cms_Slide_Item_Model extends MY_Model
 
         $fields = array(
             'titulo',
-            'idioma_id'
+            'idioma_id',
+            'imagem'
 
         );
 
