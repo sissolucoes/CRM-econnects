@@ -40,6 +40,12 @@ Class Cms_Slide_Item_Model extends MY_Model
             'label' => 'Slide',
             'rules' => 'required',
             'groups' => 'default'
+        ),
+        array(
+            'field' => 'url',
+            'label' => 'Url',
+            'rules' => 'required',
+            'groups' => 'default'
         )
 
     );
@@ -51,7 +57,8 @@ Class Cms_Slide_Item_Model extends MY_Model
             'slug' => $this->input->post('slug'),
             'ativo' => $this->input->post('ativo'),
             'cms_slide_id' => $this->input->post('cms_slide_id'),
-            'ordem' => $this->input->post('ordem')
+            'ordem' => $this->input->post('ordem'),
+            'url' => $this->input->post('url')
 
         );
 
