@@ -54,7 +54,7 @@ Class Cms_Slide_Item_Model extends MY_Model
 
         $data =  array(
             'nome' => $this->input->post('nome'),
-            'slug' => $this->input->post('slug'),
+            'slug' => app_parse_slug($this->input->post('slug')),
             'ativo' => $this->input->post('ativo'),
             'cms_slide_id' => $this->input->post('cms_slide_id'),
             'ordem' => $this->input->post('ordem'),
