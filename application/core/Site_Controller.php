@@ -10,5 +10,7 @@ class Site_Controller extends MY_Controller
         $this->load->helper('language');
         $this->load->helper('url');
 
+        $this->lang->load('core');
+
     }
 }
