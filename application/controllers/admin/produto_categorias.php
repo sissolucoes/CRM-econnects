@@ -43,7 +43,9 @@ class Produto_Categorias extends Admin_Controller {
         $this->load->library('pagination');
         $config['base_url'] = base_url("$this->controller_uri/index");
         $config['uri_segment'] = 4;
-        $config['total_rows'] =  $this->current_model->count_all();
+        $config['total_rows'] =  $this->current_model
+            ->filter_from_input()
+            ->count_all();
         $config['per_page'] = 10;
         $this->pagination->initialize($config);
 
@@ -54,7 +56,10 @@ class Produto_Categorias extends Admin_Controller {
 
 
 
-        $data['rows'] = $this->current_model->limit($config['per_page'], $offset )->get_all();
+        $data['rows'] = $this->current_model
+            ->filter_from_input()
+            ->limit($config['per_page'], $offset )
+            ->get_all();
 
 
 

@@ -22,10 +22,22 @@
 
                     <div class="widget-body innerAll inner-2x">
                         <div class="row innerTB">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <a href="<?php echo base_url("$current_controller_uri/add")?>" class="btn  btn-app btn-primary">
                                     <i class="fa  fa-plus"></i> Adicionar
                                 </a>
+
+                                <a class="btn  btn-app btn-success pull-right" data-toggle="collapse" href="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+                                    <i class="fa  fa-search"></i> Filtro
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row innerTB">
+                            <div class="collapse" id="collapseFilter">
+                                <div class="col-md-6">
+                                    <?php $this->load->view('admin/produtos/filtro'); ?>
+                                </div>
                             </div>
                         </div>
 

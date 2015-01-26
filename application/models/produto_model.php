@@ -129,7 +129,8 @@ Class Produto_Model extends MY_Model
         $join = 'inner';
 
         $fields = array(
-            'titulo'
+            'titulo',
+            'conteudo'
 
 
         );
@@ -215,7 +216,57 @@ Class Produto_Model extends MY_Model
 
     }
 
+    public  function get_produto_url($produto){
 
+        if(!is_array($produto) && is_numeric($produto)){
+
+            return '';
+        }
+
+        $url = '';
+
+        if($produto){
+
+
+
+            $tipo = '';
+
+            if(isset($produto['tipo_pessoa']) && $produto['tipo_pessoa'] == 'PF' ){
+
+                $tipo = 'bom_para_voce';
+            }
+
+            if(isset($produto['tipo_pessoa']) && $produto['tipo_pessoa'] == 'PJ' ){
+
+                $tipo = 'bom_para_sua_empresa';
+            }
+
+            $url = site_url("produtos/{$tipo}/{$produto['slug']}");
+
+
+
+        }
+
+        return $url;
+
+    }
+
+    public function filter_from_input(){
+
+        if($this->input->get('filter')){
+
+            $filters = $this->input->get('filter');
+
+            if(isset($filters['tipo_pessoa']) && $filters['tipo_pessoa'] != ''){
+
+                $tipo_pessoa = $filters['tipo_pessoa'];
+                $this->_database->where("{$this->_table}.tipo_pessoa", $tipo_pessoa);
+            }
+
+        }
+        return $this;
+
+    }
 
 
 }

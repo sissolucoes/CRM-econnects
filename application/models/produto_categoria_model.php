@@ -171,5 +171,22 @@ Class Produto_Categoria_Model extends MY_Model
         return $this;
     }
 
+    public function filter_from_input(){
+
+        if($this->input->get('filter')){
+
+            $filters = $this->input->get('filter');
+
+            if(isset($filters['tipo_pessoa']) && $filters['tipo_pessoa'] != ''){
+
+                $tipo_pessoa = $filters['tipo_pessoa'];
+                $this->_database->where("{$this->_table}.tipo_pessoa", $tipo_pessoa);
+            }
+
+        }
+        return $this;
+
+    }
+
 
 }

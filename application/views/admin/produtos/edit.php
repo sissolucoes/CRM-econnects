@@ -68,7 +68,7 @@
                                                     <?php $field_name = 'tipo_pessoa';?>
                                                     <div class="form-group">
                                                         <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Tipo</label>
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-4">
 
                                                             <select  class="form-control comboCategorias required" name="<?php echo $field_name;?>" id="<?php echo $field_name;?>">
                                                                 <option></option>
