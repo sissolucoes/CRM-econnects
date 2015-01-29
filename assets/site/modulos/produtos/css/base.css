@@ -1,0 +1,39 @@
+.icone_produto {
+
+    width: 200px;
+    height: 166px;
+    float: left;
+}
+
+.ico_patrimoniais_m_produto {
+
+    background-image: url("../../../images/ico-patrimoniais-produtos.png");
+}
+
+
+.ico_beneficios_m_produto {
+
+    background-image: url("../../../images/ico-beneficios-produtos.png");
+}
+
+.ico_consorcio_m_produto {
+
+    background-image: url("../../../images/ico-consorcio-produtos.png");
+}
+
+.ico_assistencia_m_produto {
+
+    background-image: url("../../../images/ico-assistencia-produtos.png");
+}
+
+
+.ico_riscos_m_produto {
+
+    background-image: url("../../../images/ico-financeiros-produtos.png");
+}
+
+
+.ico_responsabilidade_m_produto {
+
+    background-image: url("../../../images/ico-responsabilidade-produtos.png");
+}

@@ -60,6 +60,7 @@ class Produtos extends Site_Controller {
 
         }
 
+        $this->template->css(app_assets_url('modulos/produtos/css/base.css',  'site'));
         $data = array();
 
         $data['produto_categorias'] = $produto_categorias;
