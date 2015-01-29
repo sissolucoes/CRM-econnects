@@ -5,12 +5,12 @@ class Sac extends Site_Controller {
 
     public function index()
     {
-        $this->load->model('sac_categoria_model', 'sac_categoria');
+        $this->load->model('faq_categoria_model', 'faq_categoria');
 
         $data = array();
 
 
-        $data['sac_categorias'] = $this->sac_categoria
+        $data['faq_categorias'] = $this->faq_categoria
             ->set_ativos()
             ->with_idioma()
             ->set_select()
@@ -22,14 +22,6 @@ class Sac extends Site_Controller {
 
     }
 
-    public function buscar_por_categoria(){
 
-
-    }
-
-    public function buscar_por_texto(){
-
-
-    }
 
 }
