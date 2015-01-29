@@ -170,6 +170,8 @@ Class Cms_Menu_Item_Model extends MY_Model
 
         $this->_database->where('cms_menu_item_parent_id', $pai);
         $this->_database->where('cms_menu_id', $cms_menu_id);
+        $this->set_default_order();
+
         return $this->get_all();
 
     }

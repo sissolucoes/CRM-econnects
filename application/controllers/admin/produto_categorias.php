@@ -59,6 +59,7 @@ class Produto_Categorias extends Admin_Controller {
         $data['rows'] = $this->current_model
             ->filter_from_input()
             ->limit($config['per_page'], $offset )
+            ->order_by('ordem')
             ->get_all();
 
 
@@ -174,23 +175,7 @@ class Produto_Categorias extends Admin_Controller {
         redirect("{$this->controller_uri}/index");
     }
 
-    public function get_categoria_by_tipo_pessoa($tipo)
-    {
-        $data = array(
-            'status' => false,
-            'message' => 'Não foi possivel encontrar o registro.',
-        );
-        $data['rows'] = $this->current_model->get_by_tipo_pessoa($tipo);
 
-        if($data['rows']){
-
-            $data['status'] = true;
-            $data['message'] = 'Sucesso';
-        }
-
-        echo json_encode($data);
-
-    }
 
 
 }

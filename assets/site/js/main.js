@@ -16,25 +16,16 @@ $(document).ready(function(e) {
       autoDraggerLength: false,
       scrollButtons: false,
       set_width: "143px !important"
-    }); 
+    });
 
-	
-	$('a#m_servicos, #menu div.submenu').hover( function(){
-		$('#menu div.submenu').stop(true,false).slideToggle();
-	});
-        
-        $('a#m_sac, #menu div.submenu2').hover( function(){
-		$('#menu div.submenu2').stop(true,false).slideToggle();
-	});
-        
-        
-        $('a#m_servicos, #top_principal div.submenu').hover( function(){
-		$('#top_principal div.submenu').stop(true,false).slideToggle();
-	});
-        
-        $('a#m_sac, #top_principal div.submenu2').hover( function(){
-		$('#top_principal div.submenu2').stop(true,false).slideToggle();
-	});
+
+    /**
+     * Menu principal do site
+     */
+    $('#main_nav > li ').hover( function(){
+
+        $(this).find('ul.submenu').stop(true,false).slideToggle();
+    });
     
 	// HOME
 	if($('body').hasClass('home')){
@@ -181,75 +172,37 @@ $(document).ready(function(e) {
 			
 		});
 		
-	}	  
-  
-  
-  
-  	// DROPDOWN Produtos
-    
-    
+	}
+
+
+    /**
+     *  Pagina de produtos
+     */
 	if($('body').has('section#dropdown.dropdown-produtos')){
-		$("ul#dropdown-pf-left-ul, ul#dropdown-pj-left-ul").mCustomScrollbar({
+
+		$(".dropdown-container").mCustomScrollbar({
 			mouseWheel: true,
 			autoDraggerLength: true,
 			scrollButtons: false
 		});
-    
-                                                       
-    //dropdown-pf-left	
-		$("ul#dropdown-pf-left-ul, ul#dropdown-pj-left-ul, ul#dropdown-pf-assistencia-right-ul, ul#dropdown-pj-assistencia-right-ul, ul#dropdown-pf-consorcio-left-ul, ul#dropdown-pj-consorcio-left-ul, ul#dropdown-pf-patrimoniais-right-ul, ul#dropdown-pj-patrimoniais-right-ul, ul#dropdown-pf-financeiros-left-ul, ul#dropdown-pj-financeiros-left-ul, ul#dropdown-pf-responsabilidade-right-ul, ul#dropdown-pj-responsabilidade-right-ul").css({'display':'none','visibility':'visible'});
+
+		$(" ul.dropdown-container").css({'display':'none','visibility':'visible'});
 		
-		$('h1#dropdown-pf-left, h1#dropdown-pj-left, h1#dropdown-pf-assistencia-right, h1#dropdown-pj-assistencia-right, h1#dropdown-pf-consorcio-left, h1#dropdown-pj-consorcio-left, h1#dropdown-pf-patrimoniais-right, h1#dropdown-pj-patrimoniais-right, h1#dropdown-pf-financeiros-left, h1#dropdown-pj-financeiros-left, h1#dropdown-pf-responsabilidade-right, h1#dropdown-pj-responsabilidade-right').click( function(e){
+		$(' h1.dropdown-button').click( function(e){
+
+
 			var obj = $(this);
 			var id = $(this).prop('id');
 			var seta = obj.children('span');
-      
-      console.log('id=' + id);
-      $('#'+ id+ '-ul').slideToggle();
-      
-			if( id == 'dropdown-pf-left' && $('h1#dropdown-pj-left span.seta').hasClass('active') ){
-				$('#dropdown-pj-left').click(); 
-			} else if( id == 'dropdown-pj-left' && $('h1#dropdown-pf-left span.seta').hasClass('active') ){
-				$('#dropdown-pf-left').click(); 
-			}	
-      
-			if( id == 'dropdown-pf-assistencia-right' && $('h1#dropdown-pj-assistencia-right span.seta').hasClass('active') ){
-				$('#dropdown-pj-assistencia-right').click(); 
-			} else if( id == 'dropdown-pj-assistencia-right' && $('h1#dropdown-pf-assistencia-right span.seta').hasClass('active') ){
-				$('#dropdown-pf-assistencia-right').click(); 
-			}	      
 
-			if( id == 'dropdown-pf-consorcio-left' && $('h1#dropdown-pj-consorcio-left span.seta').hasClass('active') ){
-				$('#dropdown-pj-consorcio-left').click(); 
-			} else if( id == 'dropdown-pj-consorcio-left' && $('h1#dropdown-pf-consorcio-left span.seta').hasClass('active') ){
-				$('#dropdown-pf-consorcio-left').click(); 
-			}	
+            $('#'+ id+ '-ul').slideToggle();
 
-			    
-			if( id == 'dropdown-pf-patrimoniais-right' && $('h1#dropdown-pj-patrimoniais-right span.seta').hasClass('active') ){
-				$('#dropdown-pj-patrimoniais-right').click(); 
-			} else if( id == 'dropdown-pj-patrimoniais-right' && $('h1#dropdown-pf-patrimoniais-right span.seta').hasClass('active') ){
-				$('#dropdown-pf-patrimoniais-right').click(); 
-			}	
-          
-			if( id == 'dropdown-pf-financeiros-left' && $('h1#dropdown-pj-financeiros-left span.seta').hasClass('active') ){
-				$('#dropdown-pj-financeiros-left').click(); 
-			} else if( id == 'dropdown-pj-financeiros-left' && $('h1#dropdown-pf-financeiros-left span.seta').hasClass('active') ){
-				$('#dropdown-pf-financeiros-left').click(); 
-			}	          
-          
-			if( id == 'dropdown-pf-responsabilidade-right' && $('h1#dropdown-pj-responsabilidade-right span.seta').hasClass('active') ){
-				$('#dropdown-pj-responsabilidade-right').click(); 
-			} else if( id == 'dropdown-pj-responsabilidade-right' && $('h1#dropdown-pf-responsabilidade-right span.seta').hasClass('active') ){
-				$('#dropdown-pf-responsabilidade-right').click(); 
-			}	                   
-			
-			if(seta.hasClass('active')){
+            if(seta.hasClass('active')){
 				seta.removeClass('active');
 			} else {
 				seta.addClass('active');
 			}     
-		//	obj.siblings('ul').slideToggle();
+
 			    
 		});       
 		

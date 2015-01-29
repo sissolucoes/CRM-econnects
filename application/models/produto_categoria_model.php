@@ -35,12 +35,6 @@ Class Produto_Categoria_Model extends MY_Model
             'label' => 'Publicado',
             'rules' => 'required',
             'groups' => 'default'
-        ),
-        array(
-            'field' => 'tipo_pessoa',
-            'label' => 'Tipo',
-            'rules' => 'required',
-            'groups' => 'default'
         )
 
     );
@@ -51,7 +45,8 @@ Class Produto_Categoria_Model extends MY_Model
             'nome' => $this->input->post('nome'),
             'slug' => app_parse_slug($this->input->post('slug')),
             'publicado' => $this->input->post('publicado'),
-            'tipo_pessoa' => $this->input->post('tipo_pessoa')
+            'css_class_icone' => $this->input->post('css_class_icone'),
+            'ordem' => $this->input->post('ordem')
 
         );
 
@@ -103,7 +98,7 @@ Class Produto_Categoria_Model extends MY_Model
     }
     function get_produto_categoria_by_id($id){
 
-        return $this->get($id);
+        return $this->get_by("{$this->_table}.{$this->primary_key}", $id);
 
     }
     public function set_ativos(){
@@ -122,7 +117,8 @@ Class Produto_Categoria_Model extends MY_Model
         $join = 'inner';
 
         $fields = array(
-            'titulo'
+            'titulo',
+            'descricao'
 
 
         );
@@ -157,12 +153,7 @@ Class Produto_Categoria_Model extends MY_Model
 
     }
 
-    public  function get_by_tipo_pessoa($tipo){
 
-        $this->_database->where("{$this->_table}.tipo_pessoa", $tipo);
-        return $this->get_all();;
-
-    }
 
     public function set_publicados(){
 
@@ -177,10 +168,10 @@ Class Produto_Categoria_Model extends MY_Model
 
             $filters = $this->input->get('filter');
 
-            if(isset($filters['tipo_pessoa']) && $filters['tipo_pessoa'] != ''){
+            if(isset($filters['nome']) && $filters['nome'] != ''){
 
-                $tipo_pessoa = $filters['tipo_pessoa'];
-                $this->_database->where("{$this->_table}.tipo_pessoa", $tipo_pessoa);
+                $nome = $filters['nome'];
+                $this->_database->where("{$this->_table}.nome", $nome);
             }
 
         }

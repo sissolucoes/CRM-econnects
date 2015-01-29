@@ -37,7 +37,8 @@ Class Produto_Categoria_Idioma_Model extends MY_Model
             $data[]= array(
                 'produto_categoria_id' => $produto_categoria_id,
                 'idioma_id' => $idioma_id,
-                'titulo' => $idioma_data['titulo']
+                'titulo' => $idioma_data['titulo'],
+                'descricao' => $idioma_data['descricao']
 
             );
 
@@ -60,7 +61,8 @@ Class Produto_Categoria_Idioma_Model extends MY_Model
         foreach($idiomasData as $idioma_id => $idioma_data){
             $data = array(
 
-                'titulo' => $idioma_data['titulo']
+                'titulo' => $idioma_data['titulo'],
+                'descricao' => $idioma_data['descricao']
 
             );
 

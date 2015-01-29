@@ -498,20 +498,7 @@ function app_parse_slug($string) {
     return $parse;
 }
 
-function app_get_url_anuncio($anuncio){
 
-    $CI =& get_instance();
-    $CI->load->model('anuncio_model');
-    return $CI->anuncio_model->getAnuncioUrl($anuncio);
-
-}
-function app_get_url_acessorio($anuncio){
-
-    $CI =& get_instance();
-    $CI->load->model('acessorio_anuncio_model', 'acessorio_anuncio');
-    return $CI->acessorio_anuncio->getAnuncioUrl($anuncio);
-
-}
 
 
 
@@ -741,5 +728,13 @@ function app_display_options_sac_categoria_duvidas_parents($itens,  $level, $cur
             app_display_options_sac_categoria_duvidas_parents($item["filhos"], $level + 1, $current );
         }
     }
+
+}
+
+function app_get_url_produto($produto){
+
+    $CI =& get_instance();
+    $CI->load->model('produto_model', 'produto');
+    return $CI->produto->get_produto_url($produto);
 
 }

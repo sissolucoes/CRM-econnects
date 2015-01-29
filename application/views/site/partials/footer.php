@@ -81,7 +81,7 @@
                     <a href="#">Capitalização</a>
                 </nav>
 
-                <nav style="float: none ! important; width: 200px;">
+                <nav class="nav_class01">
                     <h2>RESPONSABILIDADE CIVIL</h2>
                     <a href="#">Estabelecimentos</a>
                     <a href="#">Profissional</a>
@@ -95,7 +95,7 @@
     <section id="copy">
         <div class="wrap clearfix sitemap_row2">
             <article id="assinatura" class="left clearfix">
-                <img src="<?php echo app_assets_url('images/logotipo-corcovado-footer.png', 'site');?>"" width="49" height="56" alt="Logotipo Corcovado"
+                <img src="<?php echo app_assets_url('images/logotipo-corcovado-footer.png', 'site');?>" width="49" height="56" alt="Logotipo Corcovado"
                      title="Corcovado" class="left"/>
 
                 <p class="left">Corcovado<br>

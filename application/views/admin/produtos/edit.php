@@ -70,7 +70,7 @@
                                                         <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Tipo</label>
                                                         <div class="col-md-4">
 
-                                                            <select  class="form-control comboCategorias required" name="<?php echo $field_name;?>" id="<?php echo $field_name;?>">
+                                                            <select  class="form-control required" name="<?php echo $field_name;?>" id="<?php echo $field_name;?>">
                                                                 <option></option>
                                                                 <?php foreach(array( 'PF' => 'Pessoa Fisica', 'PJ' => 'Pessoa Juridica') as $item_value => $item_name) :?>
                                                                     <option value="<?php echo $item_value;?>" <?php  if(isset($row[$field_name]) && $row[$field_name] == $item_value) echo 'selected="selected"'; ?>><?php echo $item_name;?></option>
@@ -85,7 +85,7 @@
 
                                                             <select  class="form-control required" name="<?php echo $field_name;?>" id="<?php echo $field_name;?>">
                                                                 <option></option>
-                                                                <?php foreach(array( '1' => 'Frame e Conteúdo', '2' => 'Apenas Frame', '3' => 'Apenas Conteúdo') as $item_value => $item_name) :?>
+                                                                <?php foreach($modelos_paginas as $item_value => $item_name) :?>
                                                                     <option value="<?php echo $item_value;?>" <?php  if(isset($row[$field_name]) && $row[$field_name] == $item_value) echo 'selected="selected"'; ?>><?php echo $item_name;?></option>
                                                                 <?php endforeach;?>
                                                             </select>

@@ -1,20 +1,3 @@
-<?php
-
-$quemsomos = (basename($_SERVER ['REQUEST_URI']) == 'quem-somos.php') ? ' active' : '';
-$produtos = (basename($_SERVER ['REQUEST_URI']) == 'produtos.php') ? ' active' : '';
-$sinistro = (basename($_SERVER ['REQUEST_URI']) == 'sinistro.php') ? ' active' : '';
-$vistoria = (basename($_SERVER ['REQUEST_URI']) == 'vistoria.php') ? ' active' : '';
-$reimpressao = (basename($_SERVER ['REQUEST_URI']) == 'login.php') ? ' active' : '';
-$segunda_via = (basename($_SERVER ['REQUEST_URI']) == 'login.php') ? 'active' : '';
-$contato = (basename($_SERVER ['REQUEST_URI']) == 'contato.php') ? ' active' : '';
-$sac = (basename($_SERVER ['REQUEST_URI']) == 'sac.php') ? ' active' : '';
-
-$servicos = '';
-if((!empty($sinistro)) || (!empty($vistoria)) || (!empty($reimpressao))){
-    $servicos = ' active';
-}
-
-?>
 <header>
     <div class="wrap clearfix">
         <h1 class="left"><a href="<?php echo base_url();?>" id="logo"><img src="<?php echo app_assets_url('images/logotipo-corcovado.png', 'site');?>" width="298" height="79" alt="Logotipo Corcovado" title="Corcovado" /></a></h1>
@@ -34,22 +17,27 @@ if((!empty($sinistro)) || (!empty($vistoria)) || (!empty($reimpressao))){
         </nav>
 
         <nav id="menu" class="right">
-            <a href="<?php echo site_url('quem-somos'); ?>" class="<?php echo $quemsomos; ?>" id="m_quem_somos">QUEM SOMOS</a><span>|</span>
-            <a href="<?php echo site_url('produtos'); ?>"  class="<?php echo $produtos; ?>" id="m_produtos">PRODUTOS</a><span>|</span>
-            <a href="#" class="<?php echo $servicos; ?>" id="m_servicos">SERVIÇOS
-                <div class="seta-submenu sprite"></div>
-            </a><span>|</span>
+        	<ul id="main_nav">
+                <?php if($menu_principal) :?>
 
-            <div class="submenu">
-                <a href="sinistro.php" class="<?php echo $sinistro; ?>" id="m_sinistro">SINISTRO</a>
-                <a href="vistoria.php" class="<?php echo $vistoria; ?>" id="m_vistoria">VISTORIA / INSPEÇÃO</a>
-                <a href="login.php" class="<?php echo $segunda_via; ?>" id="m_vistoria">2º VIA DE PAGAMENTO</a>
-                <a href="login.php" class="<?php echo $reimpressao; ?>" id="m_reimpressao">REIMPRESSÃO</a>
-            </div>
-            <a href="#" class="<?php echo $contato; ?>" id="m_blog">BLOG</a><span>|</span>
-            <a href="sac.php" class="<?php echo $sac; ?>" id="m_sac">SAC
-            </a>
 
+                    <?php $c = 1; $total = count($menu_principal); foreach($menu_principal as $menu_item) :?>
+                        <li class="main_item item_<?php echo  $c;?> <?php if($c == $total) echo 'last_item'?>">
+                            <a href="<?php echo $menu_item['link'];?>" class="" ><?php echo $menu_item['titulo'];?> </a>
+                            <?php if($menu_item['filhos']) :?>
+                                <div class="seta-submenu sprite"></div>
+                                <ul class="submenu">
+
+                                   <?php foreach($menu_item['filhos'] as $menu_item_sub) :?>
+                                       <li><a href="<?php echo $menu_item_sub['link'];?>" class="" id="m_sinistro"><?php echo $menu_item_sub['nome'];?></a></li>
+                                   <?php endforeach;?>
+                                </ul>
+                            <?php  endif;?>
+
+                        </li>
+                    <?php $c++; endforeach;?>
+                <?php endif;?>
+	        </ul>
 
 
             <div class="social right">

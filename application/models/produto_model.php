@@ -268,5 +268,22 @@ Class Produto_Model extends MY_Model
 
     }
 
+    public  function set_by_tipo_pessoa($tipo){
+
+        $this->_database->where("{$this->_table}.tipo_pessoa", $tipo);
+        return $this;
+
+    }
+
+    public function get_modelos_paginas(){
+
+
+        return array(
+            'frame-and-content' => 'Frame e Conteúdo',
+            'frame-only' => 'Apenas Frame',
+            'content-only' => 'Apenas Conteúdo'
+        );
+    }
+
 
 }

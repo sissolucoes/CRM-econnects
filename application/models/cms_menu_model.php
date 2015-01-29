@@ -47,6 +47,20 @@ Class Cms_Menu_Model extends MY_Model
 
     }
 
+    public function build_menu($slug){
 
+        $menu = $this->get_by_slug($slug);
+
+        $this->load->model('cms_menu_item_model', 'cms_menu_item');
+
+        $itens = $this->cms_menu_item
+            ->with_idioma()
+            ->filter_idioma($this->lang->lang())
+            ->set_default_order()
+            ->get_menu_item_parents(0, $menu[$this->primary_key] );
+
+
+        return $itens;
+    }
 
 }

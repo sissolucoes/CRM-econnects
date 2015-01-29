@@ -48,6 +48,10 @@
         <script src="<?php echo app_assets_url("ckfinder/ckfinder.js", 'common');?>"></script>
     <?php endif?>
 
+    <script>
+        var ADMIN_URL = '<?php echo base_url('admin'); ?>';
+    </script>
+
 </head>
 <body class=" menu-right-hidden">
 

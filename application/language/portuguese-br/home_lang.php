@@ -1,3 +1,4 @@
 <?php
 
-$lang['home.teste'] = "Teste PT";
+$lang['home.teste'] = "Teste En";
+$lang['core.nossos_produtos'] = 'Nossos Produtos';

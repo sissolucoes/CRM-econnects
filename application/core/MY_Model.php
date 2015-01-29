@@ -1161,4 +1161,10 @@ class MY_Model extends CI_Model
 
         return $this;
     }
+
+    public function set_default_order(){
+
+        $this->order_by('ordem');
+        return $this;
+    }
 }

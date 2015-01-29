@@ -1,10 +1,10 @@
 <section id="quem-somos">
     <h1><?php echo $pagina['titulo'];?><span>A Corcovado foi criada para cumprir uma missão única: identificar necessidades e expectativas não atendidas pelo mercado segurador e oferecer soluções criativas e inovadoras à gestão de seguros e serviços, indo além da simples oferta de preço e produto.</span></h1>
     <article class="quem_somos">
-        <p style="padding-top: 16px !important; padding-bottom: 10px !important;">
+        <p class="p_quem_somos">
             Por meio de estudos e larga experiência vivida dos seus profissionais, A CORCOVADO DESENVOLVEU UMA METODOLOGIA DE TRABALHO EXCLUSIVA, altamente eficiente, pensada para garantir um atendimento personalizado e a oferta de opções sob medida para você ou sua empresa. UMA CADEIA DE VALORES, composta por seis pilares, que norteia toda a atuação da Corcovado, identificando as melhores soluções para cada perfil de cliente.
         </p>
-        <img src="<?php echo app_assets_url('images/banner-metodologia.jpg', 'site');?>" alt="" style= ""/>
+        <img src="<?php echo app_assets_url('images/banner-metodologia.jpg', 'site');?>" alt=""/>
 
         <p>O primeiro pilar é a <a>qualificação</a> dos pontos fortes das seguradoras e empresas de serviços de assistência 24h - os parceiros estratégicos da Corcovado - cuidadosamente selecionadas, compondo um ranking das melhores empresas do segmento no País.</p>
         <p>O <a>atendimento</a> é nosso principal diferencial e pode ser da maneira que você preferir: online ou offline. Em ambos os casos, ele é personalizado, ágil, com processos bem definidos, tanto para pessoa física como para pessoa jurídica.</p>
@@ -23,24 +23,24 @@
 <?php $bloco = app_get_cms_bloco('quem-somos-missao'); ?>
 
 <div id="bottom_quem_somos">
-    <div class="quem_somos_bottom2" style="padding-left: 45px">
-        <h1><span style="position: relative; top: -15px"><?php echo $bloco['titulo'];?>:</span></h1>
-        <span style="position: relative; top: -40px;">
+    <div class="quem_somos_bottom2 quem_somos_bottom10">
+        <h1><span class="quem_somos_title"><?php echo $bloco['titulo'];?>:</span></h1>
+        <span class="quem_somos_content">
                 <?php echo $bloco['conteudo'];?>
           
         </span>
     </div>
 
     <div class="quem_somos_bottom2">
-        <h1><span style="position: relative; top: -15px">Visão:</span></h1>
-        <span style="position: relative; top: -40px;"><p style="height: 23px">Ser reconhecida como empresa referência em excelência pelos serviços prestados.</p></span>
+        <h1><span class="visao_title">Visão:</span></h1>
+        <span class="visao_span"><p class="visao_p">Ser reconhecida como empresa referência em excelência pelos serviços prestados.</p></span>
     </div>
 
     <div class="quem_somos_bottom2">
-        <h1><span style="position: relative; top: -15px">Valores:</span></h1>
-                        <span style="position: relative; top: -40px;">
+        <h1><span class="valores_span">Valores:</span></h1>
+                        <span class="valores_span2">
                             <p>Ética na conduta junto aos clientes e parceiros. Valorização e respeito às pessoas: colaboradores, clientes e fornecedores</p>
-                            <p style="position: relative; top: -27px; height: 42px">
+                            <p class="valores_p">
                                 - Transparência e confiança<br>
                                 - Satisfação do Cliente<br>
                                 - Responsabilidade Social

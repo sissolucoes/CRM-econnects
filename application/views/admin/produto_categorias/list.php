@@ -59,7 +59,7 @@
                                 <th class="center">ID</th>
                                 <th>Nome</th>
                                 <th>Slug</th>
-                                <th>Tipo</th>
+                                <th>Ordem</th>
                                 <th class="center" style="width: 20%">Ações</th>
                             </tr>
                             </thead>
@@ -75,7 +75,7 @@
                                 <td class="center"><?php echo $row[$primary_key];?></td>
                                 <td><?php echo $row['nome'];?></td>
                                 <td><?php echo $row['slug'];?></td>
-                                <td><?php echo $row['tipo_pessoa'];?></td>
+                                <td><?php echo $row['ordem'];?></td>
                                 <td class="center">
                                     <a href="<?php echo base_url("{$current_controller_uri}/edit/{$row[$primary_key]}")?>" class="btn btn-sm btn-primary">  <i class="fa fa-edit"></i>  Editar </a>
                                     <a href="<?php echo base_url("$current_controller_uri/delete/{$row[$primary_key]}")?>" class="btn btn-sm btn-danger deleteRowButton"> <i class="fa fa-eraser"></i> Excluir </a>

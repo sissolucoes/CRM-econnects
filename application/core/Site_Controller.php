@@ -12,5 +12,12 @@ class Site_Controller extends MY_Controller
 
         $this->lang->load('core');
 
+        /**
+         * Carrega o menu principal
+         */
+        $this->load->model('cms_menu_model', 'cms_menu');
+        $menu_principal = $this->cms_menu->build_menu('home');
+        $this->template->set('menu_principal', $menu_principal);
+
     }
 }

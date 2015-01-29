@@ -110,12 +110,12 @@ header nav.menu_secundario a.flag{ width:16px; height:14px; margin-right:4px; }
 header nav.menu_secundario a.flag.last{ margin-right:0; }
 /* --- menu principal */
 header nav#menu{ clear:right; margin-top:35px; width:630px; position:relative; }
-header nav#menu a{ font-size:20px; font-family: 'Fjalla One', sans-serif; vertical-align:middle; position:relative; z-index:20; border-bottom: 2px solid rgba(0, 0, 0, 0); }
+header nav#menu a{ text-transform: uppercase; font-size:20px; font-family: 'Fjalla One', sans-serif; vertical-align:middle; position:relative; z-index:20; border-bottom: 2px solid rgba(0, 0, 0, 0); }
 header nav#menu a:hover,
 header nav#menu a.active{ border-bottom:2px solid; }
-header nav#menu a#m_servicos{ margin-right:30px; }
+/*header nav#menu a#m_servicos{ margin-right:30px; }*/
 header nav#menu a#m_servicos .seta-submenu{  background-position:0 -114px; position:absolute; width:12px; height:6px; right:-25px;top:11px; }
-header nav#menu a#m_sac{ margin-right:30px; }
+/* header nav#menu a#m_sac{ margin-right:30px; } */
 header nav#menu a#m_sac .seta-submenu{  background-position:0 -114px; position:absolute; width:12px; height:6px; right:-25px;top:11px; }
 header nav#menu span{ font-size:12px; margin:0 10px 0 13px; }
 header nav#menu .social{ margin-top:-4px; }
@@ -434,7 +434,7 @@ footer .social a.last{ margin:0; }
 .img_elemento {float: left; margin-right: 10px; padding-top: 11px;}
 .quem_somos h1 {background: none !important; color: #00a5db !important;}
 .quem_somos h2 {color: #BDBEBF; font-weight: normal; padding-top: 17px;}
-.quem_somos p {font-family: 'trebuchet ms' !important; padding: 0px 40px !important; width: 921px !important; text-align: justify !important; line-height: 18px !important;}
+.quem_somos p {font-family: 'trebuchet ms' !important; padding: 0px 40px; width: 921px !important; text-align: justify !important; line-height: 18px !important;}
 .quem_somos p a{color: #1799D7;}
 #bottom_quem_somos {width: 1000px; margin: 0 auto;}
 .quem_somos_bottom {width: 310px; float: left; background: #FFFFFF; margin-right: 40px; padding-bottom: 10px; }
@@ -2928,4 +2928,70 @@ input[type="checkbox"] {vertical-align: middle;}
     height: 56px;
     margin-right: 35px;
     width: 448px;
+}
+
+/* Css inserido após solicitações do Carlão */
+
+h2.parceiros_estrategico {padding-left: 25px; position: relative; top: -15px;}
+h2.parceiros_estrategico span {padding-left: 8px;}
+
+h1.segurados_conceituadas {padding-left: 25px; position: relative; top: -6px;}
+p.p_parceiros_estrategico {padding: 0px 82px 0px 25px !important; position: relative; top: -6px;}
+
+div.slides_banners {position: absolute; margin-left: 475px; height: 229px; overflow: hidden;}
+
+.article_class {height: 485px;}
+.span_class {position: relative; top: 3px; left: 8px;}
+.text_01 {height: 280px;}
+.span_class02 {position: relative; top: -7px; left: 8px;}
+.p_quem_somos {padding-top: 16px !important; padding-bottom: 10px !important;}
+.quem_somos_bottom10 {padding-left: 45px;}
+.quem_somos_title {position: relative; top: -15px;}
+.quem_somos_content {position: relative; top: -40px;}
+.visao_title {position: relative; top: -15px;}
+.visao_span {position: relative; top: -40px;}
+.visao_p {height: 23px;}
+.valores_span {position: relative; top: -15px;}
+.valores_span2 {position: relative; top: -40px;}
+.valores_p {position: relative; top: -27px; height: 42px;}
+.nav_class01 {float: none ! important; width: 200px;}
+
+#menu li {
+	display: inline-block;
+	border-right: 1px solid;
+	padding: 0 15px;
+}
+
+#menu li:first-child {
+	padding-left: 0px;
+}
+
+#menu li.last_item {
+	border: none;
+	padding-right: 0px;
+}
+
+
+
+li.blog_item ul.submenu {
+	left: 365px !important;
+} 
+
+li.last_item ul.submenu {
+	left: 440px !important;
+}
+
+.submenu li {
+	display: block !important;
+	border: none;
+	border-right: none !important;
+	text-align: left;
+	padding: 0px 0 !important;
+}
+
+.seta-submenu {
+	float: right;
+	height: 22px;
+	width: 22px;
+	background-position: 4px -106px;
 }
