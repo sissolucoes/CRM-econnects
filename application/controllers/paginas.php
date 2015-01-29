@@ -5,7 +5,7 @@
  *
  * @property Pagina_Model $pagina
  */
-class Paginas extends Public_Controller
+class Paginas extends Site_Controller
 {
 
 
