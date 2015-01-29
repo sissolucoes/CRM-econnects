@@ -1,9 +1,9 @@
 <?php
-Class Sac_Categoria_Idioma_Model extends MY_Model
+Class Faq_Categoria_Idioma_Model extends MY_Model
 {
 
-    protected $_table = 'sac_categoria_idioma';
-    protected $primary_key = 'sac_categoria_idioma_id';
+    protected $_table = 'faq_categoria_idioma';
+    protected $primary_key = 'faq_categoria_idioma_id';
 
     protected $return_type = 'array';
     protected $soft_delete = FALSE;
@@ -40,13 +40,13 @@ Class Sac_Categoria_Idioma_Model extends MY_Model
         return $data;
     }
 
-    public function insert_by_sac_categoria($sac_categoria_id, $idiomasData){
+    public function insert_by_faq_categoria($faq_categoria_id, $idiomasData){
 
         $data = array();
 
         foreach($idiomasData as $idioma_id => $idioma_data){
             $data[]= array(
-                'sac_categoria_id' => $sac_categoria_id,
+                'faq_categoria_id' => $faq_categoria_id,
                 'idioma_id' => $idioma_id,
                 'titulo' => $idioma_data['titulo']
 
@@ -55,7 +55,7 @@ Class Sac_Categoria_Idioma_Model extends MY_Model
         }
         if($data){
 
-            $this->delete_by_sac_categoria($sac_categoria_id);
+            $this->delete_by_faq_categoria($faq_categoria_id);
             $this->insert_array($data);
             return true;
         }
@@ -64,7 +64,7 @@ Class Sac_Categoria_Idioma_Model extends MY_Model
 
     }
 
-    public function update_by_sac_categoria($sac_categoria_id, $idiomasData){
+    public function update_by_faq_categoria($faq_categoria_id, $idiomasData){
 
 
 
@@ -76,24 +76,24 @@ Class Sac_Categoria_Idioma_Model extends MY_Model
             );
 
 
-            $this->update_by( array('sac_categoria_id' => $sac_categoria_id, 'idioma_id' => $idioma_id ), $data);
+            $this->update_by( array('faq_categoria_id' => $faq_categoria_id, 'idioma_id' => $idioma_id ), $data);
 
         }
 
 
     }
 
-    function delete_by_sac_categoria($sac_categoria_id){
+    function delete_by_faq_categoria($faq_categoria_id){
 
-        return $this->delete_by( array('sac_categoria_id' => $sac_categoria_id));
+        return $this->delete_by( array('faq_categoria_id' => $faq_categoria_id));
 
     }
 
-    function get_by_sac_categoria($sac_categoria_id){
+    function get_by_faq_categoria($faq_categoria_id){
 
         $data = array();
 
-        $this->_database->where("sac_categoria_id", $sac_categoria_id);
+        $this->_database->where("faq_categoria_id", $faq_categoria_id);
         $rows = $this->get_all();
 
         if($rows){

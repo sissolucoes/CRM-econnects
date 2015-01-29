@@ -1,12 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Class Sac_Categorias
+ * Class Faq_Categorias
  *
- * @property Sac_Categoria_Model $current_model
+ * @property Faq_Categoria_Model $current_model
  *
  */
-class Sac_Categorias extends Admin_Controller {
+class Faq_Categorias extends Admin_Controller {
 
 
     public function __construct(){
@@ -16,11 +16,11 @@ class Sac_Categorias extends Admin_Controller {
 
 
 
-        $this->template->set('page_title', 'SAC - Categorias');
-        $this->template->set_breadcrumb('SAC - Categorias', base_url("$this->controller_uri/index"));
+        $this->template->set('page_title', 'FAQ - Categorias');
+        $this->template->set_breadcrumb('FAQ - Categorias', base_url("$this->controller_uri/index"));
 
-        $this->load->model('sac_categoria_model', 'current_model');
-        $this->load->model('sac_categoria_idioma_model', 'sac_categoria_idioma');
+        $this->load->model('faq_categoria_model', 'current_model');
+        $this->load->model('faq_categoria_idioma_model', 'faq_categoria_idioma');
         $this->load->model('idioma_model', 'idioma');
 
 
@@ -155,7 +155,7 @@ class Sac_Categorias extends Admin_Controller {
 
         $data['primary_key'] = $this->current_model->primary_key();
         $data['idiomas'] =$idomas;
-        $data['idiomas_rows'] = $this->sac_categoria_idioma->get_by_sac_categoria($id);
+        $data['idiomas_rows'] = $this->faq_categoria_idioma->get_by_faq_categoria($id);
 
         $data['new_record'] = '0';
         $data['form_action'] =  base_url("$this->controller_uri/edit/{$id}");

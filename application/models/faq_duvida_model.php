@@ -1,9 +1,9 @@
 <?php
-Class Sac_Duvida_Model extends MY_Model
+Class Faq_Duvida_Model extends MY_Model
 {
 
-    protected $_table = 'sac_duvida';
-    protected $primary_key = 'sac_duvida_id';
+    protected $_table = 'faq_duvida';
+    protected $primary_key = 'faq_duvida_id';
 
     protected $return_type = 'array';
     protected $soft_delete = TRUE;
@@ -37,7 +37,7 @@ Class Sac_Duvida_Model extends MY_Model
             'groups' => 'default'
         ),
         array(
-            'field' => 'sac_categoria_id',
+            'field' => 'faq_categoria_id',
             'label' => 'Categoria',
             'rules' => 'required',
             'groups' => 'default'
@@ -52,7 +52,7 @@ Class Sac_Duvida_Model extends MY_Model
             'nome' => $this->input->post('nome'),
             'slug' => app_parse_slug($this->input->post('slug')),
             'ativo' => $this->input->post('ativo'),
-            'sac_categoria_id' => $this->input->post('sac_categoria_id')
+            'faq_categoria_id' => $this->input->post('faq_categoria_id')
         );
 
 
@@ -63,45 +63,45 @@ Class Sac_Duvida_Model extends MY_Model
     public function insert_form(){
 
 
-        $this->load->model('sac_duvida_idioma_model', 'sac_duvida_idioma');
+        $this->load->model('faq_duvida_idioma_model', 'faq_duvida_idioma');
 
         $data = $this->get_form_data();
 
         $idiomas = $this->input->post('idiomas');
 
 
-        $sac_duvida_id =  $this->insert($data);
+        $faq_duvida_id =  $this->insert($data);
 
-        $this->sac_duvida_idioma->insert_by_sac_duvida($sac_duvida_id, $idiomas);
+        $this->faq_duvida_idioma->insert_by_faq_duvida($faq_duvida_id, $idiomas);
 
-        return $sac_duvida_id;
+        return $faq_duvida_id;
 
     }
 
     public function update_form(){
 
-        $this->load->model('sac_duvida_idioma_model', 'sac_duvida_idioma');
+        $this->load->model('faq_duvida_idioma_model', 'faq_duvida_idioma');
 
 
         $data = $this->get_form_data();
 
         $idiomas = $this->input->post('idiomas');
 
-        $sac_duvida_id = $this->input->post($this->primary_key);
+        $faq_duvida_id = $this->input->post($this->primary_key);
 
-        $this->update( $sac_duvida_id,  $data);
+        $this->update( $faq_duvida_id,  $data);
 
-        $this->sac_duvida_idioma->insert_by_sac_duvida($sac_duvida_id, $idiomas);
+        $this->faq_duvida_idioma->insert_by_faq_duvida($faq_duvida_id, $idiomas);
 
     }
 
 
-    function get_sac_duvida_by_slug($slug){
+    function get_faq_duvida_by_slug($slug){
 
         return $this->get_by('slug', $slug);
 
     }
-    function get_sac_duvida_by_id($id){
+    function get_faq_duvida_by_id($id){
 
         return $this->get($id);
 
@@ -116,7 +116,7 @@ Class Sac_Duvida_Model extends MY_Model
     public function with_idioma(){
 
 
-        $with_table = 'sac_duvida_idioma';
+        $with_table = 'faq_duvida_idioma';
         $prefix = '';
         $foreing_key = $this->primary_key;
         $join = 'inner';
@@ -159,7 +159,7 @@ Class Sac_Duvida_Model extends MY_Model
 
     public function get_filhos_of($pai){
 
-        $this->_database->where('sac_duvida_parent_id', $pai);
+        $this->_database->where('faq_duvida_parent_id', $pai);
         return $this->get_all();
 
     }

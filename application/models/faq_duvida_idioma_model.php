@@ -1,9 +1,9 @@
 <?php
-Class Sac_Duvida_Idioma_Model extends MY_Model
+Class Faq_Duvida_Idioma_Model extends MY_Model
 {
 
-    protected $_table = 'sac_duvida_idioma';
-    protected $primary_key = 'sac_duvida_idioma_id';
+    protected $_table = 'faq_duvida_idioma';
+    protected $primary_key = 'faq_duvida_idioma_id';
 
     protected $return_type = 'array';
     protected $soft_delete = FALSE;
@@ -40,13 +40,13 @@ Class Sac_Duvida_Idioma_Model extends MY_Model
         return $data;
     }
 
-    public function insert_by_sac_duvida($sac_duvida_id, $idiomasData){
+    public function insert_by_faq_duvida($faq_duvida_id, $idiomasData){
 
         $data = array();
 
         foreach($idiomasData as $idioma_id => $idioma_data){
             $data[]= array(
-                'sac_duvida_id' => $sac_duvida_id,
+                'faq_duvida_id' => $faq_duvida_id,
                 'idioma_id' => $idioma_id,
                 'pergunta' => $idioma_data['pergunta'],
                 'resposta' => $idioma_data['resposta']
@@ -56,7 +56,7 @@ Class Sac_Duvida_Idioma_Model extends MY_Model
         }
         if($data){
 
-            $this->delete_by_sac_duvida($sac_duvida_id);
+            $this->delete_by_faq_duvida($faq_duvida_id);
             $this->insert_array($data);
             return true;
         }
@@ -65,7 +65,7 @@ Class Sac_Duvida_Idioma_Model extends MY_Model
 
     }
 
-    public function update_by_sac_duvida($sac_duvida_id, $idiomasData){
+    public function update_by_faq_duvida($faq_duvida_id, $idiomasData){
 
 
 
@@ -77,24 +77,24 @@ Class Sac_Duvida_Idioma_Model extends MY_Model
             );
 
 
-            $this->update_by( array('sac_duvida_id' => $sac_duvida_id, 'idioma_id' => $idioma_id ), $data);
+            $this->update_by( array('faq_duvida_id' => $faq_duvida_id, 'idioma_id' => $idioma_id ), $data);
 
         }
 
 
     }
 
-    function delete_by_sac_duvida($sac_duvida_id){
+    function delete_by_faq_duvida($faq_duvida_id){
 
-        return $this->delete_by( array('sac_duvida_id' => $sac_duvida_id));
+        return $this->delete_by( array('faq_duvida_id' => $faq_duvida_id));
 
     }
 
-    function get_by_sac_duvida($sac_duvida_id){
+    function get_by_faq_duvida($faq_duvida_id){
 
         $data = array();
 
-        $this->_database->where("sac_duvida_id", $sac_duvida_id);
+        $this->_database->where("faq_duvida_id", $faq_duvida_id);
         $rows = $this->get_all();
 
         if($rows){

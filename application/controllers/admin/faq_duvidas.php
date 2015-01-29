@@ -1,12 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Class Sac_Duvidas
+ * Class Faq_Duvidas
  *
- * @property Sac_Duvida_Model $current_model
+ * @property Faq_Duvida_Model $current_model
  *
  */
-class Sac_Duvidas extends Admin_Controller {
+class Faq_Duvidas extends Admin_Controller {
 
 
     public function __construct(){
@@ -16,16 +16,16 @@ class Sac_Duvidas extends Admin_Controller {
 
 
 
-        $this->template->set('page_title', 'SAC - Dúvidas');
-        $this->template->set_breadcrumb('SAC', base_url("$this->controller_uri/index"));
+        $this->template->set('page_title', 'FAQ - Dúvidas');
+        $this->template->set_breadcrumb('FAQ', base_url("$this->controller_uri/index"));
 
-        $this->load->model('sac_duvida_model', 'current_model');
-        $this->load->model('sac_duvida_idioma_model', 'sac_duvida_idioma');
-        $this->load->model('sac_categoria_model', 'sac_categoria');
+        $this->load->model('faq_duvida_model', 'current_model');
+        $this->load->model('faq_duvida_idioma_model', 'faq_duvida_idioma');
+        $this->load->model('faq_categoria_model', 'faq_categoria');
         $this->load->model('idioma_model', 'idioma');
 
 
-        $this->template->set('categoria_parents', $this->sac_categoria->get_parents(0));
+        $this->template->set('categoria_parents', $this->faq_categoria->get_parents(0));
 
 
     }
@@ -153,7 +153,7 @@ class Sac_Duvidas extends Admin_Controller {
         $idomas =  $this->idioma->filter_ativos()->get_all();
         $data['primary_key'] = $this->current_model->primary_key();
         $data['idiomas'] =$idomas;
-        $data['idiomas_rows'] = $this->sac_duvida_idioma->get_by_sac_duvida($id);
+        $data['idiomas_rows'] = $this->faq_duvida_idioma->get_by_faq_duvida($id);
 
         $data['new_record'] = '0';
         $data['form_action'] =  base_url("$this->controller_uri/edit/{$id}");

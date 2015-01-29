@@ -1,9 +1,9 @@
 <?php
-Class Sac_Categoria_Model extends MY_Model
+Class Faq_Categoria_Model extends MY_Model
 {
 
-    protected $_table = 'sac_categoria';
-    protected $primary_key = 'sac_categoria_id';
+    protected $_table = 'faq_categoria';
+    protected $primary_key = 'faq_categoria_id';
 
     protected $return_type = 'array';
     protected $soft_delete = TRUE;
@@ -45,7 +45,7 @@ Class Sac_Categoria_Model extends MY_Model
             'nome' => $this->input->post('nome'),
             'slug' => app_parse_slug($this->input->post('slug')),
             'ativo' => $this->input->post('ativo'),
-            'sac_categoria_parent_id' => $this->input->post('sac_categoria_parent_id')
+            'faq_categoria_parent_id' => $this->input->post('faq_categoria_parent_id')
         );
 
 
@@ -56,45 +56,45 @@ Class Sac_Categoria_Model extends MY_Model
     public function insert_form(){
 
 
-        $this->load->model('sac_categoria_idioma_model', 'sac_categoria_idioma');
+        $this->load->model('faq_categoria_idioma_model', 'faq_categoria_idioma');
 
         $data = $this->get_form_data();
 
         $idiomas = $this->input->post('idiomas');
 
 
-        $sac_categoria_id =  $this->insert($data);
+        $faq_categoria_id =  $this->insert($data);
 
-        $this->sac_categoria_idioma->insert_by_sac_categoria($sac_categoria_id, $idiomas);
+        $this->faq_categoria_idioma->insert_by_faq_categoria($faq_categoria_id, $idiomas);
 
-        return $sac_categoria_id;
+        return $faq_categoria_id;
 
     }
 
     public function update_form(){
 
-        $this->load->model('sac_categoria_idioma_model', 'sac_categoria_idioma');
+        $this->load->model('faq_categoria_idioma_model', 'faq_categoria_idioma');
 
 
         $data = $this->get_form_data();
 
         $idiomas = $this->input->post('idiomas');
 
-        $sac_categoria_id = $this->input->post($this->primary_key);
+        $faq_categoria_id = $this->input->post($this->primary_key);
 
-        $this->update( $sac_categoria_id,  $data);
+        $this->update( $faq_categoria_id,  $data);
 
-        $this->sac_categoria_idioma->insert_by_sac_categoria($sac_categoria_id, $idiomas);
+        $this->faq_categoria_idioma->insert_by_faq_categoria($faq_categoria_id, $idiomas);
 
     }
 
 
-    function get_sac_categoria_by_slug($slug){
+    function get_faq_categoria_by_slug($slug){
 
         return $this->get_by('slug', $slug);
 
     }
-    function get_sac_categoria_by_id($id){
+    function get_faq_categoria_by_id($id){
 
         return $this->get($id);
 
@@ -109,7 +109,7 @@ Class Sac_Categoria_Model extends MY_Model
     public function with_idioma(){
 
 
-        $with_table = 'sac_categoria_idioma';
+        $with_table = 'faq_categoria_idioma';
         $prefix = '';
         $foreing_key = $this->primary_key;
         $join = 'inner';
@@ -152,7 +152,7 @@ Class Sac_Categoria_Model extends MY_Model
 
     public function get_filhos_of($pai){
 
-        $this->_database->where('sac_categoria_parent_id', $pai);
+        $this->_database->where('faq_categoria_parent_id', $pai);
         return $this->get_all();
 
     }

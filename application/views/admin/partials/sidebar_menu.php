@@ -82,10 +82,10 @@
 </li>
 
     <li class="hasSubmenu">
-        <a href="#menu-sac" data-toggle="collapse"><i class="fa fa-comments-o"></i><span>SAC</span></a>
-        <ul id="menu-sac" class="collapse">
-            <li><a href="<?php echo base_url('admin/sac_categorias/index');?>"><i class="fa fa-list"></i><span>Categorias</span></a></li>
-            <li><a href="<?php echo base_url('admin/sac_duvidas/index');?>"><i class="fa fa-question-circle"></i><span>Dúvidas</span></a></li>
+        <a href="#menu-faq" data-toggle="collapse"><i class="fa fa-comments-o"></i><span>FAQ</span></a>
+        <ul id="menu-faq" class="collapse">
+            <li><a href="<?php echo base_url('admin/faq_categorias/index');?>"><i class="fa fa-list"></i><span>Categorias</span></a></li>
+            <li><a href="<?php echo base_url('admin/faq_duvidas/index');?>"><i class="fa fa-question-circle"></i><span>Dúvidas</span></a></li>
 
         </ul>
     </li>

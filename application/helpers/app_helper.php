@@ -678,7 +678,7 @@ function app_display_options_pagina_parents($itens,  $level, $current, $skip){
 
 }
 
-function app_display_options_sac_categoria_parents($itens,  $level, $current, $skip){
+function app_display_options_faq_categoria_parents($itens,  $level, $current, $skip){
 
     if(!is_array($skip)){
         $skip = (array) $skip;
@@ -689,23 +689,23 @@ function app_display_options_sac_categoria_parents($itens,  $level, $current, $s
     foreach($itens as $item){
 
         $disabled = '';
-        if(in_array($item["sac_categoria_id"], $skip)){
+        if(in_array($item["faq_categoria_id"], $skip)){
             $disabled = 'disabled="disabled"';
         }
 
         $selected = '';
-        if($item["sac_categoria_id"] == $current){
+        if($item["faq_categoria_id"] == $current){
             $selected = 'selected="selected="';
         }
 
-        echo "<option value=\"{$item["sac_categoria_id"]}\" {$selected} {$disabled}>". str_repeat("-", $level) . " {$item["nome"]}" . "</option>\n";
+        echo "<option value=\"{$item["faq_categoria_id"]}\" {$selected} {$disabled}>". str_repeat("-", $level) . " {$item["nome"]}" . "</option>\n";
         if(isset($item["filhos"])){
-            app_display_options_sac_categoria_parents($item["filhos"], $level + 1, $current, $skip );
+            app_display_options_faq_categoria_parents($item["filhos"], $level + 1, $current, $skip );
         }
     }
 
 }
-function app_display_options_sac_categoria_duvidas_parents($itens,  $level, $current){
+function app_display_options_faq_categoria_duvidas_parents($itens,  $level, $current){
 
 
 
@@ -713,19 +713,19 @@ function app_display_options_sac_categoria_duvidas_parents($itens,  $level, $cur
     foreach($itens as $item){
 
         $disabled = '';
-        if($item["sac_categoria_parent_id"] == 0){
+        if($item["faq_categoria_parent_id"] == 0){
             $disabled = 'disabled="disabled"';
         }
 
         $selected = '';
-        if($item["sac_categoria_id"] == $current){
+        if($item["faq_categoria_id"] == $current){
             $selected = 'selected="selected="';
         }
 
 
-        echo "<option value=\"{$item["sac_categoria_id"]}\" {$selected} {$disabled}>". str_repeat("-", $level) . " {$item["nome"]}" . "</option>\n";
+        echo "<option value=\"{$item["faq_categoria_id"]}\" {$selected} {$disabled}>". str_repeat("-", $level) . " {$item["nome"]}" . "</option>\n";
         if(isset($item["filhos"])){
-            app_display_options_sac_categoria_duvidas_parents($item["filhos"], $level + 1, $current );
+            app_display_options_faq_categoria_duvidas_parents($item["filhos"], $level + 1, $current );
         }
     }
 

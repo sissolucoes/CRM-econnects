@@ -73,14 +73,13 @@
                                                         <div class="col-md-8"><input class="form-control" id="<?php echo $field_name;?>" name="<?php echo $field_name;?>" type="text" value="<?php echo isset($row[$field_name]) ? $row[$field_name] : set_value($field_name); ?>" /></div>
                                                     </div>
 
-                                                    <?php $field_name = 'sac_categoria_parent_id';?>
+                                                    <?php $field_name = 'faq_categoria_id';?>
                                                     <div class="form-group">
-                                                        <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Menu Pai</label>
-                                                        <div class="col-md-4">
-
+                                                        <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Categoria</label>
+                                                        <div class="col-md-5">
                                                             <select  class="form-control required" name="<?php echo $field_name;?>" id="<?php echo $field_name;?>">
-                                                                <option value="0">Raiz</option>
-                                                                <?php app_display_options_sac_categoria_parents($categoria_parents, 1, isset($row[$field_name]) ? $row[$field_name] : 0,  isset($row[$primary_key]) ? $row[$primary_key] : 0  ) ?>
+                                                                <option>-- Selecione --</option>
+                                                                <?php app_display_options_faq_categoria_duvidas_parents($categoria_parents, 1, isset($row[$field_name]) ? $row[$field_name] : 0  ) ?>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -114,6 +113,9 @@
                                                             <!-- Tabs Heading -->
                                                             <div class="widget-head">
                                                                 <ul>
+                                                                    <!--li class="active"><a class="glyphicons flag" href="#tabAll" data-toggle="tab"><i></i><span>Português</span></a></li>
+                                                                    <li><a class="glyphicons flag" href="#tabAccount" data-toggle="tab"><i></i><span>Inglês</span></a></li>
+                                                                    <li><a class="glyphicons flag" href="#tabPayments" data-toggle="tab"><i></i><span>Espanhol</span></a></li-->
 
                                                                     <?php $c = 0; foreach($idiomas as $idioma): ?>
                                                                         <?
@@ -141,23 +143,42 @@
                                                                         <?
                                                                          if( isset($idiomas_rows[$idioma['idioma_id']])){
                                                                              $idioma_row =    $idiomas_rows[$idioma['idioma_id']];
+
+
                                                                          }
 
                                                                         ?>
+
+
                                                                         <div id="idioma-<?php echo $idioma['codigo'];?>" class="tab-pane <? if($c == 0) echo 'active';?> widget-body-regular">
 
+
+
                                                                             <div class="row">
-                                                                                <?php $field_name = 'titulo';?>
+                                                                                <?php $field_name = 'pergunta';?>
                                                                                 <div class="form-group">
-                                                                                    <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Título</label>
+                                                                                    <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Pergunta</label>
                                                                                     <div class="col-md-8"><input class="form-control" id="<?php echo $field_name;?>" name="idiomas[<?php echo $idioma['idioma_id'];?>][<?php echo $field_name;?>]" type="text" value="<?php echo isset($idioma_row[$field_name]) ? $idioma_row[$field_name] : set_value($field_name); ?>" /></div>
                                                                                 </div>
-
+                                                                                <?php $field_name = 'resposta';?>
+                                                                                <div class="form-group">
+                                                                                    <label class="col-md-2 control-label" for="<?php echo $field_name . '_'. $idioma['codigo'] ;?>">Resposta</label>
+                                                                                    <div class="col-md-8">
+                                                                                        <textarea class="form-control" id="<?php echo $field_name . '_'. $idioma['codigo'] ;?>" name="idiomas[<?php echo $idioma['idioma_id'];?>][<?php echo $field_name;?>]" ><?php echo isset($idioma_row[$field_name]) ? $idioma_row[$field_name] : set_value($field_name); ?></textarea>
+                                                                                    </div>
+                                                                                </div>
 
                                                                             </div>
                                                                         </div>
+                                                                        <?php
+                                                                            if(isset($ckeditor_conteudo[$idioma['codigo']])){
+                                                                                echo display_ckeditor($ckeditor_conteudo[$idioma['codigo']]);
+                                                                            }
+
+                                                                        ?>
                                                                     <?php $c++; endforeach;?>
                                                                     <!-- End Tab content -->
+
                                                                 </div>
                                                             </div>
                                                         </div>
