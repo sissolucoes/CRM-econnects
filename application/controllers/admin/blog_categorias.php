@@ -3,7 +3,7 @@
 /**
  * Class Blog_Categorias
  *
- * @property Sac_Categoria_Model $current_model
+ * @property Blog_Categoria_Model $current_model
  *
  */
 class Blog_Categorias extends Admin_Controller {
