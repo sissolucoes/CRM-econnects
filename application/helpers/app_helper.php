@@ -738,3 +738,11 @@ function app_get_url_produto($produto){
     return $CI->produto->get_produto_url($produto);
 
 }
+
+function app_get_url_menu_item($menu){
+
+    $CI =& get_instance();
+    $CI->load->model('cms_menu_model', 'cms_menu');
+    return $CI->cms_menu->get_menu_item_url($menu);
+
+}

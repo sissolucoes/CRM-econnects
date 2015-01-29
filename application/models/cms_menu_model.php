@@ -63,4 +63,23 @@ Class Cms_Menu_Model extends MY_Model
         return $itens;
     }
 
+    public function get_menu_item_url($menu){
+
+
+
+
+        $url = '';
+
+        if($menu){
+
+
+            $url =  str_replace('{{base_url}}', site_url(''), $menu );
+
+
+        }
+
+        return $url;
+
+    }
+
 }
