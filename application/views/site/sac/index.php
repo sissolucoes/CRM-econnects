@@ -52,9 +52,9 @@
             <ul id="dropdown_pj" class="mCustomScrollbar _mCS_1" style="visibility: visible; display: none; height: auto !important;"><div style="position:relative; height:100%; overflow:hidden; max-width:100%;" id="mCSB_1" class="mCustomScrollBox mCS-light">
 
                     <div style="position:relative; top:0;" class="mCSB_container">
-                        <?php foreach($sac_categorias as $sac_categoria) :?>
+                        <?php foreach($faq_categorias as $faq_categoria) :?>
 
-                            <li><h2><a href="#dropdown" id="aparecer_acidente"><?php echo  $sac_categoria['titulo'];?></a></h2></li>
+                            <li><h2><a href="#dropdown" id="aparecer_acidente"><?php echo  $faq_categoria['titulo'];?></a></h2></li>
                         <?php endforeach;?>
                     </div>
             </ul>

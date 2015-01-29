@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <title>Corcovado</title>
+    <title><?php echo $title;?></title>
     <link rel="stylesheet" href="<?php echo app_assets_url('css/normalize.min.css', 'site')?>">
     <link rel="stylesheet" href="<?php echo app_assets_url('css/main.css', 'site')?>">
     <link rel="stylesheet" href="<?php echo app_assets_url('css/uniform.default.css', 'site')?>">
     <link href="<?php echo app_assets_url('css/ui-lightness/jquery-ui-1.10.3.custom.css', 'site')?>" rel="stylesheet">
+
+    <?php echo $css_for_layout;?>
+
     <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <script src="<?php echo app_assets_url('js/vendor/modernizr-2.6.2.min.js', 'site')?>"></script>
 </head>

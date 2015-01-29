@@ -1,12 +1,17 @@
 <section class="wrap clearfix dropdown-produtos" id="dropdown" style="margin-top: -20px; margin-bottom: -20px;">
-    <h1 class="h1_produtos">Produtos<span class="span_produtos">A Corcovado, por meio de seus parceiros criteriosamente selecionados, disponibiliza seguros e serviços, com as melhores coberturas e limites, para o seu perfil ou de sua empresa. Faça uma cotação ou entre em contato conosco.</span></h1>
+    <?php $header_page_produto = app_get_cms_bloco('header-page-produto');  ?>
+
+    <h1 class="h1_produtos"><?php echo $header_page_produto['titulo'];?><span class="span_produtos"><?php echo strip_tags($header_page_produto['conteudo']);?></span></h1>
 
 
 
     <?php $c = 1; foreach($produto_categorias as $produto_categoria) :?>
 
         <article class="produtos colunas <?php echo ( ($c % 2) == 0 ) ? 'right' : 'left' ?>">
-            <img src="<?php echo app_assets_url('images/ico-financeiros-produtos.png', 'site');?>">
+            <div class="icone_produto <?php echo $produto_categoria['css_class_icone'];?>_produto">
+
+            </div>
+
 
             <?php if(isset($produto_categoria['produtos_pf'])) :?>
                 <h1 id="<?php echo $produto_categoria['slug'];?>-pf" class="dropdown-button">Bom para você <span class="seta branca sprite right"></span></h1>

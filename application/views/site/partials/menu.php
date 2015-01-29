@@ -23,13 +23,13 @@
 
                     <?php $c = 1; $total = count($menu_principal); foreach($menu_principal as $menu_item) :?>
                         <li class="main_item item_<?php echo  $c;?> <?php if($c == $total) echo 'last_item'?>">
-                            <a href="<?php echo $menu_item['link'];?>" class="" ><?php echo $menu_item['titulo'];?> </a>
+                            <a href="<?php echo app_get_url_menu_item($menu_item['link']);?>" class="" ><?php echo $menu_item['titulo'];?> </a>
                             <?php if($menu_item['filhos']) :?>
                                 <div class="seta-submenu sprite"></div>
                                 <ul class="submenu">
 
                                    <?php foreach($menu_item['filhos'] as $menu_item_sub) :?>
-                                       <li><a href="<?php echo $menu_item_sub['link'];?>" class="" id="m_sinistro"><?php echo $menu_item_sub['nome'];?></a></li>
+                                       <li><a href="<?php echo app_get_url_menu_item($menu_item_sub['link']);?>" class="" target="<?php echo $menu_item_sub['target'];?>"><?php echo $menu_item_sub['nome'];?></a></li>
                                    <?php endforeach;?>
                                 </ul>
                             <?php  endif;?>
