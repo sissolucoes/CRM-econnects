@@ -15,6 +15,10 @@
 
     <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <script src="<?php echo app_assets_url('js/vendor/modernizr-2.6.2.min.js', 'site')?>"></script>
+
+    <script>
+        var SITE_URL = '<?php echo site_url();?>';
+    </script>
 </head>
 <body class="home <?php if(app_current_controller() == 'home') echo 'index_row';?>">
 <?php $this->load->view('site/partials/menu');?>
@@ -29,6 +33,8 @@
 <script src="<?php echo app_assets_url('js/jquery.placeholder.js', 'site');?>"></script>
 <script src="<?php echo app_assets_url('js/jquery.ui.min.js', 'site');?>"></script>
 <script src="<?php echo app_assets_url('js/main.js', 'site');?>"></script>
+
+<?php echo $js_for_layout;?>
 
 <script>
     /*var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

@@ -107,6 +107,15 @@
     </li>
 
     <li class="hasSubmenu">
+        <a href="#menu-relacionamento" data-toggle="collapse"><i class="fa fa-tags "></i><span>Relacionamento</span></a>
+        <ul id="menu-relacionamento" class="collapse">
+            <li><a href="<?php echo base_url('admin/relacionamento_usuarios/index');?>"><i class="fa fa-list"></i><span>Gerenciar Usuários</span></a></li>
+
+
+        </ul>
+    </li>
+
+    <li class="hasSubmenu">
         <a href="#menu-sistema" data-toggle="collapse"><i class="fa fa-gears"></i><span>Sistema</span></a>
         <ul id="menu-sistema" class="collapse">
             <li><a href="<?php echo base_url('admin/idiomas/index');?>"><i class="fa fa-language"></i><span>Idiomas</span></a></li>

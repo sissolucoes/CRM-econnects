@@ -255,34 +255,7 @@ $(document).ready(function(e) {
     
     });
     
-    $( ".esqueci-minha-senha" ).click( function(e){
-      $(".recuperar_login").attr('style', 'height: 335px !important;');
-        $(".pag_cadastre").hide();
-        $(".area_personalizada").hide();
-        $("#pag_esqueci_senha").show('slow');
-        return false;
-    
-    });    
-    
-    $( ".cadastre-se" ).click( function(e){
-        $(".recuperar_login").attr('style', 'height: 510px !important;');
-        $("#pag_esqueci_senha").hide();
-        $(".area_personalizada").hide();
-        $(".pag_cadastre").show('slow');
-        
-        return false;
-    
-    });   
 
-    $( ".area-personalizada" ).click( function(e){
-        $(".recuperar_login").attr('style', 'height: 465px !important;');
-        $("#pag_esqueci_senha").hide();
-        $(".pag_cadastre").hide();
-        $(".area_personalizada").show('slow');
-        
-        return false;
-    
-    });      
     
     
 
