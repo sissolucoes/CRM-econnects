@@ -67,6 +67,30 @@
                                                         <div class="col-md-8"><input class="form-control" id="<?php echo $config_key;?>" name="config[<?php echo $config_key;?>]" type="text" value="<?php echo isset($config[$config_key]) ? $config[$config_key] : set_value($config_key); ?>" /></div>
                                                     </div>
 
+                                                    <?php  $config_key = 'url_page_facebook'; ?>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label" for="<?php echo $config_key;?>">URL Facebook</label>
+                                                        <div class="col-md-8"><input class="form-control" id="<?php echo $config_key;?>" name="config[<?php echo $config_key;?>]" type="text" value="<?php echo isset($config[$config_key]) ? $config[$config_key] : set_value($config_key); ?>" /></div>
+                                                    </div>
+
+                                                    <?php  $config_key = 'url_page_linkedin'; ?>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label" for="<?php echo $config_key;?>">URL LinkedIn</label>
+                                                        <div class="col-md-8"><input class="form-control" id="<?php echo $config_key;?>" name="config[<?php echo $config_key;?>]" type="text" value="<?php echo isset($config[$config_key]) ? $config[$config_key] : set_value($config_key); ?>" /></div>
+                                                    </div>
+
+                                                    <?php  $config_key = 'url_page_google_plus'; ?>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label" for="<?php echo $config_key;?>">URL Google+</label>
+                                                        <div class="col-md-8"><input class="form-control" id="<?php echo $config_key;?>" name="config[<?php echo $config_key;?>]" type="text" value="<?php echo isset($config[$config_key]) ? $config[$config_key] : set_value($config_key); ?>" /></div>
+                                                    </div>
+
+                                                    <?php  $config_key = 'site_telefone'; ?>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label" for="<?php echo $config_key;?>">Telefone do Site</label>
+                                                        <div class="col-md-8"><input class="form-control" id="<?php echo $config_key;?>" name="config[<?php echo $config_key;?>]" type="text" value="<?php echo isset($config[$config_key]) ? $config[$config_key] : set_value($config_key); ?>" /></div>
+                                                    </div>
+
 
 
                                                 </div>

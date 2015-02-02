@@ -746,3 +746,11 @@ function app_get_url_menu_item($menu){
     return $CI->cms_menu->get_menu_item_url($menu);
 
 }
+
+function app_get_configuracao($key){
+
+    $CI =& get_instance();
+    $CI->load->model('configuracao_model', 'configuracao');
+
+    return $CI->configuracao->get_config_value_by_chave($key);
+}
