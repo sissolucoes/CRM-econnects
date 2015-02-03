@@ -74,7 +74,33 @@ class Produtos extends Site_Controller {
 
     public function bom_para_voce($slug){
 
-        var_dump($slug);
+        $this->load->model('produto_model', 'produto');
+        $this->load->model('produto_categoria_model', 'produto_categoria');
+
+
+        $produto = $this->produto
+            ->set_publicados()
+            ->with_idioma()
+            ->set_select()
+            ->filter_idioma($this->lang->lang())
+            ->set_by_tipo_pessoa('PF')
+            ->get_produto_by_slug($slug);
+
+        $modelo_pagina = $produto['modelo_pagina'];
+
+        $data['produto'] = $produto;
+
+
+        $categoria = $this->produto_categoria
+            ->set_publicados()
+            ->with_idioma()
+            ->set_select()
+            ->filter_idioma($this->lang->lang())
+            ->get_produto_categoria_by_id($produto['produto_categoria_id']);
+
+        $data['categoria'] = $categoria;
+
+        $this->template->load('site/layouts/base', "site/produtos/modelos/{$modelo_pagina}", $data );
     }
     public function bom_para_sua_empresa($slug){
 
