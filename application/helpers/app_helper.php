@@ -4,6 +4,11 @@ if ( ! function_exists('app_assets_url'))
     function app_assets_url($uri = '', $context = 'site'){
 
         $CI =& get_instance();
+
+        $lang = $CI->lang->lang();
+
+        $uri =  str_replace('{{lang}}', $lang, $uri );
+
         $assets_directory = $CI->config->item('app_assets_dir');
         $uri = $assets_directory . '/' .$context . '/' .$uri;
         return base_url($uri) ;
