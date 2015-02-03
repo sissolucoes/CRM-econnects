@@ -2,91 +2,47 @@
     <section id="mapa">
         <div class="wrap clearfix sitemap">
             <nav id="main_links" class="left">
-                <a href="#">PÁGINA INICIAL</a>
-                <a href="#">QUEM SOMOS</a>
-                <a href="#">PRODUTOS</a>
-                <a href="#">SINISTRO</a>
-                <a href="#">VISTORIA PRÉVIA</a>
-                <a href="#">CONTATO</a>
-                <a href="#">SAC</a>
+                <?php if($menu_footer) : ?>
+                    <?php foreach( $menu_footer as  $menu_footer_item) :?>
+                        <a href="<?php echo app_get_url_menu_item($menu_footer_item['link']);?>" class="" target="<?php echo $menu_footer_item['target'];?>"><?php echo $menu_footer_item['nome'];?></a>
+                    <?php endforeach?>
+                <?php endif;?>
             </nav>
 
             <article id="links_voce" class="clearfix left">
-                <h1>BOM PARA VOCÊ</h1>
-                <nav>
-                    <h2>BENEFÍCIOS</h2>
-                    <a href="#">Vida</a>
-                    <a href="#">Odontológico</a>
-                    <a href="#">Previdência</a>
-                    <a href="#">Acidentes Pessoais</a>
-                    <a href="#">Viagem</a>
-                </nav>
+                <h1><?=lang('core.bom_para_vc');?></h1>
 
-                <nav>
-                    <h2>RESPONSABILIDADE</h2>
-                    <a href="#">Responsabilidade Civil Familiar</a>
-                </nav>
+                <?php foreach($produto_categorias_pf as $produto_categoria_pf): ?>
+                    <nav>
+                        <h2><?php echo $produto_categoria_pf['titulo']?></h2>
+                        <?php if($produto_categoria_pf['produtos']) :?>
 
-                <nav>
-                    <h2>RISCOS FINANCEIROS</h2>
-                    <a href="#">Fiança Locatícia</a>
-                </nav>
+                                <?php foreach($produto_categoria_pf['produtos'] as $produto_pf) :?>
+                                  <a href="<?php echo app_get_url_produto($produto_pf);?>"><?php echo $produto_pf['titulo'];?></a>
+                                <?php endforeach;?>
 
-                <nav class="clear_left">
-                    <h2>PATRIMONIAIS</h2>
-                    <a href="#">Automóvel</a>
-                    <a href="#">Residencial</a>
-                    <a href="#">Carta Verde</a>
-                    <a href="#">Notebok, Celular</a>
-                </nav>
+                        <?php endif?>
 
-                <nav>
-                    <h2>CONSÓRCIO</h2>
-                    <a href="#">Consórcio</a>
-                </nav>
+                    </nav>
+                <?php endforeach;?>
+
             </article>
 
             <article id="links_empresa" class="clearfix right">
-                <h1>BOM PARA SUA EMPRESA</h1>
-                <nav>
-                    <h2>PATRIMONIAL</h2>
-                    <a href="#">Empresarial</a>
-                    <a href="#">Frota</a>
-                    <a href="#">Carta Verde</a>
-                    <a href="#">Transporte</a>
-                    <a href="#">Riscos de Engenharia</a>
-                    <a href="#">Lucros Cessantes</a>
-                </nav>
+                <h1><?= lang('core.bom_para_empresa');?></h1>
+                <?php foreach($produto_categorias_pj as $produto_categorias_pj): ?>
+                    <nav>
+                        <h2><?php echo $produto_categorias_pj['titulo']?></h2>
+                        <?php if($produto_categorias_pj['produtos']) :?>
 
-                <nav>
-                    <h2>BENEFÍCIOS</h2>
-                    <a href="#">Saúde</a>
-                    <a href="#">Vida</a>
-                    <a href="#">Odontológico</a>
-                    <a href="#">Previdência</a>
-                    <a href="#">Acidentes Pessoais</a>
-                    <a href="#">Viagem</a>
-                    <a href="#">Prestamista</a>
-                </nav>
+                            <?php foreach($produto_categorias_pj['produtos'] as $produto_pj) :?>
+                                <a href="<?php echo app_get_url_produto($produto_pj);?>"><?php echo $produto_pj['titulo'];?></a>
+                            <?php endforeach;?>
 
-                <nav>
-                    <h2>RISCOS FINANCEIROS</h2>
-                    <a href="#">Fiança Locatícia</a>
-                    <a href="#">Seguro Garantia</a>
-                    <a href="#">D&amp;C (RC contra Executivos)</a>
-                    <a href="#">E&amp;O (RC Erros e Omissões)</a>
-                    <a href="#">Fraude Corporativa</a>
-                    <a href="#">Seguro de Crédito</a>
-                    <a href="#">Garantia Estendida</a>
-                    <a href="#">Capitalização</a>
-                </nav>
+                        <?php endif?>
 
-                <nav class="nav_class01">
-                    <h2>RESPONSABILIDADE CIVIL</h2>
-                    <a href="#">Estabelecimentos</a>
-                    <a href="#">Profissional</a>
-                    <a href="#">Resultante Atividade Excercida</a>
-                </nav>
+                    </nav>
+                <?php endforeach;?>
 
             </article>
         </div>
@@ -104,16 +60,16 @@
             </article>
 
             <nav class="social right clearfix">
-                <a href="#" class="ico_facebook sprite"></a>
+                <a href="<?php echo app_get_configuracao('url_page_facebook');?>" class="ico_facebook sprite"></a>
                 <!--<a href="#" class="ico_twitter sprite"></a>-->
-                <a href="#" class="ico_linkedin sprite"></a>
-                <a href="#" class="ico_google sprite"></a>
+                <a href="<?php echo app_get_configuracao('url_page_linkedin');?>" class="ico_linkedin sprite"></a>
+                <a href="<?php echo app_get_configuracao('url_page_google_plus');?>" class="ico_google sprite"></a>
             </nav>
 
             <nav class="menu_secundario right clearfix">
-                <a href="#" class="sac tootlip" title="Página de SAC">SAC</a>
-                <a href="#" class="ico_chat sac sprite tootlip" title="Chat"></a>
-                <a href="#" class="ico_email sac sprite tootlip" title="E-mail"></a>
+                <a href="<?php echo site_url('sac');?>" class="sac tootlip" title="Página de SAC">SAC</a>
+                <a href="<?php echo site_url('sac');?>" class="ico_chat sac sprite tootlip" title="Chat"></a>
+                <a href="<?php echo site_url('contato');?>" class="ico_email sac sprite tootlip" title="E-mail"></a>
                 <a href="#" class="ico_tel sac sprite tootlip" title="Telefone"></a>
 
                 <p>0800.121520</p>
