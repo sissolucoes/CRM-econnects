@@ -45,22 +45,22 @@
         <article class="coluna left">
             <h1 class="h1style">TIRE SUAS DÚVIDAS SOBRE:</h1>
         </article>
-        <article class="coluna right" style="margin-top: 12px;">
+        <article class="coluna left" style="margin-top: 12px;">
             <h1 id="but_pj">
                 Selecione... <span class="seta branca sprite right"></span>
             </h1>
             <ul id="dropdown_pj" class="mCustomScrollbar _mCS_1" style="visibility: visible; display: none; height: auto !important;"><div style="position:relative; height:100%; overflow:hidden; max-width:100%;" id="mCSB_1" class="mCustomScrollBox mCS-light">
 
                     <div style="position:relative; top:0;" class="mCSB_container">
-                        <?php foreach($faq_categorias as $faq_categoria) :?>
+                        <?php foreach($faq_categorias as $faq_categoria) : ?>
 
-                            <li><h2><a href="#dropdown" id="aparecer_acidente"><?php echo  $faq_categoria['titulo'];?></a></h2></li>
+                            <li><h2><a href="#<?php echo  $faq_categoria['faq_categoria_id'];?>" id="aparecer_acidente" class="load_faq_categoria"><?php echo  $faq_categoria['titulo'];?></a></h2></li>
                         <?php endforeach;?>
                     </div>
             </ul>
         </article>
     </section>
 </div>
-<section class="wrap">
-    CONTAINER RESULTADOS
+<section class="wrap" id="container_faq_result">
+
 </section>

@@ -122,9 +122,8 @@ Class Faq_Duvida_Model extends MY_Model
         $join = 'inner';
 
         $fields = array(
-            'titulo'
-
-
+            'pergunta',
+            'resposta'
         );
 
         foreach($fields as $field){
@@ -179,6 +178,13 @@ Class Faq_Duvida_Model extends MY_Model
         }
 
         return $data;
+
+    }
+
+    public function get_all_by_categoria_id($categoria_id){
+
+        $this->_database->where('faq_categoria_id', $categoria_id);
+        return $this->get_all();
 
     }
 

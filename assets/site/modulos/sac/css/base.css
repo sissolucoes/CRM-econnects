@@ -1,0 +1,15 @@
+.faq_header {
+
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    width: 480px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.faq_header h1 {
+    background: none repeat scroll 0 0 transparent !important;
+    color: #1799D6 !important;
+    font-size: 23px !important;
+    font-weight: lighter !important;
+    padding: 10px 0 10px 25px !important;
+
+}

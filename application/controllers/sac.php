@@ -18,6 +18,10 @@ class Sac extends Site_Controller {
             ->get_filhos_of(0);
 
 
+        $this->template->css(app_assets_url('modulos/sac/css/base.css',  'site'));
+        $this->template->js(app_assets_url('modulos/sac/js/base.js',  'site'));
+
+
         $this->template->load('site/layouts/base', "site/sac/index", $data );
 
     }

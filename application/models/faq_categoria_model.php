@@ -134,6 +134,8 @@ Class Faq_Categoria_Model extends MY_Model
 
     }
 
+
+
     public function filter_idioma($idioma){
 
         if (is_numeric($idioma)) {

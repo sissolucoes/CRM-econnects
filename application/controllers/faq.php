@@ -22,9 +22,42 @@ class Faq extends Site_Controller {
 
     }
 
-    public function buscar_por_categoria(){
+    public function buscar_por_categoria($categoria_id){
 
-        echo 'buscar_por_categoria';
+      $this->load->model('faq_categoria_model', 'faq_categoria');
+      $this->load->model('faq_duvida_model', 'faq_duvida');
+
+      $data = array();
+
+      $categoria = $this->faq_categoria
+          ->set_ativos()
+          ->with_idioma()
+          ->set_select()
+          ->filter_idioma($this->lang->lang())
+          ->get($categoria_id);
+
+       $data['faq_categoria']= $categoria;
+
+      $subCategorias =   $this->faq_categoria
+            ->set_ativos()
+            ->with_idioma()
+            ->set_select()
+            ->filter_idioma($this->lang->lang())
+            ->get_filhos_of($categoria_id);
+
+       foreach($subCategorias as $index => $subCategoria){
+
+           $subCategorias[$index]['duvidas'] = $this->faq_duvida
+               ->with_idioma()
+               ->set_select()
+               ->filter_idioma($this->lang->lang())
+               ->get_all_by_categoria_id($subCategoria['faq_categoria_id']);
+
+       }
+
+        $data['faq_sub_categorias'] = $subCategorias;
+
+        $this->load->view('site/faq/row_item', $data);
     }
 
     public function buscar_por_texto(){
