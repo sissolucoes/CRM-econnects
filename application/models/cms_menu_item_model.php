@@ -186,7 +186,11 @@ Class Cms_Menu_Item_Model extends MY_Model
         foreach($pais as $pai){
 
            $data[$pai['cms_menu_item_id']] = $pai;
-           $data[$pai['cms_menu_item_id']]['filhos'] = $this->get_menu_item_parents($pai['cms_menu_item_id'], $cms_menu_id);
+           $data[$pai['cms_menu_item_id']]['filhos'] = $this->with_idioma()
+               ->set_ativos()
+               ->filter_idioma($this->lang->lang())
+               ->set_default_order()
+               ->get_menu_item_parents($pai['cms_menu_item_id'], $cms_menu_id);
 
         }
 

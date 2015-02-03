@@ -55,6 +55,7 @@ Class Cms_Menu_Model extends MY_Model
 
         $itens = $this->cms_menu_item
             ->with_idioma()
+            ->set_ativos()
             ->filter_idioma($this->lang->lang())
             ->set_default_order()
             ->get_menu_item_parents(0, $menu[$this->primary_key] );
