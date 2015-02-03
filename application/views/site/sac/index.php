@@ -6,15 +6,15 @@
                 <tr>
                     <th><img src="<?php echo app_assets_url('images/img_sac-0800.png');?>"></th>
                     <th>
-                        <img src="<?php echo app_assets_url('images/img_sac-email.png');?>" border="0" style="height: 58px; width: 298px;">
+                        <img src="<?php echo app_assets_url('images/{{lang}}/img_sac-email.png');?>" border="0" style="height: 58px; width: 298px;">
                         <a href="solicitacao.php">
-                            <img src="<?php echo app_assets_url('images/img_sac-email-solicitacao.png');?>" tipo="solicitacao" border="0" class="tootlip solicitacao fig_solicitacao" title="Abrir">
+                            <img src="<?php echo app_assets_url('images/{{lang}}/img_sac-email-solicitacao.png');?>" tipo="solicitacao" border="0" class="tootlip solicitacao fig_solicitacao" title="Abrir">
                         </a>
                         <a href="ocorrencia.php">
-                            <img src="<?php echo app_assets_url('images/img_sac-email-ocorrencia.png');?>"  tipo="ocorrencia" border="0" class="tootlip ocorrencia fig_ocorrencia" title="Abrir">
+                            <img src="<?php echo app_assets_url('images/{{lang}}/img_sac-email-ocorrencia.png');?>"  tipo="ocorrencia" border="0" class="tootlip ocorrencia fig_ocorrencia" title="Abrir">
                         </a>
                     </th>
-                    <th><img src="<?php echo app_assets_url('images/img_sac-chat.png');?>"></th>
+                    <th><img src="<?php echo app_assets_url('images/{{lang}}/img_sac-chat.png');?>"></th>
                 </tr>
                 <tr>
                     <!--<td>A nível organizacional, a constante divulgação das informações facilita a criação dos métodos utilizados na avaliação de resultados.</td>-->
