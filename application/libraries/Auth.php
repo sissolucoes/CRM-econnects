@@ -60,13 +60,13 @@ class Auth {
 
     }
 
-    public function is_site(){
+    public function is_relacionamento(){
 
 
 
         if($this->is_logged()){
 
-            return (bool) $this->CI->session->userdata('anunciante_id');
+            return (bool) $this->CI->session->userdata('relacionamento_usuario_id');
 
         }else {
 
@@ -82,9 +82,9 @@ class Auth {
 
             return $this->CI->session->userdata('usuario_id');
 
-        }elseif($this->is_site()){
+        }elseif($this->is_relacionamento()){
 
-            return $this->CI->session->userdata('anunciante_id');
+            return $this->CI->session->userdata('relacionamento_usuario_id');
 
         }else {
 
