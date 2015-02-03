@@ -29,24 +29,24 @@
         <div style="width: 442px; margin-left: 30px; margin-top: -15px;">
 
             <div class="itens_login">
-                <img src="images/aba_login.png">
+                <img src="<?php echo app_assets_url('images/aba_login.png', 'site')?>">
                 <div class="vc_login">
-                    <a href="./relacionamento/relacionamento_home.php"><h2>MARCELLO DIORIO</h2>
+                    <a href="<?php echo site_url('relacionamento/home')?>"><h2>MARCELLO DIORIO</h2>
                         <span class="cnpj">CPF: 123.456.789 - 00</span></a>
                 </div>
             </div>
             <div class="itens_login">
-                <img src="images/aba_login_empresa.png">
+                <img src="<?php echo app_assets_url('images/aba_login_empresa.png', 'site')?>">
                 <div class="segurados_login">
-                    <a href="./relacionamento/relacionamento_home.php"><h2>CORCOVADO CORRETORA DE SEGUROS E AGENCIA DE VIAGENS LTDA</h2>
+                    <a href="<?php echo site_url('relacionamento/home')?>"><h2>CORCOVADO CORRETORA DE SEGUROS E AGENCIA DE VIAGENS LTDA</h2>
                         <span class="cnpj">CNPJ: 08.303.528/0001-41</span></a>
                 </div>
                 <div class="segurados_login">
-                    <a href="./relacionamento/relacionamento_home.php"><h2>CORCOVADO CORRETORA DE SEGUROS E AGENCIA DE VIAGENS LTDA</h2>
+                    <a href="<?php echo site_url('relacionamento/home')?>"><h2>CORCOVADO CORRETORA DE SEGUROS E AGENCIA DE VIAGENS LTDA</h2>
                         <span class="cnpj">CNPJ: 08.303.528/0001-41</span></a>
                 </div>
                 <div class="segurados_login">
-                    <a href="./relacionamento/relacionamento_home.php"><h2>CORCOVADO CORRETORA DE SEGUROS E AGENCIA DE VIAGENS LTDA</h2>
+                    <a href="<?php echo site_url('relacionamento/home')?>"><h2>CORCOVADO CORRETORA DE SEGUROS E AGENCIA DE VIAGENS LTDA</h2>
                         <span class="cnpj">CNPJ: 08.303.528/0001-41</span></a>
                 </div>
             </div>

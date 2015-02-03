@@ -73,6 +73,12 @@ Class Relacionamento_Perfil_Model extends MY_Model
         return $data;
     }
 
+    public function set_ativo(){
+
+        $this->_database->where('ativo', 1);
+        return $this;
+
+    }
 
     public function filter_by_usuario($usuario_id){
 

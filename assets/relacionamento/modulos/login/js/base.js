@@ -4,7 +4,7 @@ $(document).ready(function() {
 
            var data = $( this ).serialize();
 
-           var url = SITE_URL + 'relacionamento/login/proccess'
+           var url = SITE_URL + '/relacionamento/login/proccess'
 
            $.post(url, data, function(response) {
 
@@ -12,9 +12,11 @@ $(document).ready(function() {
 
                if(response.success){
 
-                   //@todo exibi perfis
+                   $(".area_personalizada").show('slow');
                }
            });
+
+           event.preventDefault();
 
        });
 
