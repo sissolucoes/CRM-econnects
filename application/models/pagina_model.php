@@ -117,7 +117,8 @@ Class Pagina_Model extends MY_Model
             'conteudo',
             'meta_description',
             'meta_keywords',
-            'idioma_id'
+            'idioma_id',
+            'subtitulo'
 
         );
 

@@ -18,18 +18,7 @@ Class Pagina_Idioma_Model extends MY_Model
 
 
     public $validate = array(
-        array(
-            'field' => 'nome',
-            'label' => 'Nome',
-            'rules' => 'required',
-            'groups' => 'default'
-        ),
-        array(
-            'field' => 'slug',
-            'label' => 'Slug',
-            'rules' => 'required',
-            'groups' => 'default'
-        )
+
 
     );
 
@@ -54,7 +43,8 @@ Class Pagina_Idioma_Model extends MY_Model
                 'titulo' => $idioma_data['titulo'],
                 'conteudo' => $idioma_data['conteudo'],
                 'meta_description' => $idioma_data['meta_description'],
-                'meta_keywords' => $idioma_data['meta_keywords']
+                'meta_keywords' => $idioma_data['meta_keywords'],
+                'subtitulo' => $idioma_data['subtitulo']
             );
 
         }
@@ -77,7 +67,8 @@ Class Pagina_Idioma_Model extends MY_Model
             $data = array(
 
                 'titulo' => $idioma_data['titulo'],
-                'conteudo' => $idioma_data['conteudo']
+                'conteudo' => $idioma_data['conteudo'],
+                'subtitulo' => $idioma_data['subtitulo']
             );
 
 
