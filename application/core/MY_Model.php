@@ -158,7 +158,7 @@ class MY_Model extends CI_Model
      */
     public function get($primary_value)
     {
-        return $this->get_by($this->primary_key, $primary_value);
+        return $this->get_by("{$this->_table}.{$this->primary_key}", $primary_value);
     }
 
     /**
