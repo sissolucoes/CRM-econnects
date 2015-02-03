@@ -2995,3 +2995,38 @@ li.last_item ul.submenu {
 	width: 22px;
 	background-position: 4px -106px;
 }
+
+/** Pagina **/
+
+.page {
+
+    width: 1000px;
+    margin: 0 auto;
+
+}
+
+.page h1 {
+
+    background: url("../images/bg_quem-somos.jpg") repeat scroll -110% center transparent;
+    color: #FFFFFF;
+    font-weight: lighter;
+    padding: 20px;
+
+}
+
+.page .subtitulo {
+    float: right;
+    font-family: 'trebuchet MS';
+    font-size: 13px;
+    margin: -7px -3px;
+    text-transform: none;
+    width: 790px;
+}
+
+.page .page_content {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding-bottom: 16px;
+    padding-right: 45px;
+    min-height: 145px;
+}
+
