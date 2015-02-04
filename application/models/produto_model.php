@@ -79,6 +79,7 @@ Class Produto_Model extends MY_Model
 
         $produto_id =  $this->insert($data);
 
+        $this->do_upload_imagem($produto_id);
         $this->produto_idioma->insert_by_produto($produto_id, $idiomas);
 
         return $produto_id;
@@ -98,6 +99,7 @@ Class Produto_Model extends MY_Model
 
         $this->update( $produto_id,  $data);
 
+        $this->do_upload_imagem($produto_id);
         $this->produto_idioma->insert_by_produto($produto_id, $idiomas);
 
     }
@@ -283,6 +285,47 @@ Class Produto_Model extends MY_Model
             'frame-only' => 'Apenas Frame',
             'content-only' => 'Apenas Conteúdo'
         );
+    }
+
+
+    public function do_upload_imagem($produto_id){
+
+
+            $upload_field = 'imagem';
+
+            if(isset($_FILES[$upload_field])){
+
+                $config['upload_path'] = PUBLIC_UPLOAD_PATH . "produtos/{$produto_id}";
+
+                if(!file_exists($config['upload_path'])){
+                    mkdir($config['upload_path'], 0777, true);
+                }
+
+                $config['allowed_types'] = 'gif|jpg|png';
+                $config['encrypt_name'] = TRUE;
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload($upload_field))
+                {
+                    throw new Exception($this->upload->display_errors('', ''));
+                }
+                else
+                {
+                    $upload_data = $this->upload->data();
+
+
+                    $data = array(
+                        'imagem' => $upload_data['file_name']
+                    );
+
+                    $this->update( $produto_id,  $data,  TRUE);
+
+
+                }
+
+            }
+
+
     }
 
 

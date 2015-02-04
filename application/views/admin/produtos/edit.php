@@ -34,7 +34,7 @@
                             <div class="col-app">
 
                                 <!-- Form -->
-                                <form class="form-horizontal margin-none" id="validateSubmitForm" method="post" autocomplete="off">
+                                <form class="form-horizontal margin-none" id="validateSubmitForm" method="post" autocomplete="off" enctype="multipart/form-data">
                                     <input type="hidden" name="<?php echo $primary_key ?>" value="<?php if (isset($row[$primary_key])) echo $row[$primary_key]; ?>"/>
                                     <input type="hidden" name="new_record" value="<?php echo $new_record; ?>"/>
                                     <!-- Widget -->
@@ -116,6 +116,21 @@
                                                                     <option value="<?php echo $item[$field_name]?>" <?php  if(isset($row[$field_name]) && $row[$field_name] == $item[$field_name]) echo 'selected="selected"'; ?>><?php echo $item['nome'];?></option>
                                                                 <?php endforeach;?>
                                                             </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <?php $field_name = 'imagem';?>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Imagem</label>
+                                                        <div class="col-md-8">
+
+                                                            <input type="file" id="imagem" name="imagem" />
+
+                                                            <?php if(isset($row['imagem']) && $row['imagem'] != ''): ?>
+
+                                                                <br/>
+                                                                <p class="help-block"> <img class="img-thumbnail" src="<?php echo app_assets_url("produtos/{$row[$primary_key]}/{$row['imagem']}" , 'uploads')?>"></p>
+                                                            <?php endif;?>
                                                         </div>
                                                     </div>
 

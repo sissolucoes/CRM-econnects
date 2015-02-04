@@ -1,6 +1,6 @@
 <section id="produtos">
     <div class="left">
-        <img src="<?php echo app_assets_url('images/torre_produto_online.jpg', 'site');?>">
+        <img src="<?php echo app_assets_url("produtos/{$produto['produto_id']}/{$produto['imagem']}" , 'uploads')?>">
     </div>
     <div id="produtos_offline">
         <div class="offline wrap clearfix" id="pf">
