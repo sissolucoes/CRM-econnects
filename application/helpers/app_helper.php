@@ -599,12 +599,14 @@ function app_item_ckeditor($id){
 
         'id'   => $id,
         'path' => app_assets_url("ckeditor/", 'common'),
+
         'config' => array
         (
             'toolbar' => "Full",
             'baseHref' => base_url(),
             'width'   => "100%",
             'height'  => "400px",
+            'extraPlugins' => 'colordialog,colorbutton',
             'filebrowserBrowseUrl'      => app_assets_url("ckfinder/ckfinder.html", 'common'),
             'filebrowserImageBrowseUrl' => app_assets_url("ckfinder/ckfinder.html?Type=Images", 'common'),
             'filebrowserFlashBrowseUrl' => app_assets_url("ckfinder/ckfinder.html?Type=Flash", 'common'),
