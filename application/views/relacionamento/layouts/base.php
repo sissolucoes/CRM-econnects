@@ -81,9 +81,9 @@
         <div class="slides">
             <div class="slider-wrapper">
                 <div id="slider" class="nivoSlider">
-                    <img src="../images/slides/seguro-viagem.jpg" title="#description_1" alt="" />
-                    <img src="../images/slides/compra-online.jpg" title="#description_2" alt="" />
-                    <img src="../images/slides/metodologia-relacionamento.jpg" title="#description_3" alt="" />
+                    <img src="<?php echo app_assets_url('images/slides/seguro-viagem.jpg');?>" title="#description_1" alt="" />
+                    <img src="<?php echo app_assets_url('images/slides/compra-online.jpg');?>" title="#description_2" alt="" />
+                    <img src="<?php echo app_assets_url('images/slides/metodologia-relacionamento.jpg');?>" title="#description_3" alt="" />
                 </div>
             </div>
         </div>
