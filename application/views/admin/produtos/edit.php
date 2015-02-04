@@ -122,7 +122,7 @@
                                                     <?php $field_name = 'imagem';?>
                                                     <div class="form-group">
                                                         <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Imagem</label>
-                                                        <div class="col-md-8">
+                                                        <div class="col-md-6">
 
                                                             <input type="file" id="imagem" name="imagem" />
 
