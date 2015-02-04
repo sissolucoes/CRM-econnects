@@ -81,7 +81,6 @@
                                                         <div class="col-md-8"><input class="form-control" id="<?php echo $field_name;?>" name="<?php echo $field_name;?>" type="text" value="<?php echo isset($row[$field_name]) ? $row[$field_name] : set_value($field_name); ?>" />
                                                             <p class="help-block"><strong>Placeholder:</strong></p>
                                                             <p class="help-block">Adiciona a url do site: <strong>{{base_url}}</strong></p>
-                                                            <p class="help-block">Adiciona o codigo do idioma: <strong>{{idioma}}</strong></p>
                                                         </div>
                                                     </div>
 
