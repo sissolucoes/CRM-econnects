@@ -5,7 +5,7 @@ class Contato extends Site_Controller {
 
     public function index()
     {
-
+        $this->lang->load('contato');
         $this->template->set('title', 'Contato');
         $data = array();
 
