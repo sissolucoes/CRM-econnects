@@ -307,7 +307,7 @@ Class Produto_Model extends MY_Model
 
                 if ( ! $this->upload->do_upload($upload_field))
                 {
-                    throw new Exception($this->upload->display_errors('', ''));
+                    //throw new Exception($this->upload->display_errors('', ''));
                 }
                 else
                 {

@@ -121,7 +121,7 @@ class Produtos extends Admin_Controller {
         $data['produto_categorias'] = $this->produto_categoria->get_all();
 
 
-        $data['modelos_paginas'] = $this->produto->get_modelos_paginas();
+        $data['modelos_paginas'] = $this->current_model->get_modelos_paginas();
 
 
 
