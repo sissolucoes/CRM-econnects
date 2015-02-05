@@ -7,17 +7,24 @@
                     <th><img src="<?php echo app_assets_url('images/img_sac-0800.png');?>"></th>
                     <th>
                         <img src="<?php echo app_assets_url('images/{{lang}}/img_sac-email.png');?>" border="0" style="height: 58px; width: 298px;">
-                        <a href="solicitacao.php">
-                            <img src="<?php echo app_assets_url('images/{{lang}}/img_sac-email-solicitacao.png');?>" tipo="solicitacao" border="0" class="tootlip solicitacao fig_solicitacao" title="Abrir">
+                        <a href="<?php echo app_assets_url('solicitacao');?>">
+                            <img src="<?php echo app_assets_url('images/{{lang}}/img_sac-email-solicitacao.png');?>"
+                                 data-over="<?php echo app_assets_url('images/{{lang}}/img_sac-email-solicitacao-cinza.png');?>"
+                                 data-out="<?php echo app_assets_url('images/{{lang}}/img_sac-email-solicitacao.png');?>"
+                                 border="0" class="tootlip solicitacao fig_solicitacao" title="<?=lang('core.abrir');?>">
                         </a>
-                        <a href="ocorrencia.php">
-                            <img src="<?php echo app_assets_url('images/{{lang}}/img_sac-email-ocorrencia.png');?>"  tipo="ocorrencia" border="0" class="tootlip ocorrencia fig_ocorrencia" title="Abrir">
+                        <a href="<?php echo app_assets_url('ocorrencia');?>">
+                            <img src="<?php echo app_assets_url('images/{{lang}}/img_sac-email-ocorrencia.png');?>"
+                                 data-over="<?php echo app_assets_url('images/{{lang}}/img_sac-email-ocorrencia-cinza.png');?>"
+                                 data-out="<?php echo app_assets_url('images/{{lang}}/img_sac-email-ocorrencia.png');?>"
+                                 tipo="ocorrencia" border="0" class="tootlip ocorrencia fig_ocorrencia"
+                                 title="<?=lang('core.abrir');?>">
                         </a>
                     </th>
                     <th><img src="<?php echo app_assets_url('images/{{lang}}/img_sac-chat.png');?>"></th>
                 </tr>
                 <tr>
-                    <!--<td>A nível organizacional, a constante divulgação das informações facilita a criação dos métodos utilizados na avaliação de resultados.</td>-->
+
                     <td style="padding: 10px 0px 0px 0px !important;">
                         Ligue para a Central de Relacionamento de segunda a sexta-feira das 9h às 18h.<br>
                         Capitais e Regiões Metropolitanas custo de ligação local. Demais localidades ligação gratuita.

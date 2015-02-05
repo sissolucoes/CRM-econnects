@@ -458,44 +458,5 @@ $(window).load(function() {
             });
         }
         
-        $('.solicitacao').hover(function(){
-            var tipo = $(this).attr('tipo');
-            $(this).attr("src", "images/img_sac-email-"+tipo+"-cinza.png");
-            $(this).attr('style', "width: 149px; height: 40px; position: relative; top: -2px; left: 2px;");
-            $(this).mouseout(function(){
-                $(this).attr("src", "images/img_sac-email-"+tipo+".png");
-            });
-        });
-        
-        $('.ocorrencia').hover(function(){
-            var tipo = $(this).attr('tipo');
-            $(this).attr("src", "images/img_sac-email-"+tipo+"-cinza.png");
-            $(this).attr('style', "width: 148px; height: 40px; position: relative; top: -2px; left: -1px;");
-            $(this).mouseout(function(){
-                $(this).attr("src", "images/img_sac-email-"+tipo+".png");
-            });
-        });
-        
-        $('.solicitacao_relacionamento').hover(function(){
-            var tipo = $(this).attr('tipo');
-            $(this).attr("src", "../images/img_sac-email-"+tipo+"-cinza.png");
-            $(this).attr('style', "width: 149px; height: 40px; position: relative; top: -2px; left: 2px;");
-            $(this).mouseout(function(){
-                $(this).attr("src", "../images/img_sac-email-"+tipo+".png");
-            });
-        });
-        
-        $('.ocorrencia_relacionamento').hover(function(){
-            var tipo = $(this).attr('tipo');
-            $(this).attr("src", "../images/img_sac-email-"+tipo+"-cinza.png");
-            $(this).attr('style', "width: 148px; height: 40px; position: relative; top: -2px; left: -1px;");
-            $(this).mouseout(function(){
-                $(this).attr("src", "../images/img_sac-email-"+tipo+".png");
-            });
-        });
-        
-        $('.continuar').click(function(){
-            $('#continuacao').show('fast');
-            $(this).hide('fast');
-        });
+
 });

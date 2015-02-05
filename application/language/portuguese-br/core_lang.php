@@ -7,3 +7,4 @@ $lang['core.saiba_mais'] = 'Saiba Mais';
 $lang['core.planos'] = 'Planos';
 $lang['core.comprar'] = 'Comprar';
 $lang['core.confira'] = 'Confira';
+$lang['core.abrir'] = 'Abrir';
