@@ -57,9 +57,20 @@ function cke_create_instance($data = array()) {
 	    				$return .= config_data($v);
 	    				$return .= "]";
 	    				
-	    			}
-	    			else {
-	    				$return .= $k . " : '" . $v . "'";
+	    			}else {
+                       
+                        if($v == 'true' || $v == 'false'){
+
+                            $return .= $k . " : " . $v . "";
+
+                        }elseif(strpos($v, 'CKEDITOR') !== false) {
+
+                            $return .= $k . " : " . $v . "";
+
+                        }else {
+                            $return .= $k . " : '" . $v . "'";
+                        }
+
 	    			}
 
 	    			if($k !== end(array_keys($data['config']))) {
