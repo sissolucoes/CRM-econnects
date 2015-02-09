@@ -132,7 +132,8 @@ Class Produto_Model extends MY_Model
 
         $fields = array(
             'titulo',
-            'conteudo'
+            'conteudo',
+            'resumo'
 
 
         );

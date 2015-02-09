@@ -116,7 +116,7 @@
                             <li>
                                 <h2><?php echo $produto_pf['titulo']?> <span class="seta sprite"></span></h2>
                                 <div class="content clearfix">
-                                    <p><?php echo strip_tags($produto_pf['conteudo']);?>...</p>
+                                    <p><?php echo strip_tags($produto_pf['resumo']);?></p>
                                     <a href="<?php echo app_get_url_produto($produto_pf);?>" class="botao more right"><?= lang('core.saiba_mais');?></a>
                                 </div>
                             </li>
@@ -140,7 +140,7 @@
                             <li>
                                 <h2><?php echo $produto_pf['titulo']?> <span class="seta sprite"></span></h2>
                                 <div class="content clearfix">
-                                    <p><?php echo strip_tags($produto_pf['conteudo']);?>...</p>
+                                    <p><?php echo strip_tags($produto_pf['resumo']);?></p>
                                     <a href="<?php echo app_get_url_produto($produto_pf);?>" class="botao more right"><?= lang('core.saiba_mais');?></a>
                                 </div>
                             </li>
@@ -177,7 +177,7 @@
                             <li>
                                 <h2><?php echo $produto_pj['titulo']?> <span class="seta sprite"></span></h2>
                                 <div class="content clearfix">
-                                    <p><?php echo strip_tags($produto_pj['conteudo']);?>...</p>
+                                    <p><?php echo strip_tags($produto_pj['resumo']);?></p>
                                     <a href="<?php echo app_get_url_produto($produto_pj);?>" class="botao more right"><?= lang('core.saiba_mais');?></a>
                                 </div>
                             </li>
@@ -198,7 +198,7 @@
                             <li>
                                 <h2><?php echo $produto_pj['titulo']?> <span class="seta sprite"></span></h2>
                                 <div class="content clearfix">
-                                    <p><?php echo strip_tags($produto_pj['conteudo']);?>...</p>
+                                    <p><?php echo strip_tags($produto_pj['resumo']);?></p>
                                     <a href="<?php echo app_get_url_produto($produto_pj);?>" class="botao more right"><?= lang('core.saiba_mais');?></a>
                                 </div>
                             </li>

@@ -40,7 +40,8 @@ Class Produto_Idioma_Model extends MY_Model
                 'titulo' => $idioma_data['titulo'],
                 'conteudo' => $idioma_data['conteudo'],
                 'meta_description' => $idioma_data['meta_description'],
-                'meta_keywords' => $idioma_data['meta_keywords']
+                'meta_keywords' => $idioma_data['meta_keywords'],
+                'resumo' => $idioma_data['resumo']
 
             );
 
