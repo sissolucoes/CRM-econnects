@@ -1,9 +1,9 @@
 <section id="produtos">
     <div class="left">
-        <img src="<?php echo app_assets_url("produtos/{$produto['produto_id']}/{$produto['imagem']}" , 'uploads')?>">
+        <img id="img_produto" src="<?php echo app_assets_url("produtos/{$produto['produto_id']}/{$produto['imagem']}" , 'uploads')?>">
     </div>
     <div id="produtos_offline">
-        <div class="offline wrap clearfix" id="pf">
+        <div class="offline wrap clearfix" id="produtoDescricao">
             <nav>
                 <div style="text-align: right; margin-top: 10px; width: 582px;">
                     <a href="#" id="botao_voltar" title="Voltar" class="voltar"><img src="<?php echo app_assets_url('images/botao_voltar.png', 'site');?>"></a>

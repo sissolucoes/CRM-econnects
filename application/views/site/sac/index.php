@@ -7,13 +7,13 @@
                     <th><img src="<?php echo app_assets_url('images/img_sac-0800.png');?>"></th>
                     <th>
                         <img src="<?php echo app_assets_url('images/{{lang}}/img_sac-email.png');?>" border="0" style="height: 58px; width: 298px;">
-                        <a href="<?php echo app_assets_url('solicitacao');?>">
+                        <a href="<?php echo site_url('solicitacao');?>">
                             <img src="<?php echo app_assets_url('images/{{lang}}/img_sac-email-solicitacao.png');?>"
                                  data-over="<?php echo app_assets_url('images/{{lang}}/img_sac-email-solicitacao-cinza.png');?>"
                                  data-out="<?php echo app_assets_url('images/{{lang}}/img_sac-email-solicitacao.png');?>"
                                  border="0" class="tootlip solicitacao fig_solicitacao" title="<?=lang('core.abrir');?>">
                         </a>
-                        <a href="<?php echo app_assets_url('ocorrencia');?>">
+                        <a href="<?php echo site_url('ocorrencia');?>">
                             <img src="<?php echo app_assets_url('images/{{lang}}/img_sac-email-ocorrencia.png');?>"
                                  data-over="<?php echo app_assets_url('images/{{lang}}/img_sac-email-ocorrencia-cinza.png');?>"
                                  data-out="<?php echo app_assets_url('images/{{lang}}/img_sac-email-ocorrencia.png');?>"

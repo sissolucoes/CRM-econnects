@@ -28,7 +28,7 @@
 
             <?php if(isset($produto_categoria['produtos_pj'])) :?>
                 <h1 id="<?php echo $produto_categoria['slug'];?>-pj" class="dropdown-button">Bom para sua empresa <span class="seta branca sprite right"></span></h1>
-                <ul id="<?php echo $produto_categoria['slug'];?>-pj-ul" class="dropdown-container dropdown-p1">
+                <ul id="<?php echo $produto_categoria['slug'];?>-pj-ul" class="dropdown-container dropdown-p2">
                     <li>
                         <ul class="categoria">
                             <?php foreach($produto_categoria['produtos_pj'] as $produto_pj ) :?>

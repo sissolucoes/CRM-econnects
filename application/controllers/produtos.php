@@ -77,6 +77,8 @@ class Produtos extends Site_Controller {
         $this->load->model('produto_model', 'produto');
         $this->load->model('produto_categoria_model', 'produto_categoria');
 
+        $this->template->js(app_assets_url('modulos/produtos/js/base.js',  'site'));
+
 
         $produto = $this->produto
             ->set_publicados()
@@ -107,6 +109,8 @@ class Produtos extends Site_Controller {
 
         $this->load->model('produto_model', 'produto');
         $this->load->model('produto_categoria_model', 'produto_categoria');
+
+        $this->template->js(app_assets_url('modulos/produtos/js/base.js',  'site'));
 
 
         $produto = $this->produto

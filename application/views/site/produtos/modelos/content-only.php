@@ -1,9 +1,9 @@
 <section id="produtos">
     <div class="left">
-        <img src="<?php echo app_assets_url("produtos/{$produto['produto_id']}/{$produto['imagem']}" , 'uploads')?>">
+        <img id="img_produto" src="<?php echo app_assets_url("produtos/{$produto['produto_id']}/{$produto['imagem']}" , 'uploads')?>">
     </div>
     <div id="produtos_offline">
-        <div class="offline wrap clearfix" id="pf">
+        <div class="offline wrap clearfix " id="produtoDescricao">
             <nav>
                 <div style="text-align: right; margin-top: 10px; width: 582px;">
                     <a href="#" id="botao_voltar" title="Voltar" class="voltar"><img src="<?php echo app_assets_url('images/botao_voltar.png', 'site');?>"></a>
@@ -39,7 +39,7 @@
             <div id="boxes_bottom_produtos">
                 <div class="box_aviso left">
                     <img src="<?php echo app_assets_url('images/img_box_aviso.png', 'site');?>" style="width: 160px; height: 164px;">
-                    <h1 style="margin-bottom: -4px !important; position: relative; top: -9px">BOM PARA SUA EMPRESA</h1>
+                    <h1 class="aviso_h1">BOM PARA SUA EMPRESA</h1>
                     <p style="position: relative; top: -11px;">Conheça o portfólio de seguros disponíveis para sua empresa que permite assumir maiores riscos de maneira controlada.</p>
                     <a href="produtos.php"><img  style="position: relative; top: -11px;" src="<?php echo app_assets_url('images/ico_saiba_mais.png', 'site');?>"></a>
                 </div>

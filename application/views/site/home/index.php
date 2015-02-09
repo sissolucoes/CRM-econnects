@@ -60,8 +60,8 @@
     <article class="window dois left article_class">
         <img src="<?php echo app_assets_url('img_placeholders/seguro-viagem-negocios.jpg', 'site');?>" width="355" height="485" alt="" />
         <div class="text right">
-            <h2><img src="<?php echo app_assets_url('images/icone-beneficios.png', 'site');?>" border="0"><span class="span_class"><?php echo $bloco_home_seguroviagem['titulo']?></span></h2>
-            <h1><?php echo $bloco_home_seguroviagem['subtitulo'];?></h1>
+            <h2 class="h2-bloco_home"><img src="<?php echo app_assets_url('images/icone-beneficios.png', 'site');?>" border="0"><span class="span_class"><?php echo $bloco_home_seguroviagem['titulo']?></span></h2>
+            <h1 class="h1-bloco_home"><?php echo $bloco_home_seguroviagem['subtitulo'];?></h1>
             <?php echo $bloco_home_seguroviagem['conteudo'];?>
 
             <nav class="left clearfix">
