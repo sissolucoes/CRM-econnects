@@ -13,7 +13,7 @@
 
     <?php echo $css_for_layout;?>
 
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <!--link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'-->
     <script src="<?php echo app_assets_url('js/vendor/modernizr-2.6.2.min.js', 'site')?>"></script>
 
     <script>

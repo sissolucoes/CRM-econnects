@@ -45,6 +45,39 @@ $(document).ready(function() {
         event.preventDefault();
     });
 
+    $('#botao_faq').click(function(event){
+        event.preventDefault();
+
+
+        $("#container_faq_result").html('');
+
+
+        var values = { term: $('#pesquisa_faq').val() };
+
+        var url = SITE_URL + '/faq/buscar_por_texto/';
+
+
+        $.ajax({
+            url: url,
+            type: "post",
+            data: values,
+            dataType: "html",
+            success: function(html ){
+
+                $("#faq_result_search").html(html);
+
+                $('#faq_result_search').slideDown();
+
+                initAccordion();
+
+
+            }
+        });
+
+
+
+    });
+
 
     $('.solicitacao').hover(function(){
 
@@ -92,5 +125,44 @@ $(document).ready(function() {
         $(this).hide('fast');
     });
 
+
+    function initAccordion (  ){
+
+        jQuery( '#accordion' ).find( 'h2' ).click( function( e ){
+
+            e.preventDefault();
+
+            jQuery( '#accordion .active' ).not(jQuery( this ).parent( 'li' )).each( function( $ ){
+
+                jQuery( this ).find( 'div.accordion_body' ).slideUp( 'fast' ).css( 'zoom', '1' );
+                jQuery( this).removeClass('active');
+            });
+
+            
+
+            jQuery( this ).find( 'div.accordion_body' ).slideUp( 'fast' ).css( 'zoom', '1');
+            jQuery( this ).next().slideToggle( 'fast' ).css( 'zoom', '1');
+
+
+            jQuery( this ).parent( 'li' ).toggleClass( 'collapse' ).addClass('active');
+
+        } );
+
+        jQuery( '#accordion > li' ).each( function( $ ){
+
+            /**
+             * fecha o accordion
+             */
+            if ( !jQuery( this ).hasClass( 'extended' ) ){
+
+                jQuery( this ).find( 'div.accordion_body' ).slideUp( 'fast' ).css( 'zoom', '1' );
+                jQuery( this ).toggleClass( 'collapse' );
+
+            }
+
+        } );
+
+
+    }
 
 });

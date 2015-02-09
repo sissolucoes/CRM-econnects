@@ -41,11 +41,19 @@
                 <label>FAQ:<input type="text" placeholder="Pesquise aqui sua dúvida em nosso FAQ:" id="pesquisa_faq" name="pesquisa_faq"></label>
                 <button value="Pesquisar" id="botao_faq" class="botao_faq botoes" type="submit">
                     <div class="span_botoes sprite">Pesquisar</div></button>
+                <br class="clearfix" />
+
             </div>
+
+
         </div>
     </article>
 
 </section>
+
+<div class="wrap" id="faq_result_search" style="display: none">
+
+</div>
 
 <div class="selecione_duvida" style="background: none repeat scroll 0% 0% rgb(255, 255, 255); margin-top: 30px; height: 100px;">
     <section class="wrap clearfix" id="dropdown" style="background: #fff;">

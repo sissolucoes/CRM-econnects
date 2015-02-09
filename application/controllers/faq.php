@@ -62,6 +62,25 @@ class Faq extends Site_Controller {
 
     public function buscar_por_texto(){
 
+        $this->load->model('faq_categoria_model', 'faq_categoria');
+        $this->load->model('faq_duvida_model', 'faq_duvida');
+
+
+        $term = $this->input->post('term');
+
+        $duvidas = $this->faq_duvida
+            ->with_idioma()
+            ->with_categorias()
+            ->set_select()
+            ->filter_idioma($this->lang->lang())
+            ->buscar_by_termo($term);
+
+        $data = array(
+            'duvidas' => $duvidas
+        );
+
+        $this->load->view('site/faq/resultado_texto', $data);
+
 
     }
 

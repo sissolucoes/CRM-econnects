@@ -188,5 +188,28 @@ Class Faq_Duvida_Model extends MY_Model
 
     }
 
+    public function with_categorias(){
+
+        $this->_database->join('faq_categoria', $this->_table.".faq_categoria_id  = faq_categoria.faq_categoria_id");
+
+        $this->_database->join('faq_categoria_idioma', $this->_table.".faq_categoria_id  = faq_categoria_idioma.faq_categoria_id");
+        $this->_database->join('faq_categoria_idioma AS cat_pai', "faq_categoria.faq_categoria_parent_id = cat_pai.faq_categoria_id");
+
+        $this->_database->select("faq_categoria_idioma.titulo AS categoria_nome");
+        $this->_database->select("cat_pai.titulo AS categoria_pai_nome");
+
+        return $this;
+    }
+    public function buscar_by_termo($termo){
+
+        $this->_database->or_like('pergunta', $termo);
+
+        $this->_database->or_like('resposta', $termo);
+
+        $this->db->group_by("faq_duvida_id");
+
+        return $this->get_all();
+
+    }
 
 }
