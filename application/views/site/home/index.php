@@ -11,7 +11,7 @@
                     <?php if($produto_categoria_pf['produtos']) :?>
                         <ul class="categoria">
                             <?php foreach($produto_categoria_pf['produtos'] as $produto_pf) :?>
-                                <li><a href="#" title=""><?php echo $produto_pf['titulo']?></a></li>
+                                <li><a href="<?php echo app_get_url_produto($produto_pf);?>" title=""><?php echo $produto_pf['titulo']?></a></li>
                             <?php endforeach;?>
                         </ul>
                     <?php endif?>
@@ -30,7 +30,7 @@
                     <?php if($produto_categoria_pj['produtos']) :?>
                         <ul class="categoria">
                             <?php foreach($produto_categoria_pj['produtos'] as $produto_pj) :?>
-                                <li><a href="#" title=""><?php echo $produto_pj['titulo']?></a></li>
+                                <li><a href="<?php echo app_get_url_produto($produto_pj);?>" title=""><?php echo $produto_pj['titulo']?></a></li>
                             <?php endforeach;?>
                         </ul>
                     <?php endif?>
