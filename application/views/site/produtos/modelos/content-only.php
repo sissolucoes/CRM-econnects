@@ -23,34 +23,57 @@
         <div id="boxes">
 
 
-            <div id="cotacao_tel">
-                <div class="cotacao_tel">
-                    <h1>Você também pode fazer sua cotação por telefone</h1>
-                    <p>A Corcovado conta com uma equipe altamente qualificada e treinada para atendê-lo e fazer a sua cotação, dando todo o suporte que você precisa. Ligue para a Central de Relacionamento de segunda à sexta-feira das 9h às 18h.</p>
+            <?php $bloco_box_telefone = app_get_cms_bloco('produto-box-telefone');?>
+            <?php if($bloco_box_telefone) :?>
+                <div id="cotacao_tel">
+                    <div class="cotacao_tel">
+                        <h1><?php echo $bloco_box_telefone['titulo'];?></h1>
+                        <p><?php echo strip_tags($bloco_box_telefone['conteudo']);?></p>
+                    </div>
+                    <div class="img_cotacao_tel">
+                        <img src="<?php echo app_assets_url('images/img_cotacao_tel.png', 'site');?>" style="width: 497px;">
+                    </div>
                 </div>
-                <div class="img_cotacao_tel">
-                    <img src="<?php echo app_assets_url('images/img_cotacao_tel.png', 'site');?>" style="width: 497px;">
-                </div>
-            </div>
+            <?php endif;?>
             <br clear="all">
 
 
 
             <div id="boxes_bottom_produtos">
-                <div class="box_aviso left">
-                    <img src="<?php echo app_assets_url('images/img_box_aviso.png', 'site');?>" style="width: 160px; height: 164px;">
-                    <h1 class="aviso_h1">BOM PARA SUA EMPRESA</h1>
-                    <p style="position: relative; top: -11px;">Conheça o portfólio de seguros disponíveis para sua empresa que permite assumir maiores riscos de maneira controlada.</p>
-                    <a href="produtos.php"><img  style="position: relative; top: -11px;" src="<?php echo app_assets_url('images/ico_saiba_mais.png', 'site');?>"></a>
-                </div>
+
+                <?php
+                    $bloco_produto_tipo = false;
+
+                    if($produto['tipo_pessoa'] == 'PF') {
+
+                        $bloco_produto_tipo = app_get_cms_bloco('produto-bom-pra-vc');
+
+                    }elseif($produto['tipo_pessoa'] == 'PJ') {
+                        $bloco_produto_tipo = app_get_cms_bloco('produto-bom-pra-empresa');
+                    }
+
+                ?>
+
+                <?php if($bloco_produto_tipo) : ?>
+                    <div class="box_aviso left">
+                        <img src="<?php echo app_assets_url('images/img_box_aviso.png', 'site');?>" style="width: 160px; height: 164px;">
+                        <h1 class="aviso_h1"><?php echo $bloco_produto_tipo['titulo'];?></h1>
+                        <p><?php echo $bloco_produto_tipo['conteudo'];?></p>
+                        <a href="<?php echo site_url('produtos')?>"><img  style="position: relative; top: -11px;" src="<?php echo app_assets_url('images/ico_saiba_mais.png', 'site');?>"></a>
+                    </div>
+                <?php endif;?>
+
+                <?php $bloco_box_duvidas = app_get_cms_bloco('produto-box-duvidas');?>
                 <div class="box_faq right">
-                    <a href="sac.php">
+                    <a href="<?php echo site_url('sac')?>">
                         <img src="<?php echo app_assets_url('images/img_box_faq.png', 'site');?>" style="width: 160px; height: 164px;">
-                        <h1 style="margin-bottom: -4px !important; position: relative; top: -9px">DÚVIDAS</h1>
-                        <p style="position: relative; top: -11px;">No FAQ você encontra as respostas para as perguntas mais frequentes, que naturalmente surgem no momento da compra de seguros.</p>
-                        <p style="position: relative; top: -18px;">Você pode consulta-lo ou contar com o apoio da Central de Relacionamento para obter informações.</p>
+                        <h1><?php echo $bloco_box_duvidas['titulo'];?></h1>
+
+                        <?php echo $bloco_box_duvidas['conteudo'];?>
+
                     </a>
-                </div><br clear="all">
+                </div>
+                <br clear="all">
             </div>
 
 </section>

@@ -628,11 +628,18 @@ footer .social a.last{ margin:0; }
 .box_faq {width: 48%;
 		  background: #FFFFFF; height: 164px;}
 
-.box_faq h1{color: #00A5DB;
-		    font-size: 25px;
-		    font-weight: normal;
-		    padding-left: 20px;
-		    padding-top: 10px;} 
+.box_faq h1{
+    color: #00A5DB;
+	font-size: 25px;
+	font-weight: normal;
+	padding-left: 20px;
+	padding-top: 10px;
+    margin-bottom: -4px !important;
+    position: relative;
+    top: -9px;
+}
+
+
 
 .box_faq img {float: left;
 			  margin-right: 20px;}
@@ -643,6 +650,18 @@ footer .social a.last{ margin:0; }
 
 .box_faq a:visited {
 	color: #7C7D7E !important;
+}
+
+.box_faq p {
+
+    position: relative;
+    top: -11px;
+}
+
+.box_aviso p {
+
+    position: relative;
+    top: -11px;
 }
 
 .imgs_destaques {float: left; 
