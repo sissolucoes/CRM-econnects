@@ -4,19 +4,29 @@
 
     <h1><?php echo $header_page_contato['titulo'];?><span><?php echo strip_tags($header_page_contato['conteudo']);?></span></h1>
     <div id="form_contato">
-        <form>
+
+        <div id="message_box">
+        </div>
+
+        <form id="formContato" method="post" action="<?php echo site_url('contato/proccess_form')?>">
             <fieldset>
-                <input type="text" name="contato_nome" id="contato_nome" placeholder="<?=lang('contato.nome')?>:">
-                <input type="text" name="contato_assunto" id="contato_assunto" placeholder="<?=lang('contato.assunto')?>:">
+                <input type="text" name="nome" id="" placeholder="<?=lang('contato.nome')?>:">
+                <input type="text" name="assunto" id="" placeholder="<?=lang('contato.assunto')?>:">
             </fieldset>
             <fieldset class="field_form">
-                <input type="email" name="contato_email" id="contato_email" placeholder="<?=lang('contato.email')?>:">
+                <input type="text" name="email" id="" placeholder="<?=lang('contato.email')?>:">
             </fieldset>
             <fieldset class="field_form">
-                <input type="text" name="contato_telefone" id="contato_telefone" placeholder="<?=lang('contato.telefone')?>:">
+                <input type="text" name="telefone" id="" placeholder="<?=lang('contato.telefone')?>:">
+            </fieldset>
+            <fieldset class="field_form">
+                <input type="text" name="celular" id="" placeholder="<?=lang('contato.celular')?>:">
+            </fieldset>
+            <fieldset class="field_form">
+                <input type="text" name="horario_contato" id="" placeholder="<?=lang('contato.horario_contato')?>">
             </fieldset>
             <fieldset class="text_form">
-                <textarea cols="68" rows="15" placeholder="<?=lang('contato.mensagem')?>:"></textarea>
+                <textarea name="mensagem" cols="68" rows="15" placeholder="<?=lang('contato.mensagem')?>:"></textarea>
             </fieldset>
             <fieldset>
                 <button type="submit" id="encaminha_email" value="enviar" class="contato_enviar botoes">
