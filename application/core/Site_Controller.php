@@ -13,6 +13,9 @@ class Site_Controller extends MY_Controller
         $this->lang->load('core');
 
 
+        $this->controller_name = strtolower(get_class($this) );
+
+
         $this->load_menu_principal();
 
         $this->load_menu_rodape();
