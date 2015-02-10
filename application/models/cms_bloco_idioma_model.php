@@ -18,12 +18,7 @@ Class Cms_Bloco_Idioma_Model extends MY_Model
 
 
     public $validate = array(
-        array(
-            'field' => 'titulo',
-            'label' => 'Título',
-            'rules' => 'required',
-            'groups' => 'default'
-        )
+
 
     );
 

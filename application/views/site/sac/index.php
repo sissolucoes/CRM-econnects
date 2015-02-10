@@ -26,14 +26,22 @@
                 <tr>
 
                     <td style="padding: 10px 0px 0px 0px !important;">
-                        Ligue para a Central de Relacionamento de segunda a sexta-feira das 9h às 18h.<br>
-                        Capitais e Regiões Metropolitanas custo de ligação local. Demais localidades ligação gratuita.
+                        <?php $bloco_telefone = app_get_cms_bloco('sac-box-telefone'); ?>
+                        <?php if($bloco_telefone) :?>
+                            <?php echo nl2br(strip_tags($bloco_telefone['conteudo']));?>
+                        <?php endif;?>
                     </td>
                     <td style="padding: 8px 32px 0px 31px !important;">
-                        Envie suas solicitações e ocorrências para a Central de Relacionamento. Em até 72h úteis a resposta estará disponível na Área de Relacionamento Personalizada.
+                        <?php $bloco_email = app_get_cms_bloco('sac-box-enviar-email'); ?>
+                        <?php if($bloco_email) :?>
+                            <?php echo strip_tags($bloco_email['conteudo']);?>
+                        <?php endif;?>
                     </td>
                     <td style="padding: 0px 0px 8px 0px !important;">
-                        Fale com nossos atendentes online na Central de Relacionamento de segunda a sexta-feira das 9h às 18h.
+                        <?php $bloco_chat = app_get_cms_bloco('sac-box-chat-online'); ?>
+                        <?php if($bloco_chat) :?>
+                            <?php echo strip_tags($bloco_chat['conteudo']);?>
+                        <?php endif;?>
                     </td>
                 </tr>
             </table>
