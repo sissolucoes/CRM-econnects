@@ -27,7 +27,7 @@ Class App_mail {
 
         $this->CI = &get_instance();
 
-        /*$config = Array(
+        $config = Array(
             'protocol' => 'smtp',
             'smtp_host' => 'smtp.mandrillapp.com',
             'smtp_port' => 587,
@@ -36,25 +36,9 @@ Class App_mail {
             'mailtype'  => 'html'
 
         );
-        $config = array();
-        $config['protocol'] = "smtp";
-        $config['smtp_host'] = "ssl://smtp.gmail.com";
-        $config['smtp_port'] = "465";
-        $config['smtp_user'] = "carlos@zazz.com.br";
-        $config['smtp_pass'] = "zazz1q2w3e";
-        $config['charset'] = "utf-8";
-        $config['mailtype'] = "html";
-        $config['newline'] = "\r\n";*/
 
-        $config = array();
-        $config['protocol'] = "smtp";
-        $config['smtp_host'] = "smtp.topride.com.br";
-        $config['smtp_port'] = "587";
-        $config['smtp_user'] = "contato@topride.com.br";
-        $config['smtp_pass'] = "senha20031982";
-        $config['charset'] = "utf-8";
-        $config['mailtype'] = "html";
-        $config['newline'] = "\r\n";
+
+
 
 
         $this->CI->load->library('email', $config);
