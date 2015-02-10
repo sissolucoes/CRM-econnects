@@ -27,12 +27,8 @@
     <div class="quem_somos_bottom2">
         <h1><span class="valores_span"><?php echo $bloco_valores['titulo'];?>:</span></h1>
                         <span class="valores_span2">
-                            <p>Ética na conduta junto aos clientes e parceiros. Valorização e respeito às pessoas: colaboradores, clientes e fornecedores</p>
-                            <p class="valores_p">
-                                - Transparência e confiança<br>
-                                - Satisfação do Cliente<br>
-                                - Responsabilidade Social
-                            </p>
+                            <?php echo $bloco_valores['conteudo'];?>
+
                         </span>
     </div>
 </div>

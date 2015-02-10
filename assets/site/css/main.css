@@ -3014,8 +3014,17 @@ div.slides_banners {position: absolute; margin-left: 475px; height: 229px; overf
 .visao_p {height: 23px;}
 .valores_span {position: relative; top: -15px;}
 .valores_span2 {position: relative; top: -40px;}
-.valores_p {position: relative; top: -27px; height: 42px;}
+.valores_p,  {position: relative; top: -27px; height: 42px;}
 .nav_class01 {float: none ! important; width: 200px;}
+.quem_somos_bottom2 ul {
+
+    font-family: 'trebuchet ms';
+    padding: 0px 22px;
+    border-left: 1px solid #BBBBBB;
+}
+.valores_span2 p {
+    margin-bottom: 0px !important;
+}
 
 #menu li {
 	display: inline-block;
