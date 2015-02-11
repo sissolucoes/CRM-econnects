@@ -15,9 +15,9 @@
                 <h1><?php echo $produto['titulo'];?></h1>
                 <?php echo $produto['conteudo'];?>
             </div>
-            <div class="conheca">
+            <!--div class="conheca">
                 <p> <a href="#dialog" name="modal">Conheça cobertura e limite dos planos</a></p>
-            </div>
+            </div-->
         </div> <br clear="all">
 
         <div id="boxes">
