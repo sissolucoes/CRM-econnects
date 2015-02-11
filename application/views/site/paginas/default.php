@@ -1,4 +1,4 @@
-<section  class="page ">
+<section  class="page header_<?php echo $pagina['slug'];?>">
     <h1>
         <?php echo $pagina['titulo'];?>
         <span class="subtitulo"> <?php echo $pagina['subtitulo'];?></span>
