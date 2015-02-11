@@ -46,7 +46,8 @@ Class Produto_Categoria_Model extends MY_Model
             'slug' => app_parse_slug($this->input->post('slug')),
             'publicado' => $this->input->post('publicado'),
             'css_class_icone' => $this->input->post('css_class_icone'),
-            'ordem' => $this->input->post('ordem')
+            'ordem_pf' => $this->input->post('ordem_pf'),
+            'ordem_pj' => $this->input->post('ordem_pj')
 
         );
 
@@ -175,6 +176,19 @@ Class Produto_Categoria_Model extends MY_Model
             }
 
         }
+        return $this;
+
+    }
+
+    public function set_order_pf(){
+
+        $this->order_by('ordem_pf');
+        return $this;
+    }
+
+    public function set_order_pj(){
+
+        $this->order_by('ordem_pj');
         return $this;
 
     }

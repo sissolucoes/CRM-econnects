@@ -59,7 +59,6 @@ class Produto_Categorias extends Admin_Controller {
         $data['rows'] = $this->current_model
             ->filter_from_input()
             ->limit($config['per_page'], $offset )
-            ->order_by('ordem')
             ->get_all();
 
 
