@@ -63,7 +63,7 @@
                             <tr>
 
                                 <td class="center"><?php echo $row[$primary_key];?></td>
-                                <td><?php echo $row['nome'];?></td>
+                                <td><?php echo $row['categoria_pai_nome'];?> -> <?php echo $row['nome'];?></td>
                                 <td><?php echo $row['slug'];?></td>
                                 <td class="center">
                                     <a href="<?php echo base_url("{$current_controller_uri}/edit/{$row[$primary_key]}")?>" class="btn btn-sm btn-primary">  <i class="fa fa-edit"></i>  Editar </a>

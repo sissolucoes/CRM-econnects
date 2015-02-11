@@ -198,5 +198,16 @@ Class Cms_Menu_Item_Model extends MY_Model
 
     }
 
+    public function with_pai(){
+
+        $this->_database->select("IFNULL(tb_pai.nome, 'Raiz') AS categoria_pai_nome", false);
+
+
+        $this->_database->join("$this->_table AS tb_pai", "$this->_table.cms_menu_item_parent_id = tb_pai.cms_menu_item_id", 'left');
+
+        return $this;
+
+    }
+
 
 }

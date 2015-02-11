@@ -70,7 +70,7 @@ class Cms_Menu_Itens extends Admin_Controller {
 
 
 
-        $data['rows'] = $this->current_model->limit($config['per_page'], $offset )->set_cms_menu($cms_menu_id)->get_all();
+        $data['rows'] = $this->current_model->limit($config['per_page'], $offset )->with_pai()->set_cms_menu($cms_menu_id)->get_all();
 
 
 
