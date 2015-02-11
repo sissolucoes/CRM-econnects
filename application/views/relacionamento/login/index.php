@@ -1,6 +1,6 @@
 <section class="recuperar_login">
     <div class="pag_login">
-        <h1>ÁREA DE RELACIONAMENTO PERSONALIZADA</h1>
+        <!--h1>ÁREA DE RELACIONAMENTO PERSONALIZADA</h1>
         <p style="text-align: justify">Aqui você pode gerenciar suas apólices, pagamentos, acompanhar suas cotações e sinistros, entre outros serviços, de maneira fácil e rápida. TUDO EM UM ÚNICO LUGAR!</p>
         <form id="loginForm" method="post" action="<?php echo $login_form_url;?>">
             <fieldset>
@@ -17,7 +17,8 @@
             </fieldset>
             <fieldset>
                 <p style="margin-top: 0;"><a class="area-personalizada botao_entrar botoes" href="#"><span class="span_botoes sprite">Entrar</span></a></p>
-            </fieldset>
+            </fieldset-->
+            <h1><?=lang('core.em_contrucao');?></h1>
         </form>
     </div>
 
