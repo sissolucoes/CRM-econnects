@@ -607,8 +607,7 @@ function app_item_ckeditor($id){
             'width'   => "100%",
             'height'  => "400px",
             'extraPlugins' => 'colordialog,colorbutton',
-            /*'autoParagraph' => 'false',
-            'enterMode' => 'CKEDITOR.ENTER_BR',*/
+            'autoParagraph' => 'false',
             'filebrowserBrowseUrl'      => app_assets_url("ckfinder/ckfinder.html", 'common'),
             'filebrowserImageBrowseUrl' => app_assets_url("ckfinder/ckfinder.html?Type=Images", 'common'),
             'filebrowserFlashBrowseUrl' => app_assets_url("ckfinder/ckfinder.html?Type=Flash", 'common'),
