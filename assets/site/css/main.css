@@ -433,13 +433,18 @@ footer .social a.last{ margin:0; }
 }
 #quem-somos {width: 1000px; margin: 0 auto;}
 #quem-somos h1 {background: url("../images/bg_quem-somos.jpg") repeat scroll -110% center transparent; color: #FFFFFF; font-weight: lighter; padding: 20px;}
-#quem-somos span {float: right; font-family: 'trebuchet MS'; font-size: 13px; margin: -7px -3px; text-transform: none; width: 790px;}
+#quem-somos h1 span {float: right; font-family: 'trebuchet MS'; font-size: 13px; margin: -7px -3px; text-transform: none; width: 790px;}
 .quem_somos {background: none repeat scroll 0 0 #FFFFFF; padding-bottom: 16px; padding-right: 45px;}
 .img_elemento {float: left; margin-right: 10px; padding-top: 11px;}
 .quem_somos h1 {background: none !important; color: #00a5db !important;}
 .quem_somos h2 {color: #BDBEBF; font-weight: normal; padding-top: 17px;}
 .quem_somos p {font-family: 'trebuchet ms' !important; padding: 0px 40px; width: 921px !important; text-align: justify !important; line-height: 18px !important;}
 .quem_somos p a{color: #1799D7;}
+
+.quem_somos p:first-child{
+    padding-top: 16px !important;
+    padding-bottom: 10px !important;
+}
 #bottom_quem_somos {width: 1000px; margin: 0 auto;}
 .quem_somos_bottom {width: 310px; float: left; background: #FFFFFF; margin-right: 40px; padding-bottom: 10px; }
 .quem_somos_bottom h1 {background: none !important; color: #00A5DB !important; font-weight: lighter; padding: 20px;}
@@ -1851,101 +1856,7 @@ input.form_1col, select.form_1col {
     height: 80px;
 }
 
-/*Page Vistoria*/
 
-.vistoria_section {
-    width: 1000px;
-    margin: 0 auto;
-}
-
-.vistoria_section h1 {
-    background: url("../images/bg_vistoria.jpg") repeat scroll 70% center transparent;
-    color: #FFFFFF;
-    font-weight: lighter;
-    padding: 20px;
-}
-
-.vistoria_section h1 span {
-    float: right;
-    font-family: 'trebuchet MS';
-    font-size: 13px;
-    margin: 0px 3px;
-    text-transform: none;
-    width: 727px;
-}
-
-
-.vistoria_row h2 {
-    color: #00A5DB;
-    font-size: 30px;
-    font-weight: normal;
-    padding-left: 12px;
-
-}
-
-
-
-
-.vistoria_row {
-    background: none repeat scroll 0 0 #FFFFFF;
-    margin-top: 30px;
-    padding: 1px 15px 15px 30px;
-}
-
-.vistoria_row .select_header {
-
-    margin-top: 11px;
-    margin-left: 28px;
-
-}
-
-
-.vistoria_row fieldset {
-    border: medium none;
-    margin-left: -4px;
-}
-
-.vistoria_row textarea {
-    background: none repeat scroll 0 0 #F2F2F2;
-    border: 1px solid #CECECE;
-    color: #BDBEBF;
-    float: left;
-    font-family: 'Fjalla One';
-    font-size: 13px;
-
-    margin-left: 10px;
-    margin-right: 15px;
-    padding-left: 5px;
-
-
-    margin-bottom: 10px;
-}
-
-.vistoria_info {
-
-    margin-left: 10px;
-    margin-right: 15px;
-    margin-top: 10px;
-
-    margin-bottom: 10px;
-    border-top: 1px solid #ccc ;
-}
-
-.vistoria_info span {
-
-    font-size: 20px;
-    text-transform: uppercase;
-    color: #5b5c5e;
-    display: block;
-    padding: 16px 0 10px;
-}
-.vistoria_info ul li  {
-
-    list-style: disc;
-    list-style-position: inside;
-    padding: 6px 0;
-    font-size: 13px;
-}
 
 /* PlaceHolder */
 ::-webkit-input-placeholder { color:#bdbebf; opacity: 1; }
@@ -3139,4 +3050,100 @@ li.last_item ul.submenu {
 .error {
     color: #D8000C;
     background-color: #FFBABA;
+}
+
+/*Page Vistoria*/
+
+.vistoria_section {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.header_vistoria-inspecao h1 {
+    background: url("../images/bg_vistoria.jpg") repeat scroll 70% center transparent;
+    color: #FFFFFF;
+    font-weight: lighter;
+    padding: 20px;
+}
+
+.header_vistoria-inspecao h1 .subtitulo {
+    float: right;
+    font-family: 'trebuchet MS';
+    font-size: 13px;
+    margin: 0px 3px;
+    text-transform: none;
+    width: 727px;
+}
+
+
+.vistoria_row h2 {
+    color: #00A5DB;
+    font-size: 30px;
+    font-weight: normal;
+    padding-left: 12px;
+
+}
+
+
+
+
+.vistoria_row {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin-top: 30px;
+    padding: 1px 15px 15px 30px;
+}
+
+.vistoria_row .select_header {
+
+    margin-top: 11px;
+    margin-left: 28px;
+
+}
+
+
+.vistoria_row fieldset {
+    border: medium none;
+    margin-left: -4px;
+}
+
+.vistoria_row textarea {
+    background: none repeat scroll 0 0 #F2F2F2;
+    border: 1px solid #CECECE;
+    color: #BDBEBF;
+    float: left;
+    font-family: 'Fjalla One';
+    font-size: 13px;
+
+    margin-left: 10px;
+    margin-right: 15px;
+    padding-left: 5px;
+
+
+    margin-bottom: 10px;
+}
+
+.vistoria_info {
+
+    margin-left: 10px;
+    margin-right: 15px;
+    margin-top: 10px;
+
+    margin-bottom: 10px;
+    border-top: 1px solid #ccc ;
+}
+
+.vistoria_info span {
+
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #5b5c5e;
+    display: block;
+    padding: 16px 0 10px;
+}
+.vistoria_info ul li  {
+
+    list-style: disc;
+    list-style-position: inside;
+    padding: 6px 0;
+    font-size: 13px;
 }
