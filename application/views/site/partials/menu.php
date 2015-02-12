@@ -12,8 +12,8 @@
             <a href="<?php echo site_url('relacionamento/login')?>" class="ico_restrito sprite">ÁREA DE RELACIONAMENTO</a>
             <span></span>
             <a href="<?php echo base_url($this->lang->switch_uri('pt'));?>" class="ico_pt sprite flag"></a>
-            <a href="<?php echo base_url($this->lang->switch_uri('en'));?>" class="ico_en sprite flag"></a>
-            <a href="<?php echo base_url($this->lang->switch_uri('es'));?>" class="ico_es sprite flag last"></a>
+            <a href="<?php echo base_url($this->lang->switch_uri('pt'));?>" class="ico_en sprite flag"></a>
+            <a href="<?php echo base_url($this->lang->switch_uri('pt'));?>" class="ico_es sprite flag last"></a>
         </nav>
 
         <nav id="menu" class="right">
