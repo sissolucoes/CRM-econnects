@@ -65,9 +65,9 @@
             <?php echo $bloco_home_seguroviagem['conteudo'];?>
 
             <nav class="left clearfix">
-                <a href="#" class="botao more"><?= lang('core.saiba_mais');?></a>
-                <a href="produto_online_pag-01.php" class="botao online sprite"><?= lang('core.comprar');?></a>
-                <a href="#" class="botao"><?= lang('core.planos');?></a>
+                <a href="<?php echo site_url('produtos/bom_para_voce/viagem-turismo');?>" class="botao more"><?= lang('core.saiba_mais');?></a>
+                <a href="<?php echo site_url('produtos/bom_para_voce/viagem-turismo');?>" class="botao online sprite"><?= lang('core.comprar');?></a>
+                <a href="<?php echo site_url('produtos/bom_para_voce/viagem-turismo');?>" class="botao"><?= lang('core.planos');?></a>
             </nav>
         </div>
     </article>
