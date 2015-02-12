@@ -22,6 +22,8 @@ class Site_Controller extends MY_Controller
 
         $this->load_produtos();
 
+        $this->load_footer_menu_produtos();
+
     }
 
 
@@ -59,7 +61,6 @@ class Site_Controller extends MY_Controller
             ->set_publicados()
             ->with_idioma()
             ->set_select()
-            ->set_default_order()
             ->filter_idioma($this->lang->lang())
             ->get_all();
 
@@ -98,8 +99,37 @@ class Site_Controller extends MY_Controller
 
         }
 
+        usort($produto_categorias_pf, function($a, $b) {
+
+            if ($a['ordem_pf'] == $b['ordem_pf']) {
+                return 0;
+            }
+            return ($a['ordem_pf'] < $b['ordem_pf']) ? -1 : 1;
+        });
+
+        usort($produto_categorias_pj, function($a, $b) {
+            if ($a['ordem_pj'] == $b['ordem_pj']) {
+                return 0;
+            }
+            return ($a['ordem_pj'] < $b['ordem_pj']) ? -1 : 1;
+        });
+
         $this->template->set('produto_categorias_pf', $produto_categorias_pf);
         $this->template->set('produto_categorias_pj', $produto_categorias_pj);
+
+    }
+
+    public function load_footer_menu_produtos(){
+
+        /**
+         * Carrega o menu
+         */
+        $this->load->model('cms_menu_model', 'cms_menu');
+        $menu_pra_vc = $this->cms_menu->build_menu('footer-bom-pra-vc');
+        $this->template->set('menu_bom_pra_vc', $menu_pra_vc);
+
+        $menu_para_empresa = $this->cms_menu->build_menu('footer-bom-para-sua-empresa');
+        $this->template->set('menu_para_sua_empresa', $menu_para_empresa);
 
     }
 }

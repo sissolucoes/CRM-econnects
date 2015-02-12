@@ -59,8 +59,8 @@
                                 <th class="center">ID</th>
                                 <th>Nome</th>
                                 <th>Slug</th>
-                                <th>Ordem PF</th>
-                                <th>Ordem PJ</th>
+                                <th>Ordem (PF)</th>
+                                <th>Ordem (PJ)</th>
                                 <th class="center" style="width: 20%">Ações</th>
                             </tr>
                             </thead>

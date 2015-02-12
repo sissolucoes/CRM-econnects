@@ -47,7 +47,8 @@ Class Produto_Categoria_Model extends MY_Model
             'publicado' => $this->input->post('publicado'),
             'css_class_icone' => $this->input->post('css_class_icone'),
             'ordem_pf' => $this->input->post('ordem_pf'),
-            'ordem_pj' => $this->input->post('ordem_pj')
+            'ordem_pj' => $this->input->post('ordem_pj'),
+            'ordem' => $this->input->post('ordem'),
 
         );
 

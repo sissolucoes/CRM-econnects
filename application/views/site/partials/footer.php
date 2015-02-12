@@ -12,37 +12,37 @@
             <article id="links_voce" class="clearfix left">
                 <h1><?=lang('core.bom_para_vc');?></h1>
 
-                <?php foreach($produto_categorias_pf as $produto_categoria_pf): ?>
-                    <nav>
-                        <h2><?php echo $produto_categoria_pf['titulo']?></h2>
-                        <?php if($produto_categoria_pf['produtos']) :?>
+                <?php $c = 1; $total = count($menu_bom_pra_vc); foreach($menu_bom_pra_vc as $menu_bom_pra_vc_item): ?>
+                    <nav class="<?php echo ($c == $total) ? 'last': '';?>">
+                        <h2><?php echo $menu_bom_pra_vc_item['titulo']?></h2>
+                        <?php if($menu_bom_pra_vc_item['filhos']) :?>
 
-                                <?php foreach($produto_categoria_pf['produtos'] as $produto_pf) :?>
-                                  <a href="<?php echo app_get_url_produto($produto_pf);?>"><?php echo $produto_pf['titulo'];?></a>
+                                <?php foreach($menu_bom_pra_vc_item['filhos'] as $filho_item) :?>
+                                  <a href="<?php echo app_get_url_menu_item($filho_item['link']);?>"><?php echo $filho_item['titulo'];?></a>
                                 <?php endforeach;?>
 
                         <?php endif?>
 
                     </nav>
-                <?php endforeach;?>
+                <?php $c++; endforeach;?>
 
             </article>
 
             <article id="links_empresa" class="clearfix right">
                 <h1><?= lang('core.bom_para_empresa');?></h1>
-                <?php foreach($produto_categorias_pj as $produto_categorias_pj): ?>
-                    <nav>
-                        <h2><?php echo $produto_categorias_pj['titulo']?></h2>
-                        <?php if($produto_categorias_pj['produtos']) :?>
+                <?php $c = 1; $total = count($menu_para_sua_empresa); foreach($menu_para_sua_empresa as $menu_para_sua_empresa_item): ?>
+                    <nav class="<?php echo ($c == $total) ? 'last': '';?>">
+                        <h2><?php echo $menu_para_sua_empresa_item['titulo']?></h2>
+                        <?php if($menu_para_sua_empresa_item['filhos']) :?>
 
-                            <?php foreach($produto_categorias_pj['produtos'] as $produto_pj) :?>
-                                <a href="<?php echo app_get_url_produto($produto_pj);?>"><?php echo $produto_pj['titulo'];?></a>
+                            <?php foreach($menu_para_sua_empresa_item['filhos'] as $filho_item) :?>
+                                <a href="<?php echo app_get_url_menu_item($filho_item['link']);?>"><?php echo $filho_item['titulo'];?></a>
                             <?php endforeach;?>
 
                         <?php endif?>
 
                     </nav>
-                <?php endforeach;?>
+                <?php $c++; endforeach;?>
 
             </article>
         </div>
