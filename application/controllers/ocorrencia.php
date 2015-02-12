@@ -51,7 +51,7 @@ class Ocorrencia extends Site_Controller {
 
             $this->app_mail->set_from( $this->config->item('app_email_from'), $this->config->item('app_email_name'));
 
-            $this->app_mail->add_to('carlos@zazz.com.br');
+            $this->app_mail->add_to(app_get_configuracao('to_email_ocorrencia'));
 
             $this->app_mail->set_subject('[Corcovado] Ocorrencia - Site');
 
