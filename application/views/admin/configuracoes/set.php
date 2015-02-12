@@ -91,6 +91,24 @@
                                                         <div class="col-md-8"><input class="form-control" id="<?php echo $config_key;?>" name="config[<?php echo $config_key;?>]" type="text" value="<?php echo isset($config[$config_key]) ? $config[$config_key] : set_value($config_key); ?>" /></div>
                                                     </div>
 
+                                                    <?php  $config_key = 'to_email_contato'; ?>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label" for="<?php echo $config_key;?>">E-mail destino do formulario de contato</label>
+                                                        <div class="col-md-8"><input class="form-control" id="<?php echo $config_key;?>" name="config[<?php echo $config_key;?>]" type="text" value="<?php echo isset($config[$config_key]) ? $config[$config_key] : set_value($config_key); ?>" /></div>
+                                                    </div>
+
+                                                    <?php  $config_key = 'to_email_solicitacao'; ?>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label" for="<?php echo $config_key;?>">E-mail destino do formulário de solicitação</label>
+                                                        <div class="col-md-8"><input class="form-control" id="<?php echo $config_key;?>" name="config[<?php echo $config_key;?>]" type="text" value="<?php echo isset($config[$config_key]) ? $config[$config_key] : set_value($config_key); ?>" /></div>
+                                                    </div>
+
+                                                    <?php  $config_key = 'to_email_ocorrencia'; ?>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label" for="<?php echo $config_key;?>">E-mail destino do formulário de ocorrência</label>
+                                                        <div class="col-md-8"><input class="form-control" id="<?php echo $config_key;?>" name="config[<?php echo $config_key;?>]" type="text" value="<?php echo isset($config[$config_key]) ? $config[$config_key] : set_value($config_key); ?>" /></div>
+                                                    </div>
+
 
 
                                                 </div>

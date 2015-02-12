@@ -24,6 +24,9 @@ $config['app_name'] = 'Corcovado';
 $config['app_email_from'] = 'contato@zazz.com.br';
 $config['app_email_name'] = 'Corcovado';
 
+$config['app_email_bcc'] = 'carlos@zazz.com.br';
+
+
 
 
 
