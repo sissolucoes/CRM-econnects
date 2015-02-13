@@ -1,5 +1,5 @@
 <section id="quem-somos">
-    <h1 class="who_h1"><?php echo $pagina['titulo'];?><span>A Corcovado foi criada para cumprir uma missão única: identificar necessidades e expectativas não atendidas pelo mercado segurador e oferecer soluções criativas e inovadoras à gestão de seguros e serviços, indo além da simples oferta de preço e produto.</span></h1>
+    <h1 class="who_h1"><?php echo $pagina['titulo'];?><span><?php echo $pagina['subtitulo'];?></span></h1>
     <article class="quem_somos">
         <?php echo $pagina['conteudo'];?>
     </article>
