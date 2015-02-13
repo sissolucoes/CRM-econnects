@@ -8,4 +8,4 @@ $lang['core.planos'] = 'Planos';
 $lang['core.comprar'] = 'Comprar';
 $lang['core.confira'] = 'Confira';
 $lang['core.abrir'] = 'Abrir';
-$lang['core.em_contrucao'] = 'Em Contrução';
+$lang['core.em_contrucao'] = 'Em Construção';

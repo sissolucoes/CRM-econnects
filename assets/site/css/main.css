@@ -26,7 +26,7 @@ h1,h2,h3,h4,h5,h6{ font-family: 'Fjalla One', sans-serif; text-transform:upperca
 .wrap{ 
 	width:1000px; 
 	margin:0 auto; 
-	padding:0 10px; }
+	padding:0 0px; }
 
 .sitemap {
 	width: 939px !important;
@@ -122,7 +122,7 @@ header nav#menu a#m_servicos .seta-submenu{  background-position:0 -114px; posit
 /* header nav#menu a#m_sac{ margin-right:30px; } */
 header nav#menu a#m_sac .seta-submenu{  background-position:0 -114px; position:absolute; width:12px; height:6px; right:-25px;top:11px; }
 header nav#menu span{ font-size:12px; margin:0 10px 0 13px; }
-header nav#menu .social{ margin-top:-4px; }
+header nav#menu .social{ margin-top:-25px; }
 header nav#menu .social a{ float:left; margin:0 0 0 10px; }
 header nav#menu .submenu{ position:absolute; top:22px; left:218px; background:white; padding:0 20px 20px; z-index:99; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; filter: alpha(opacity=90); -moz-opacity:0.9; -khtml-opacity: 0.9; opacity: 0.9; display:none; }
 header nav#menu .submenu a{ font-size:16px; padding-top:18px; display: table;  }
@@ -3158,4 +3158,8 @@ li.last_item ul.submenu {
     width: 210px ! important;
     clear: both;
     padding-top: 5px;
+}
+
+#links_voce .last {
+	margin-top: -46px;
 }
