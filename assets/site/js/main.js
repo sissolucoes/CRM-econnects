@@ -29,6 +29,7 @@ $(document).ready(function(e) {
     
 	// HOME
 	if($('body').hasClass('home')){
+
 		$('#nossos_produtos h2').click( function(e){
 			obj = $(this);
 			$('#nossos_produtos div.content').not(obj.siblings('div.content')).slideUp();
@@ -41,41 +42,7 @@ $(document).ready(function(e) {
 			obj.siblings('div.content').slideToggle();
 		});
 		
-		$('a#aba_pf, a#aba_pj, a#aba_pe').click( function(e){
-			obj = $(this).prop('id');
-			switch(obj){
-				case 'aba_pf':
-					$('a#aba_pj').removeClass('active');
-					$('a#aba_pe').removeClass('active');
-					$('a#aba_pf').addClass('active');
-					$('div#pj').addClass('hidden');
-					$('div#pe').addClass('hidden');
-					$('div#pf').removeClass('hidden');
-                                        
-                                        $('.imagem').html('<img src="images/produto-seguro-viagem-turismo.jpg">');
-				break;	
-				case 'aba_pj': 
-					$('a#aba_pf').removeClass('active');
-					$('a#aba_pe').removeClass('active');
-					$('a#aba_pj').addClass('active');
-					$('div#pf').addClass('hidden');
-					$('div#pe').addClass('hidden');
-					$('div#pj').removeClass('hidden');
-                                        
-                                        $('.imagem').html('<img src="images/produto-seguro-viagem-negocios.jpg">');
-				break;	
-				case 'aba_pe': 
-					$('a#aba_pf').removeClass('active');
-					$('a#aba_pj').removeClass('active');
-					$('a#aba_pe').addClass('active');
-					$('div#pf').addClass('hidden');
-					$('div#pj').addClass('hidden');
-					$('div#pe').removeClass('hidden');
-                                        
-                                        $('.imagem').html('<img src="images/produto-seguro-viagem-estudos.jpg">');
-				break;
-			}
-		});
+
 
     $('a#aba_pf02, a#aba_pj02, a#aba_pe02').click( function(e){
       obj = $(this).prop('id');

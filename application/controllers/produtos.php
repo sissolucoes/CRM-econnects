@@ -102,6 +102,11 @@ class Produtos extends Site_Controller {
 
         $data['categoria'] = $categoria;
 
+
+        if( in_array($slug, array('viagem-turismo', 'viagem-estudo', 'viagem-negocio')) ){
+            $modelo_pagina = 'produto_online_viagem';
+        }
+
         $this->template->load('site/layouts/base', "site/produtos/modelos/{$modelo_pagina}", $data );
     }
     public function bom_para_sua_empresa($slug){
@@ -134,6 +139,10 @@ class Produtos extends Site_Controller {
             ->get_produto_categoria_by_id($produto['produto_categoria_id']);
 
         $data['categoria'] = $categoria;
+
+        if( in_array($slug, array('viagem-turismo', 'viagem-estudo', 'viagem-negocio')) ){
+            $modelo_pagina = 'produto_online_viagem';
+        }
 
         $this->template->load('site/layouts/base', "site/produtos/modelos/{$modelo_pagina}", $data );
     }

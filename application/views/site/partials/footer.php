@@ -72,7 +72,7 @@
                 <a href="<?php echo site_url('contato');?>" class="ico_email sac sprite tootlip" title="E-mail"></a>
                 <a href="#" class="ico_tel sac sprite tootlip" title="Telefone"></a>
 
-                <p>0800.121520</p>
+                <p>(11) 3017-8380</p>
             </nav>
         </div>
     </section>

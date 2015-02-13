@@ -7,7 +7,7 @@
             <a href="<?php echo site_url('contato');?>" class="ico_email sac sprite tootlip" title="E-mail"></a>
             <a href="<?php echo site_url('sac');?>" class="ico_tel sac sprite tootlip" title="Telefone"></a>
 
-            <p><?php echo app_get_configuracao('site_telefone');?></p>
+            <p>(11) 3017-8380</p>
             <span></span>
             <a href="<?php echo site_url('relacionamento/login')?>" class="ico_restrito sprite">ÁREA DE RELACIONAMENTO</a>
             <span></span>

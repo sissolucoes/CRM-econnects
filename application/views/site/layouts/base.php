@@ -18,6 +18,7 @@
 
     <script>
         var SITE_URL = '<?php echo site_url();?>';
+        var SITE_BASE_URL = '<?php echo base_url();?>';
     </script>
 </head>
 <body class="home <?php if(app_current_controller() == 'home') echo 'index_row';?>">

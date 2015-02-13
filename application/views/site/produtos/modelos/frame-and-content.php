@@ -6,7 +6,7 @@
         <div class="offline wrap clearfix" id="produtoDescricao">
             <nav>
                 <div style="text-align: right; margin-top: 10px; width: 582px;">
-                    <a href="#" id="botao_voltar" title="Voltar" class="voltar"><img src="<?php echo app_assets_url('images/botao_voltar.png', 'site');?>"></a>
+                    <a href="<?php echo site_url('produtos');?>" id="botao_voltar" title="Voltar" class="voltar"><img src="<?php echo app_assets_url('images/botao_voltar.png', 'site');?>"></a>
                 </div>
             </nav>
             <div style="margin-top: -44px;">

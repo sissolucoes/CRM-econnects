@@ -6,7 +6,7 @@
         <div class="offline wrap clearfix " id="produtoDescricao">
             <nav>
                 <div style="text-align: right; margin-top: 10px; width: 582px;">
-                    <a href="#" id="botao_voltar" title="Voltar" class="voltar"><img src="<?php echo app_assets_url('images/botao_voltar.png', 'site');?>"></a>
+                    <a href="<?php echo site_url('produtos');?>" id="botao_voltar" title="Voltar" class="voltar"><img src="<?php echo app_assets_url('images/botao_voltar.png', 'site');?>"></a>
                 </div>
             </nav>
             <div style="margin-top: -44px;">
@@ -15,13 +15,11 @@
                 <h1><?php echo $produto['titulo'];?></h1>
                 <?php echo $produto['conteudo'];?>
             </div>
-            <!--div class="conheca">
-                <p> <a href="#dialog" name="modal">Conheça cobertura e limite dos planos</a></p>
-            </div-->
-        </div> <br clear="all">
+
+        </div>
+        <br clear="all">
 
         <div id="boxes">
-
 
             <?php $bloco_box_telefone = app_get_cms_bloco('produto-box-telefone');?>
             <?php if($bloco_box_telefone) :?>
