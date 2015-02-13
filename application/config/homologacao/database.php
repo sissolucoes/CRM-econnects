@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'corcovado_portal';
+$db['default']['hostname'] = 'mysql.voetranquilo.com.br';
+$db['default']['username'] = 'voetranquilo02';
 $db['default']['password'] = 'corco1q2w3e';
-$db['default']['database'] = 'corcovado_portal';
+$db['default']['database'] = 'voetranquilo02';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

@@ -1,5 +1,11 @@
 <?php
 $host_servers['production'] = array(
+    'corcovadocorretora.com.br',
+    'www.corcovadocorretora.com.br'
+
+);
+
+$host_servers['homologacao'] = array(
     'zazz.com.br',
     'voetranquilo.com.br',
     'www.voetranquilo.com.br'
@@ -26,10 +32,15 @@ $host_servers['production'] = array(
 if(in_array($_SERVER['HTTP_HOST'], $host_servers['production']  )){
 
     define('ENVIRONMENT', 'production');
+
+}elseif(in_array($_SERVER['HTTP_HOST'], $host_servers['homologacao']  )) {
+
+    define('ENVIRONMENT', 'homologacao');
 }else {
 
     define('ENVIRONMENT', 'development');
 }
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
