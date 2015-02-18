@@ -1,5 +1,5 @@
 <footer>
-    <section id="mapa">
+    <section id="mapa" style="min-width: 1000px;">
         <div class="wrap clearfix sitemap">
             <nav id="main_links" class="left">
                 <?php if($menu_footer) : ?>
@@ -17,14 +17,14 @@
                         <h2><?php echo $menu_bom_pra_vc_item['titulo']?></h2>
                         <?php if($menu_bom_pra_vc_item['filhos']) :?>
 
-                                <?php foreach($menu_bom_pra_vc_item['filhos'] as $filho_item) :?>
-                                  <a href="<?php echo app_get_url_menu_item($filho_item['link']);?>"><?php echo $filho_item['titulo'];?></a>
-                                <?php endforeach;?>
+                            <?php foreach($menu_bom_pra_vc_item['filhos'] as $filho_item) :?>
+                                <a href="<?php echo app_get_url_menu_item($filho_item['link']);?>"><?php echo $filho_item['titulo'];?></a>
+                            <?php endforeach;?>
 
                         <?php endif?>
 
                     </nav>
-                <?php $c++; endforeach;?>
+                    <?php $c++; endforeach;?>
 
             </article>
 
@@ -42,13 +42,15 @@
                         <?php endif?>
 
                     </nav>
-                <?php $c++; endforeach;?>
+                    <?php $c++; endforeach;?>
 
             </article>
-        </div>
+            <div class="clearfix">
+            </div>
+
     </section>
 
-    <section id="copy">
+    <section id="copy" style="min-width: 1000px;">
         <div class="wrap clearfix sitemap_row2">
             <article id="assinatura" class="left clearfix">
                 <img src="<?php echo app_assets_url('images/logotipo-corcovado-footer.png', 'site');?>" width="49" height="56" alt="Logotipo Corcovado"
@@ -76,5 +78,7 @@
             </nav>
         </div>
     </section>
+
+
 
 </footer>
