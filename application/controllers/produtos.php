@@ -88,6 +88,11 @@ class Produtos extends Site_Controller {
             ->set_by_tipo_pessoa('PF')
             ->get_produto_by_slug($slug);
 
+        if(!$produto){
+            $this->template->load('site/layouts/base', "site/paginas/not-found");
+            return;
+        }
+
         $modelo_pagina = $produto['modelo_pagina'];
 
         $data['produto'] = $produto;
@@ -125,6 +130,11 @@ class Produtos extends Site_Controller {
             ->filter_idioma($this->lang->lang())
             ->set_by_tipo_pessoa('PJ')
             ->get_produto_by_slug($slug);
+
+        if(!$produto){
+            $this->template->load('site/layouts/base', "site/paginas/not-found");
+            return;
+        }
 
         $modelo_pagina = $produto['modelo_pagina'];
 
