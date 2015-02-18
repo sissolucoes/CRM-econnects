@@ -4,11 +4,12 @@ $(document).ready(function() {
     /**
      * Deixa o bloco com a mesma da descrição
      */
-    $("#img_produto").load(function() {
 
+    $("#img_produto").one('load', function() {
         $('#produtoDescricao').height($(this).height() -20);
+    }).each(function() {
+        if(this.complete) $(this).load();
     });
-
 
     $('a#aba_pf, a#aba_pj, a#aba_pe').click( function(e){
         obj = $(this).prop('id');

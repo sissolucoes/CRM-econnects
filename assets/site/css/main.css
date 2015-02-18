@@ -3164,3 +3164,27 @@ li.last_item ul.submenu {
 #links_voce .last {
 	margin-top: -66px;
 }
+
+/* hacks para firefox */
+@-moz-document url-prefix() {
+    #links_voce .last {
+        margin-top: -76px !important;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    /* Safari and Chrome */
+    #links_voce .last {
+        margin-top: -66px;
+    }
+
+    /* Safari only override */
+    ::i-block-chrome,#links_voce .last {
+        margin-top: -76px;
+    }
+}
+@media screen and (max-device-width: 480px) {
+    #links_voce .last {
+        margin-top: -76px;
+    }
+}
