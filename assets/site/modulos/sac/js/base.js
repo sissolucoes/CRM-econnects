@@ -51,6 +51,15 @@ $(document).ready(function() {
 
         $("#container_faq_result").html('');
 
+        if($('#pesquisa_faq').val() == ''){
+
+            $('#faq_erro_busca').removeClass('hidden');
+            $('#faq_result_search').slideUp();
+            return;
+        }else {
+            $('#faq_erro_busca').addClass('hidden');
+        }
+
 
         var values = { term: $('#pesquisa_faq').val() };
 

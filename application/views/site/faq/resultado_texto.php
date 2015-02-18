@@ -14,4 +14,8 @@
 
 
 </ul>
+<?php else :?>
+
+    <p id="accordion">Nenhum resultado foi encontrado.</p>
+
 <?php endif;?>

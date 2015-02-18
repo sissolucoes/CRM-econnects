@@ -65,15 +65,19 @@ class Faq extends Site_Controller {
         $this->load->model('faq_categoria_model', 'faq_categoria');
         $this->load->model('faq_duvida_model', 'faq_duvida');
 
+        $duvidas = array();
 
         $term = $this->input->post('term');
 
-        $duvidas = $this->faq_duvida
-            ->with_idioma()
-            ->with_categorias()
-            ->set_select()
-            ->filter_idioma($this->lang->lang())
-            ->buscar_by_termo($term);
+        if($term != ''){
+            $duvidas = $this->faq_duvida
+                ->with_idioma()
+                ->with_categorias()
+                ->set_select()
+                ->filter_idioma($this->lang->lang())
+                ->buscar_by_termo($term);
+        }
+
 
         $data = array(
             'duvidas' => $duvidas

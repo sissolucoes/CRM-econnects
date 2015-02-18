@@ -50,7 +50,7 @@
                 <button value="Pesquisar" id="botao_faq" class="botao_faq botoes" type="submit">
                     <div class="span_botoes sprite">Pesquisar</div></button>
                 <br class="clearfix" />
-
+                <div class="error hidden" id="faq_erro_busca">Por favor, informe o texto que deseja pesquisar. </div>
             </div>
 
 
