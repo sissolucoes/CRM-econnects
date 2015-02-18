@@ -98,9 +98,12 @@ class Produtos extends Admin_Controller {
             }
         }
 
+        $this->template->css(app_assets_url('core/css/chosen.min.css',  'admin'));
+        $this->template->js(app_assets_url('core/js/chosen.jquery.min.js',  'admin'));
 
         $this->template->css(app_assets_url('modulos/produtos/css/base.css',  'admin'));
         $this->template->js(app_assets_url('modulos/produtos/js/base.js',  'admin'));
+
 
         $data = array();
         /**
@@ -124,7 +127,7 @@ class Produtos extends Admin_Controller {
         $data['modelos_paginas'] = $this->current_model->get_modelos_paginas();
 
 
-
+        $data['subprodutos'] = $this->current_model->get_subprodutos_options();
 
         $data['new_record'] = '0';
         $data['form_action'] =  base_url("$this->controller_uri/add");
@@ -167,6 +170,9 @@ class Produtos extends Admin_Controller {
             }
         }
 
+        $this->template->css(app_assets_url('core/css/chosen.min.css',  'admin'));
+        $this->template->js(app_assets_url('core/js/chosen.jquery.min.js',  'admin'));
+
         $this->template->css(app_assets_url('modulos/produtos/css/base.css',  'admin'));
         $this->template->js(app_assets_url('modulos/produtos/js/base.js',  'admin'));
 
@@ -182,6 +188,10 @@ class Produtos extends Admin_Controller {
         }
 
         $data['produto_categorias'] = $this->produto_categoria->get_all();
+
+        $data['subprodutos'] = $this->current_model->get_subprodutos_options();
+
+
 
         $data['modelos_paginas'] = $this->current_model->get_modelos_paginas();
 

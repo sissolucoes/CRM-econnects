@@ -59,7 +59,8 @@ Class Produto_Model extends MY_Model
             'produto_categoria_id' => $this->input->post('produto_categoria_id'),
             'tipo_pessoa' => $this->input->post('tipo_pessoa'),
             'modelo_pagina' => $this->input->post('modelo_pagina'),
-            'url_frame' => $this->input->post('url_frame')
+            'url_frame' => $this->input->post('url_frame'),
+            'subproduto_de' => $this->input->post('subproduto_de')
         );
 
 
@@ -171,6 +172,15 @@ Class Produto_Model extends MY_Model
     public function set_publicados(){
 
         $this->_database->where("{$this->_table}.publicado", 1);
+
+        return $this;
+    }
+
+
+
+    public function set_not_subproduto(){
+
+        $this->_database->where("{$this->_table}.subproduto_de", 0);
 
         return $this;
     }
@@ -325,6 +335,20 @@ Class Produto_Model extends MY_Model
                 }
 
             }
+
+
+    }
+
+    public function get_subprodutos_options(){
+
+        $data = array();
+        $this->set_not_subproduto();
+        $rows = $this->get_all();
+
+        foreach($rows as $row){
+            $data[$row['tipo_pessoa']][] = $row;
+        }
+        return $data;
 
 
     }

@@ -119,6 +119,29 @@
                                                         </div>
                                                     </div>
 
+                                                    <?php $field_name = 'subproduto_de';?>
+                                                    <?php $item_field_id = 'produto_id';?>
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Subproduto de</label>
+                                                        <div class="col-md-4">
+                                                            <select data-placeholder="Nenhum" class="form-control required chosen-select" id="<?php echo $field_name;?>" name="<?php echo $field_name;?>" style="width:350px;">
+                                                                <option value="0">Nenhum</option>
+                                                                <optgroup label="Pessoa Fisica">
+                                                                    <?php foreach($subprodutos['PF'] as $item): ?>
+                                                                        <option value="<?php echo $item[$item_field_id]?>" <?php  if(isset($row[$field_name]) && $row[$field_name] == $item[$item_field_id]) echo 'selected="selected"'; ?>> <?php echo $item['nome'];?></option>
+                                                                    <?php endforeach;?>
+                                                                </optgroup>
+
+                                                                <optgroup label="Pessoa Juridica">
+                                                                    <?php foreach($subprodutos['PJ'] as $item): ?>
+                                                                        <option value="<?php echo $item[$item_field_id]?>" <?php  if(isset($row[$field_name]) && $row[$field_name] == $item[$item_field_id]) echo 'selected="selected"'; ?>> <?php echo $item['nome'];?></option>
+                                                                    <?php endforeach;?>
+                                                                </optgroup>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
                                                     <?php $field_name = 'imagem';?>
                                                     <div class="form-group">
                                                         <label class="col-md-2 control-label" for="<?php echo $field_name;?>">Imagem</label>
@@ -133,6 +156,10 @@
                                                             <?php endif;?>
                                                         </div>
                                                     </div>
+
+
+
+
 
                                                     <?php $field_name = 'publicado';?>
                                                     <div class="form-group">
