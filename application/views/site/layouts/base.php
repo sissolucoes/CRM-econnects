@@ -21,7 +21,7 @@
         var SITE_BASE_URL = '<?php echo base_url();?>';
     </script>
 </head>
-<body class="home <?php if(app_current_controller() == 'home') echo 'index_row';?>">
+<body class="home <?php if(app_current_controller() == 'home') echo 'index_row';?>" style="min-width: 1140px">
 <?php $this->load->view('site/partials/menu');?>
 
 <?php echo $contents;?>
