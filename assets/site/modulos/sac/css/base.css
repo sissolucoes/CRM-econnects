@@ -84,3 +84,5 @@
 #accordion li.active h2 .seta {
     background-position: 0 -32px;
 }
+
+.coluna{ width: 49%; }

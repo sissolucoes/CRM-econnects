@@ -36,7 +36,7 @@ p{ margin:15px 0; line-height: 18px;}
 .p-normal{line-height: 15px;}
 a, a:hover{ text-decoration:none; }
 ul, ol, li{ list-style:none; margin:0; padding:0; }
-.coluna{ width: 49%; }
+.coluna{ width:455px; }
 .window{ background:#fff; }
 
 
