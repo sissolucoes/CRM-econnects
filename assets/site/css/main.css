@@ -36,7 +36,7 @@ p{ margin:15px 0; line-height: 18px;}
 .p-normal{line-height: 15px;}
 a, a:hover{ text-decoration:none; }
 ul, ol, li{ list-style:none; margin:0; padding:0; }
-.coluna{ width:455px; }
+.coluna{ width: 49%; }
 .window{ background:#fff; }
 
 
@@ -1545,7 +1545,7 @@ th.precos_viagem  {background: #5b5c5e !important;
 
 
 #nossos_produtos div.teste.wrap{}
-#nossos_produtos div.teste .categoria{ width:455px; margin-bottom:30px; }
+#nossos_produtos div.teste .categoria{margin-bottom:30px; }
 #nossos_produtos div.teste .categoria h1{ background:#fff; font-size:20px; padding:29px 0 25px 0; color:#00a5db; margin:0 0 10px; }
 #nossos_produtos div.teste .categoria h1 span.ico_m{ margin:-20px 20px 0; }
 
