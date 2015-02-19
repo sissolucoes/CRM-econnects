@@ -163,8 +163,8 @@ header nav#menu .submenu2 a:hover{ margin-bottom:-4px; }
 
 #mapa #links_voce nav{ 
 	float:left; 
-	margin-right:20px; 
-	width:125px;
+	margin-right:15px;
+	width:130px;
 	padding-bottom: 5px;
 }
 
@@ -3163,28 +3163,4 @@ li.last_item ul.submenu {
 
 #links_voce .last {
 	margin-top: -66px;
-}
-
-/* hacks para firefox */
-@-moz-document url-prefix() {
-    #links_voce .last {
-        margin-top: -76px !important;
-    }
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    /* Safari and Chrome */
-    #links_voce .last {
-        margin-top: -66px;
-    }
-
-    /* Safari only override */
-    ::i-block-chrome,#links_voce .last {
-        margin-top: -76px;
-    }
-}
-@media screen and (max-device-width: 480px) {
-    #links_voce .last {
-        margin-top: -76px;
-    }
 }
