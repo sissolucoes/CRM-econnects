@@ -37,3 +37,60 @@
 
     background-image: url("../../../images/ico-responsabilidade-produtos.png");
 }
+
+.icone_categoria_offline {
+
+    float: left;
+    margin-right: 10px;
+    margin-top: -5px;
+    padding-left: 10px;
+    height: 26px;
+    width: 24px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position-x: 11px;
+}
+
+.icone_categoria_online {
+
+    float: left;
+    margin-right: 10px;
+    padding-top: 11px;
+    height: 22px;
+    width: 24px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position-y: 9px;
+}
+
+.ico_beneficios_m_categoria {
+
+    background-image: url("../../../images/icone-beneficios.png");
+}
+
+.ico_patrimoniais_m_categoria {
+
+    background-image: url("../../../images/icone-patrimonio.png");
+
+}
+
+.ico_consorcio_m_categoria {
+
+    background-image: url("../../../images/icone-patrimonio.png");
+}
+
+.ico_assistencia_m_categoria {
+
+    background-image: url("../../../images/icone-patrimonio.png");
+}
+
+.ico_riscos_m_categoria {
+
+    background-image: url("../../../images/icone-patrimonio.png");
+}
+
+.ico_responsabilidade_m_categoria {
+
+    background-image: url("../../../images/icone-patrimonio.png");
+}
+

@@ -60,7 +60,8 @@ Class Produto_Model extends MY_Model
             'tipo_pessoa' => $this->input->post('tipo_pessoa'),
             'modelo_pagina' => $this->input->post('modelo_pagina'),
             'url_frame' => $this->input->post('url_frame'),
-            'subproduto_de' => $this->input->post('subproduto_de')
+            'subproduto_de' => $this->input->post('subproduto_de'),
+            'ordem' => $this->input->post('ordem')
         );
 
 
@@ -350,6 +351,15 @@ Class Produto_Model extends MY_Model
         }
         return $data;
 
+
+    }
+
+    public function get_subprodutos_de($produto_id){
+
+
+        $this->_database->where("{$this->_table}.subproduto_de", $produto_id);
+
+        return $this->get_all();
 
     }
 

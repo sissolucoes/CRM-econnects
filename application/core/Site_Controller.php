@@ -73,6 +73,8 @@ class Site_Controller extends MY_Controller
                 ->set_select()
                 ->filter_idioma($this->lang->lang())
                 ->set_by_tipo_pessoa('PF')
+                ->set_not_subproduto()
+                ->set_default_order()
                 ->get_produtos_by_categoria($produto_categoria['produto_categoria_id']);
 
             if($produtos_pf){
@@ -88,6 +90,8 @@ class Site_Controller extends MY_Controller
                 ->set_select()
                 ->filter_idioma($this->lang->lang())
                 ->set_by_tipo_pessoa('PJ')
+                ->set_not_subproduto()
+                ->set_default_order()
                 ->get_produtos_by_categoria($produto_categoria['produto_categoria_id']);
 
             if($produtos_pj){

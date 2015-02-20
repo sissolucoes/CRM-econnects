@@ -27,6 +27,8 @@ class Produtos extends Site_Controller {
                 ->set_select()
                 ->filter_idioma($this->lang->lang())
                 ->set_by_tipo_pessoa('PF')
+                ->set_default_order()
+                ->set_not_subproduto()
                 ->get_produtos_by_categoria($produto_categoria['produto_categoria_id']);
 
             if($produtos_pf){
@@ -42,6 +44,8 @@ class Produtos extends Site_Controller {
                 ->set_select()
                 ->filter_idioma($this->lang->lang())
                 ->set_by_tipo_pessoa('PJ')
+                ->set_default_order()
+                ->set_not_subproduto()
                 ->get_produtos_by_categoria($produto_categoria['produto_categoria_id']);
 
             if($produtos_pj){
@@ -79,6 +83,8 @@ class Produtos extends Site_Controller {
 
         $this->template->js(app_assets_url('modulos/produtos/js/base.js',  'site'));
 
+        $this->template->css(app_assets_url('modulos/produtos/css/base.css',  'site'));
+
 
         $produto = $this->produto
             ->set_publicados()
@@ -97,6 +103,25 @@ class Produtos extends Site_Controller {
 
         $data['produto'] = $produto;
 
+        $data['default_image'] = app_assets_url("produtos/{$produto['produto_id']}/{$produto['imagem']}" , 'uploads');
+
+
+        $subprodutos = $this->produto
+            ->set_publicados()
+            ->with_idioma()
+            ->set_select()
+            ->filter_idioma($this->lang->lang())
+            ->set_default_order()
+            ->get_subprodutos_de($produto['produto_id']);
+
+        $data['subprodutos'] = $subprodutos;
+
+        if($subprodutos){
+
+            $data['default_image'] = app_assets_url("produtos/{$subprodutos[0]['produto_id']}/{$subprodutos[0]['imagem']}" , 'uploads');
+        }
+
+
 
         $categoria = $this->produto_categoria
             ->set_publicados()
@@ -108,9 +133,7 @@ class Produtos extends Site_Controller {
         $data['categoria'] = $categoria;
 
 
-        if( in_array($slug, array('viagem-turismo', 'viagem-estudo', 'viagem-negocio')) ){
-            $modelo_pagina = 'produto_online_viagem';
-        }
+
 
         $this->template->load('site/layouts/base', "site/produtos/modelos/{$modelo_pagina}", $data );
     }
@@ -121,6 +144,8 @@ class Produtos extends Site_Controller {
         $this->load->model('produto_categoria_model', 'produto_categoria');
 
         $this->template->js(app_assets_url('modulos/produtos/js/base.js',  'site'));
+
+        $this->template->css(app_assets_url('modulos/produtos/css/base.css',  'site'));
 
 
         $produto = $this->produto
@@ -140,6 +165,23 @@ class Produtos extends Site_Controller {
 
         $data['produto'] = $produto;
 
+        $data['default_image'] = app_assets_url("produtos/{$produto['produto_id']}/{$produto['imagem']}" , 'uploads');
+
+        $subprodutos = $this->produto
+            ->set_publicados()
+            ->with_idioma()
+            ->set_select()
+            ->filter_idioma($this->lang->lang())
+            ->set_default_order()
+            ->get_subprodutos_de($produto['produto_id']);
+
+        $data['subprodutos'] = $subprodutos;
+
+        if($subprodutos){
+
+            $data['default_image'] = app_assets_url("produtos/{$subprodutos[0]['produto_id']}/{$subprodutos[0]['imagem']}" , 'uploads');
+        }
+
 
         $categoria = $this->produto_categoria
             ->set_publicados()
@@ -150,9 +192,7 @@ class Produtos extends Site_Controller {
 
         $data['categoria'] = $categoria;
 
-        if( in_array($slug, array('viagem-turismo', 'viagem-estudo', 'viagem-negocio')) ){
-            $modelo_pagina = 'produto_online_viagem';
-        }
+
 
         $this->template->load('site/layouts/base', "site/produtos/modelos/{$modelo_pagina}", $data );
     }
