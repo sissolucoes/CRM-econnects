@@ -14,7 +14,10 @@
     <?php endif;?>
     <br clear="all">
 
-    <iframe src="<?php echo $produto['url_frame'];?>" width="100%" frameborder="0"></iframe>
+    <?php if ($produto['url_frame'] != '') :?>
+
+        <iframe src="<?php echo $produto['url_frame'];?>" width="100%" frameborder="0"></iframe>
+    <?php endif;?>
 
     <div id="boxes_bottom_produtos">
 

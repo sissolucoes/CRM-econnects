@@ -1,6 +1,6 @@
 <header>
     <div class="wrap clearfix">
-        <h1 class="left"><a href="<?php echo base_url();?>" id="logo"><img src="<?php echo app_assets_url('images/logotipo-corcovado.png', 'site');?>" width="298" height="79" alt="Logotipo Corcovado" title="Corcovado" /></a></h1>
+        <h1 class="left"><a href="<?php echo base_url();?>" id="logo"><img src="<?php echo app_assets_url('images/logotipo-corcovado.png', 'site');?>" width="298" height="79" alt="Corcovado - Corretora de Seguros" title="Corcovado - Corretora de Seguros" /></a></h1>
 
         <nav class="menu_secundario right">
             <a href="<?php echo site_url('sac');?>" class="ico_chat sac sprite tootlip" title="Chat"></a>

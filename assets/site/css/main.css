@@ -1325,6 +1325,7 @@ th.precos_viagem  {background: #5b5c5e !important;
 	height: 400px;
 	width: 622px;
 	padding-top: 20px;
+    padding-left: 20px;
 }
 
 .offline h1 {color: #00A5DB;
@@ -1349,7 +1350,7 @@ th.precos_viagem  {background: #5b5c5e !important;
 .cotacao_tel {background: none repeat scroll 0 0 #FFFFFF;
 			  float: left;
 			  width: 50%;
-			  height: 217px;}
+			  height: 220px;}
 
 .cotacao_tel h1 {color: #00A5DB;
 		         font-weight: lighter;
